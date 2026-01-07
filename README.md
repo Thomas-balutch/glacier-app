@@ -228,12 +228,6 @@ C’est une plateforme de sensibilisation climatique, conçue pour :
 
 informer,
 
-éduquer,
-👤 Auteur
-
-Thomas Balutch
-Administrateur Linux orienté DevOps
-
 Ce projet s’inscrit dans une démarche d’apprentissage, d’expérimentation et de mise en pratique des bonnes pratiques système, conteneurisation et déploiement applicatif.
 
 documenter,
@@ -241,3 +235,7 @@ documenter,
 alerter.
 
 À terme, le projet ambitionne de devenir un outil de référence local sur l’évolution des glaciers alpins.
+
+👤 Auteur
+Thomas Balutch
+Administrateur système é réseaux Linux orienté DevOps
