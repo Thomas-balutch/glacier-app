@@ -1,0 +1,76 @@
+services:
+
+  frontend:
+
+    image: nginx:alpine
+
+    container_name: glacier-frontend
+
+    ports:
+
+      - "8080:80"
+
+    volumes:
+
+      - ./frontend:/usr/share/nginx/html:ro,Z
+
+    depends_on:
+
+      - backend
+
+    networks:
+
+      - glacier-net
+
+
+  backend:
+
+    image: glacier-app-backend
+
+    container_name: glacier-backend
+
+    ports:
+
+      - "5000:5000"
+
+    depends_on:
+
+      - db
+
+    networks:
+
+      - glacier-net
+
+
+  db:
+
+    image: postgres:15
+
+    container_name: glacier-db
+
+    environment:
+
+      POSTGRES_DB: glaciers
+
+      POSTGRES_USER: glacier
+
+      POSTGRES_PASSWORD: glacier
+
+    volumes:
+
+      - pgdata:/var/lib/postgresql/data
+
+    networks:
+
+      - glacier-net
+
+
+networks:
+
+  glacier-net:
+
+
+volumes:
+
+  pgdata:
+

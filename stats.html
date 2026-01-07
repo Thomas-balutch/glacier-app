@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Statistiques de l’évolution des glaciers d’Europe</title>
+
+
+<!-- Chart.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<style>
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f6f8;
+
+    margin: 0;
+
+    padding: 40px;
+
+}
+
+
+h1 {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.section {
+
+    max-width: 1100px;
+
+    margin: 0 auto 40px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+
+h2 {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+canvas {
+
+    width: 100% !important;
+
+    height: 400px !important;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>Statistiques de l’évolution des glaciers d’Europe</h1>
+
+
+<div class="section">
+
+    <h2>Altitude par glacier</h2>
+
+    <canvas id="altitudeChart"></canvas>
+
+</div>
+
+
+<div class="section">
+
+    <h2>Surface actuelle par glacier</h2>
+
+    <canvas id="surfaceChart"></canvas>
+
+</div>
+
+
+<div class="section">
+
+    <h2>Évolution de la surface du glacier (Mer de Glace)</h2>
+
+    <canvas id="evolutionChart"></canvas>
+
+</div>
+
+
+<script>
+
+/* ================= ALTITUDE ================= */
+
+new Chart(document.getElementById('altitudeChart'), {
+
+    type: 'bar',
+
+    data: {
+
+        labels: [
+
+            'Mer de Glace (France)',
+
+            'Aletsch (Suisse)',
+
+            'Pasterze (Autriche)',
+
+            'Blaueis (Allemagne)',
+
+            'Ghiacciaio del Forni (Italie)'
+
+        ],
+
+        datasets: [{
+
+            label: 'Altitude (m)',
+
+            data: [2500, 2300, 2100, 2400, 3650],
+
+            backgroundColor: '#4da3ff'
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        scales: {
+
+            y: { beginAtZero: true }
+
+        }
+
+    }
+
+});
+
+
+/* ================= SURFACE ACTUELLE ================= */
+
+new Chart(document.getElementById('surfaceChart'), {
+
+    type: 'bar',
+
+    data: {
+
+        labels: [
+
+            'Mer de Glace (France)',
+
+            'Aletsch (Suisse)',
+
+            'Pasterze (Autriche)',
+
+            'Blaueis (Allemagne)',
+
+            'Ghiacciaio del Forni (Italie)'
+
+        ],
+
+        datasets: [{
+
+            label: 'Surface (km²)',
+
+            data: [12.2, 17.3, 9.6, 1.0, 11.3],
+
+            backgroundColor: '#3ddcc0'
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        scales: {
+
+            y: { beginAtZero: true }
+
+        }
+
+    }
+
+});
+
+
+/* ================= ÉVOLUTION ================= */
+
+new Chart(document.getElementById('evolutionChart'), {
+
+    type: 'line',
+
+    data: {
+
+        labels: ['1990', '2000', '2010', '2020', '2024'],
+
+        datasets: [{
+
+            label: 'Surface (km²)',
+
+            data: [18.0, 16.2, 14.0, 12.3, 11.8],
+
+            fill: true,
+
+            borderColor: '#2962ff',
+
+            backgroundColor: 'rgba(41,98,255,0.15)',
+
+            tension: 0.3,
+
+            pointRadius: 5
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        scales: {
+
+            x: { title: { display: true, text: 'Année' } },
+
+            y: { title: { display: true, text: 'Surface (km²)' } }
+
+        }
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+

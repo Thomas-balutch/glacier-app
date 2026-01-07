@@ -1,0 +1,13 @@
+FROM postgres:15
+
+
+
+ENV POSTGRES_USER=glacier
+
+ENV POSTGRES_PASSWORD=glacier123
+
+ENV POSTGRES_DB=glacierdb
+
+
+EXPOSE 5432
+
