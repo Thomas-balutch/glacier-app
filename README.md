@@ -229,6 +229,12 @@ C’est une plateforme de sensibilisation climatique, conçue pour :
 informer,
 
 éduquer,
+👤 Auteur
+
+Thomas Balutch
+Administrateur Linux orienté DevOps
+
+Ce projet s’inscrit dans une démarche d’apprentissage, d’expérimentation et de mise en pratique des bonnes pratiques système, conteneurisation et déploiement applicatif.
 
 documenter,
 
