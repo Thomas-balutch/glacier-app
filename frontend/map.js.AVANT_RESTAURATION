@@ -1,0 +1,201 @@
+// ===============================
+// INITIALISATION CARTE
+// ===============================
+const map = L.map("map").setView([45.9, 6.9], 7);
+
+// Fond satellite ESRI
+const satelliteLayer = L.tileLayer(
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  { attribution: "© Esri, Maxar, Earthstar Geographics" }
+).addTo(map);
+
+// Fond OSM
+const osmLayer = L.tileLayer(
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  { attribution: "© OpenStreetMap contributors" }
+);
+
+// Switch couches
+L.control.layers(
+  { "Satellite": satelliteLayer, "Carte (OpenStreetMap)": osmLayer },
+  null,
+  { collapsed: false }
+).addTo(map);
+
+// ===============================
+// VARIABLES GLOBALES
+// ===============================
+let geojsonLayer = null;
+let lastClickedLayer = null;
+let chartAlt = null;
+let chartArea = null;
+
+// ===============================
+// STYLES
+// ===============================
+function defaultStyle() {
+  return {
+    color: "#ffffff",
+    weight: 1,
+    fillOpacity: 0.6
+  };
+}
+
+function highlightStyle() {
+  return {
+    color: "#ff0000",
+    weight: 2,
+    fillOpacity: 0.8
+  };
+}
+
+// ===============================
+// UTILITAIRES
+// ===============================
+function getGlacierName(props) {
+  return (
+    props.Name ||
+    props.GLIMSName ||
+    props.Name_FR ||
+    props.Name_EN ||
+    (props.RGIId ? `Glacier ${props.RGIId}` : "Glacier sans nom")
+  );
+}
+
+// ===============================
+// UI UPDATE (DASHBOARD 1 + 2)
+// ===============================
+function updateUI(props) {
+
+  // -------- FICHE GLACIER --------
+  document.getElementById("g-name").textContent = getGlacierName(props);
+  document.getElementById("g-country").textContent = "Europe (Alpes)";
+  document.getElementById("g-alt").textContent =
+    props.Zmed ? `${Math.round(props.Zmed)} m` : "—";
+  document.getElementById("g-area").textContent =
+    props.Area ? `${props.Area.toFixed(2)} km²` : "—";
+
+  // -------- DASHBOARD 1 : ALTITUDE --------
+  if (chartAlt) chartAlt.destroy();
+
+  chartAlt = new Chart(document.getElementById("chartAlt"), {
+    type: "bar",
+    data: {
+      labels: [getGlacierName(props)],
+      datasets: [{
+        label: "Altitude moyenne (m)",
+        data: [props.Zmed || 0]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      }
+    }
+  });
+
+  // -------- DASHBOARD 2 : SURFACE --------
+  if (chartArea) chartArea.destroy();
+
+  chartArea = new Chart(document.getElementById("chartArea"), {
+    type: "bar",
+    data: {
+      labels: [getGlacierName(props)],
+      datasets: [{
+        label: "Surface (km²)",
+        data: [props.Area || 0]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      }
+    }
+  });
+}
+
+// ============================
+// CHARGEMENT DES GLACIERS
+// ============================
+fetch("glaciers_centraleurope.geojson")
+  .then(r => r.json())
+  .then(data => {
+
+    geojsonLayer = L.geoJSON(data, {
+      style: defaultStyle,
+
+      onEachFeature: (feature, layer) => {   // ← ICI l’accolade manquait
+
+        layer.on("click", () => {
+  try { updateUI(feature.properties); } 
+  catch(e){ console.error("updateUI", e); }
+
+  try { updateDashboard3(feature.properties); } 
+  catch(e){ console.error("updateDashboard3", e); }
+});
+      }
+    }).addTo(map);
+
+  })
+  .catch(err => {
+    console.error("Erreur chargement GeoJSON :", err);
+  });
+// ================================
+// DASHBOARD 3 — ÉVOLUTION MER DE GLACE
+// ================================
+function updateDashboard3(props) {
+  const canvas = document.getElementById("chartline");
+  const title  = document.getElementById("linetitle");
+  const hint   = document.getElementById("linehint");
+
+  if (!canvas) {
+    console.error("canvas chartline introuvable");
+    return;
+  }
+
+  const glacierName = getGlacierName(props);
+
+  // si ce n’est pas la Mer de Glace
+  if (!glacierName.toLowerCase().includes("mer de glace")) {
+    title.textContent = "Évolution";
+    hint.textContent = "Sélectionne la Mer de Glace pour voir son évolution.";
+    if (window.chartLineInstance) {
+      window.chartLineInstance.destroy();
+      window.chartLineInstance = null;
+    }
+    return;
+  }
+
+  title.textContent = "Évolution de la surface — Mer de Glace";
+  hint.textContent = "Données historiques (exemple pédagogique)";
+
+  const years  = ["1900", "1930", "1960", "1990", "2020"];
+  const values = [45, 42, 38, 34, 32];
+
+  if (window.chartLineInstance) {
+    window.chartLineInstance.destroy();
+  }
+
+  window.chartLineInstance = new Chart(canvas, {
+    type: "line",
+    data: {
+      labels: years,
+      datasets: [{
+        label: "Surface (km²)",
+        data: values,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 5
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true }
+      }
+    }
+  });
+}
+

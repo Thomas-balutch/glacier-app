@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Carte des glaciers</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+<h1>Carte interactive des glaciers</h1>
+
+<div id="map"></div>
+
+<div class="card" id="glacier-card">
+  <h2>Fiche glacier</h2>
+  <p><b>Nom :</b> <span id="g-name">—</span></p>
+  <p><b>Pays :</b> <span id="g-country">—</span></p>
+  <p><b>Altitude :</b> <span id="g-alt">—</span></p>
+  <p><b>Surface :</b> <span id="g-area">—</span></p>
+</div>
+
+<div class="card">
+  <h2 id="linetitle">Évolution</h2>
+  <canvas id="chartLine"></canvas>
+  <p id="linehint" class="muted">Sélectionne un glacier sur la carte.</p>
+</div>
+
+<script src="./map.js"></script>
+</body>
+</html>

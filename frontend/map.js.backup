@@ -1,0 +1,118 @@
+// ==================
+// MAP
+// ==================
+const map = L.map("map").setView([45.9, 6.9], 8);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap"
+}).addTo(map);
+
+// ==================
+// VARIABLES
+// ==================
+let geojsonLayer = null;
+let lastClickedLayer = null;
+let evolutionChart = null;
+
+// ==================
+// STYLES
+// ==================
+function defaultStyle() {
+  return { color: "#ffffff", weight: 1, fillOpacity: 0.6 };
+}
+
+function highlightStyle() {
+  return { color: "red", weight: 2, fillOpacity: 0.8 };
+}
+
+// ==================
+// UI
+// ==================
+function updateUI(p) {
+  document.getElementById("g-name").textContent = p.name || "—";
+  document.getElementById("g-country").textContent = p.country || "—";
+  document.getElementById("g-alt").textContent = p.Zmed || "—";
+  document.getElementById("g-area").textContent = p.Area || "—";
+}
+
+// ==================
+// EVOLUTION
+// ==================
+function showEvolution(props) {
+  const canvas = document.getElementById("chartLine");
+  const title = document.getElementById("linetitle");
+  const hint = document.getElementById("linehint");
+
+  if (!canvas) {
+    console.error("Canvas chartLine introuvable");
+    return;
+  }
+
+  const glacierName = props.name || "Glacier";
+
+  title.textContent = "Évolution de la surface — " + glacierName;
+  hint.textContent = "Données historiques (exemple pédagogique)";
+
+  const years = [1900, 1930, 1960, 1990, 2020];
+  const values = [45, 42, 38, 34, 32];
+
+  if (evolutionChart) {
+    evolutionChart.destroy();
+  }
+
+  evolutionChart = new Chart(canvas, {
+    type: "line",
+    data: {
+      labels: years,
+      datasets: [{
+        label: "Surface (km²)",
+        data: values,
+        borderColor: "red",
+        backgroundColor: "rgba(255,0,0,0.25)",
+        tension: 0.3,
+        fill: true,
+        pointRadius: 5
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true }
+      }
+    }
+  });
+}
+
+// ==================
+// LOAD GEOJSON
+// ==================
+fetch("glaciers_centraleurope.geojson")
+  .then(r => r.json())
+  .then(data => {
+
+    geojsonLayer = L.geoJSON(data, {
+      style: defaultStyle,
+      onEachFeature: (feature, layer) => {
+
+        layer.on("click", () => {
+
+          // reset ancien
+          if (lastClickedLayer) {
+            lastClickedLayer.setStyle(defaultStyle());
+          }
+
+          // highlight
+          layer.setStyle(highlightStyle());
+          lastClickedLayer = layer;
+
+          // UI
+          updateUI(feature.properties);
+
+          // EVOLUTION
+          showEvolution(feature.properties);
+        });
+      }
+    }).addTo(map);
+
+  })
+  .catch(err => console.error("Erreur GeoJSON :", err));
