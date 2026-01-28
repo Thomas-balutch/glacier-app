@@ -1,0 +1,17 @@
+{
+  "RGI60-11.03643": {
+    "title": "Mer de Glace / Géant",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [40, 38, 35, 32, 30.5, 29, 27.5, 26.5],
+    "source": "Glacioclim + estimations"
+  },
+
+  "RGI60-11.03466": {
+    "title": "Glacier du Talèfre",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [18, 16, 14, 12, 10.5, 9.8, 8.9, 8.2],
+    "source": "Glacioclim + estimations"
+  }
+}
