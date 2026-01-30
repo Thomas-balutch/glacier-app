@@ -127,20 +127,27 @@ fetch("glaciers_centraleurope.geojson")
       style: defaultStyle,
 
       onEachFeature: (feature, layer) => {
-const props = feature.properties;
+  layer.on("click", () => {
 
-const rgi =
-  props.RGIId ||
-  props.RGIID ||
-  props.rgi_id ||
-  null;
+  const props = feature.properties;
 
-console.log("Glacier cliqué - RGIId :", rgi);
+  const rgi =
+    props.RGIId ||
+    props.RGID ||
+    props.rgi_id ||
+    null;
 
-    layer.on("click", () => {
+  console.log("Glacier cliqué – RGIId :", rgi);
+
   updateUI(props);
-  // updateDashboard(props);   // TEMP: désactivé car non défini
+
+  if (rgi) {
   updateDashboardEvolution(rgi);
+} else {
+  console.warn("Aucun RGI pour ce glacier");
+  updateDashboardEvolution(null);
+}
+
   lastClickedLayer = layer;
 });
 
