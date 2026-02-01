@@ -127,31 +127,52 @@ fetch("glaciers_centraleurope.geojson")
       style: defaultStyle,
 
       onEachFeature: (feature, layer) => {
-  layer.on("click", () => {
 
   const props = feature.properties;
 
-  const rgi =
-    props.RGIId ||
-    props.RGID ||
-    props.rgi_id ||
-    null;
+  // Nom du glacier
+  // Code RGI
+const rgi =
+  props.RGIId ||
+  props.RGID ||
+  props.rgi_id ||
+  null;
 
-  console.log("Glacier cliqué – RGIId :", rgi);
+// Nom du glacier
+const name =
+  props.Name ||
+  props.NAME ||
+  props.glac_name ||
+  props.GLAC_NAME ||
+  props.Glacier ||
+  (rgi ? `Glacier ${rgi}` : "Glacier sans nom");
 
-  updateUI(props);
+  // Tooltip au survol (NOM + RGI UNIQUEMENT)
+  layer.bindTooltip(
+    `<strong>${name}</strong><br>${rgi ?? ""}`,
+    {
+      sticky: true,
+      opacity: 0.9
+    }
+  );
 
-  if (rgi) {
-  updateDashboardEvolution(rgi);
-} else {
-  console.warn("Aucun RGI pour ce glacier");
-  updateDashboardEvolution(null);
+  // Clic (logique existante)
+  layer.on("click", () => {
+    console.log("Glacier cliqué - RGIId :", rgi);
+
+    updateUI(props);
+
+    if (rgi) {
+      updateDashboardEvolution(rgi);
+    } else {
+      console.warn("Aucun RGI pour ce glacier");
+      updateDashboardEvolution(null);
+    }
+
+    lastClickedLayer = layer;
+  });
 }
 
-  lastClickedLayer = layer;
-});
-
-}
     }).addTo(map);
 
   })
