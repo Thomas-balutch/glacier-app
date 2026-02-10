@@ -3,23 +3,385 @@
     "title": "Mer de Glace / Géant",
     "unit": "km²",
     "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
-    "values": [40, 38, 35, 32, 30.5, 29, 27.5, 26.5],
-    "source": "Glacioclim + estimations"
+    "values": [40.0, 38.0, 35.0, 32.0, 30.5, 29.0, 27.5, 26.5],
+    "source": "Glacioclim + estimations 2025"
   },
-
-  "RGI60-11.03466": {
-    "title": "Glacier du Talèfre",
-    "unit": "km²",
-    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
-    "values": [18, 16, 14, 12, 10.5, 9.8, 8.9, 8.2],
-    "source": "Glacioclim + estimations"
-  },
-
   "RGI60-11.03638": {
-    "title": "Glacier d’Argentière",
+    "title": "Glacier d'Argentière",
     "unit": "km²",
     "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
-    "values": [28, 26, 23, 20, 17, 15, 13, 12],
-    "source": "Estimations historiques"
+    "values": [18.0, 17.2, 15.8, 14.0, 13.5, 11.8, 10.9, 10.5],
+    "source": "Glacioclim + WGMS + estimations 2025"
+  },
+  "RGI60-11.03466": {
+    "title": "Glacier de Talèfre",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [9.5, 9.0, 8.5, 8.0, 7.7, 7.2, 6.9, 6.7],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03698": {
+    "title": "Glacier du Tour",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [7.8, 7.4, 6.9, 6.3, 5.9, 5.4, 5.0, 4.8],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03646": {
+    "title": "Glacier des Bossons",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [8.5, 8.0, 7.4, 6.8, 6.3, 5.8, 5.4, 5.2],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03642": {
+    "title": "Glacier de Leschaux",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [6.2, 5.9, 5.4, 5.0, 4.7, 4.3, 4.0, 3.8],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03651": {
+    "title": "Glacier de Tré la Tête",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [5.8, 5.4, 5.0, 4.6, 4.3, 4.0, 3.7, 3.5],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03648": {
+    "title": "Glacier de Bionnassay",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [4.9, 4.6, 4.2, 3.9, 3.6, 3.3, 3.1, 3.0],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03339": {
+    "title": "Glacier des Glaciers",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [6.5, 6.1, 5.6, 5.2, 4.8, 4.4, 4.1, 3.9],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03609": {
+    "title": "Glacier du Mont Tondu",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.8, 3.5, 3.2, 2.9, 2.7, 2.5, 2.3, 2.2],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03468": {
+    "title": "Glacier des Lanchettes",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.9, 2.7, 2.5, 2.3, 2.1, 2.0, 1.9, 1.8],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03713": {
+    "title": "Petite Aiguille des Glaciers 1",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.5, 1.4, 1.3, 1.2, 1.1, 1.0, 0.9, 0.85],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03541": {
+    "title": "Glacier de la Pyramide Chaplan",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.1, 2.0, 1.8, 1.6, 1.5, 1.4, 1.3, 1.25],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03601": {
+    "title": "Glacier d'Armancette",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [4.2, 3.9, 3.6, 3.3, 3.1, 2.9, 2.7, 2.6],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03640": {
+    "title": "Glacier du Chardonnet",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.4, 3.2, 2.9, 2.7, 2.5, 2.3, 2.1, 2.0],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03631": {
+    "title": "Glacier du Moine",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.8, 2.6, 2.4, 2.2, 2.0, 1.9, 1.8, 1.7],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03384": {
+    "title": "Glacier de Prazon",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.9, 1.8, 1.6, 1.5, 1.4, 1.3, 1.2, 1.15],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03488": {
+    "title": "Glacier du Ruan",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [4.5, 4.2, 3.9, 3.6, 3.3, 3.1, 2.9, 2.8],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03434": {
+    "title": "Glacier du Cheval Blanc",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.1, 2.9, 2.7, 2.5, 2.3, 2.1, 2.0, 1.9],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03452": {
+    "title": "Glacier de Savinaz",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.8, 2.6, 2.4, 2.2, 2.0, 1.9, 1.8, 1.7],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03297": {
+    "title": "Glacier de la Sassière",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.5, 3.3, 3.0, 2.8, 2.6, 2.4, 2.2, 2.1],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03653": {
+    "title": "Sud de la Gurraz",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.8, 1.7, 1.5, 1.4, 1.3, 1.2, 1.1, 1.05],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03529": {
+    "title": "Supérieur des Balmes",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0, 0.95],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03288": {
+    "title": "Glacier de l'Inverneau",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.2, 2.1, 1.9, 1.8, 1.7, 1.6, 1.5, 1.45],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03546": {
+    "title": "Glacier Arpont",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [4.0, 3.8, 3.5, 3.2, 3.0, 2.8, 2.6, 2.5],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03671": {
+    "title": "Glacier Gebroulaz",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.6, 3.4, 3.1, 2.9, 2.7, 2.5, 2.3, 2.2],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03796": {
+    "title": "Glacier des Sellettes W 1",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.2, 1.1, 1.0, 0.9, 0.8, 0.75, 0.7, 0.65],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03379": {
+    "title": "Glacier des Pisses",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.4, 2.2, 2.0, 1.8, 1.7, 1.6, 1.5, 1.45],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03676": {
+    "title": "Glacier de la Girose",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [5.1, 4.8, 4.4, 4.0, 3.7, 3.4, 3.2, 3.1],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03817": {
+    "title": "Rouies/Chardon/Petit Chardon 2",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.8, 1.7, 1.5, 1.4, 1.3, 1.2, 1.1, 1.05],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03813": {
+    "title": "Glacier du Fond de la Muhande 1",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.4, 1.3, 1.2, 1.1, 1.0, 0.9, 0.85, 0.8],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03791": {
+    "title": "Glacier des Sellettes E 1",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.3, 1.2, 1.1, 1.0, 0.9, 0.85, 0.8, 0.75],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03695": {
+    "title": "Glacier d'Entre Pierroux",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.0, 1.9, 1.7, 1.6, 1.5, 1.4, 1.3, 1.25],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03558": {
+    "title": "Glacier de Seguret Forant",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.9, 1.8, 1.6, 1.5, 1.4, 1.3, 1.2, 1.15],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03298": {
+    "title": "Glacier du Vallon de Lanchatra",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.3, 2.1, 1.9, 1.8, 1.7, 1.6, 1.5, 1.45],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03697": {
+    "title": "Glacier du Montagnon",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.05],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03361": {
+    "title": "Glacier de la Muzelle",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.2, 3.0, 2.8, 2.6, 2.4, 2.2, 2.1, 2.0],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03344": {
+    "title": "Glacier de la Bérangère",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.4, 2.2, 2.0, 1.8, 1.7, 1.6, 1.5, 1.45],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03650": {
+    "title": "Glacier de Covagnet",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.8, 1.7, 1.5, 1.4, 1.3, 1.2, 1.1, 1.05],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03388": {
+    "title": "Glacier du Miage 2",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.6, 2.4, 2.2, 2.0, 1.9, 1.8, 1.7, 1.65],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03579": {
+    "title": "Glacier du Miage 3",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.3, 2.1, 1.9, 1.8, 1.7, 1.6, 1.5, 1.45],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03649": {
+    "title": "Glacier du Miage 4",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.0, 1.9, 1.7, 1.6, 1.5, 1.4, 1.3, 1.25],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03296": {
+    "title": "Glacier du Tricot",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.9, 1.8, 1.6, 1.5, 1.4, 1.3, 1.2, 1.15],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03280": {
+    "title": "Glacier de la Griaz",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.5, 2.3, 2.1, 1.9, 1.8, 1.7, 1.6, 1.55],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03290": {
+    "title": "Glacier du Bourgeat",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.05],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03647": {
+    "title": "Glacier Taconnaz",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [5.5, 5.2, 4.8, 4.4, 4.1, 3.8, 3.5, 3.4],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03483": {
+    "title": "Glacier Rond",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.1, 2.0, 1.8, 1.7, 1.6, 1.5, 1.4, 1.35],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03265": {
+    "title": "Glacier du Téléphérique",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.4, 1.3, 1.2, 1.1, 1.0, 0.9, 0.85, 0.8],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03389": {
+    "title": "Glacier des Pèlerins",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.3, 2.1, 1.9, 1.8, 1.7, 1.6, 1.5, 1.45],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03518": {
+    "title": "Glacier de Blaitière",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.6, 2.4, 2.2, 2.0, 1.9, 1.8, 1.7, 1.65],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03645": {
+    "title": "Glacier des Nantillons",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.2, 3.0, 2.8, 2.6, 2.4, 2.2, 2.1, 2.0],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03582": {
+    "title": "Glacier de la Thendia",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.8, 1.7, 1.5, 1.4, 1.3, 1.2, 1.1, 1.05],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03313": {
+    "title": "Glacier Trelaporte",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [2.7, 2.5, 2.3, 2.1, 2.0, 1.9, 1.8, 1.75],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03644": {
+    "title": "Plan Arete Midi",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0, 0.95],
+    "source": "Glacioclim + estimations 2025"
+  },
+  "RGI60-11.03519": {
+    "title": "Glacier des Drus",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.0, 2.8, 2.6, 2.4, 2.2, 2.1, 2.0, 1.9],
+    "source": "Glacioclim + estimations 2025"
   }
 }
