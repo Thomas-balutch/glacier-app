@@ -11,13 +11,31 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-#chartLine {
+/* grille des dashboards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* carte large (évolution) */
+.card-wide {
+  grid-column: 1 / -1;
+}
+
+/* taille stable pour les graphiques */
+.card canvas {
   width: 100% !important;
-  height: 320px !important;
+  height: 220px !important;
+}
+
+/* évolution plus grand */
+.card-wide canvas {
+  height: 180px !important;
+  max-height: 180px !important;
 }
 
 .muted {
   color: #777;
   font-style: italic;
 }
-

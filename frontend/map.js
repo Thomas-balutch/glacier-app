@@ -88,11 +88,12 @@ function updateUI(props) {
       }]
     },
     options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false }
-      }
-    }
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false }
+  }
+}
   });
 
   // -------- DASHBOARD 2 : SURFACE --------
@@ -108,11 +109,13 @@ function updateUI(props) {
       }]
     },
     options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false }
-      }
-    }
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false }
+  }
+}
+
   });
 }
 
