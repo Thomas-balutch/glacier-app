@@ -3,6 +3,7 @@
   margin-bottom: 20px;
 }
 
+/* cartes */
 .card {
   background: #fff;
   padding: 15px;
@@ -14,22 +15,27 @@
 /* grille des dashboards */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 /* carte large (évolution) */
 .card-wide {
-  grid-column: 1 / -1;
+  grid-column: auto;
 }
 
-/* taille stable pour les graphiques */
+/* taille standard des graphiques */
 .card canvas {
   width: 100% !important;
-  height: 220px !important;
+  height: 200px !important;
 }
 
-/* évolution plus grand */
+/* graphique évolution : plus large mais pas trop haut */
+/* graphique évolution : taille contrôlée */
+.card-wide {
+  grid-column: auto;
+}
+
 .card-wide canvas {
   height: 180px !important;
   max-height: 180px !important;
