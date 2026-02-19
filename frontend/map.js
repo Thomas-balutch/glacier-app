@@ -178,6 +178,33 @@ const name =
 
     }).addTo(map);
 
+// === CHARGEMENT DES DONNÉES D'ÉVOLUTION (fichier 1 + fichier 2) ===
+let evolutionData = {};
+
+fetch('evolution_glaciers.json', { cache: 'no-cache' })
+  .then(response => {
+    if (!response.ok) throw new Error('Fichier 1 non trouvé: ' + response.status);
+    return response.json();
+  })
+  .then(data1 => {
+    evolutionData = data1; // fichier 1 chargé
+
+    fetch('evolution_glaciers_2.json', { cache: 'no-cache' })
+      .then(response => {
+        if (!response.ok) {
+          console.warn('Fichier 2 non trouvé (404 ou autre): ' + response.status + ' → on continue avec fichier 1');
+          return {}; // continue sans fichier 2
+        }
+        return response.json();
+      })
+      .then(data2 => {
+        Object.assign(evolutionData, data2);
+        console.log("Évolution chargée :", Object.keys(evolutionData).length, "glaciers au total");
+      })
+      .catch(err => console.error("Erreur chargement fichier 2 :", err));
+  })
+  .catch(err => console.error("Erreur chargement fichier 1 :", err));
+
   })
   .catch(err => {
     console.error("Erreur chargement GeoJSON :", err);
