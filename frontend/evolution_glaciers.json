@@ -1350,6 +1350,66 @@
   "altitude": 2990,
   "country": "France (Alpes)",
   "source": "RGI + Glacioclim + estimations 2025"
+},
+"RGI60-11.03652": {
+    "title": "FR4N01144808 du Grand",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [0.90, 0.80, 0.70, 0.65, 0.60, 0.58, 0.56, 0.55],
+    "surface": 0.55,
+    "altitude": 3018,
+    "country": "Europe (Alpes)",
+    "source": "RGI + Glacioclim + estimations 2025"
+},
+"RGI60-11.0XXX": {
+    "title": "FR4N01153B14+B15 des Sources de l'Arc 1",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [1.60, 1.40, 1.30, 1.20, 1.15, 1.10, 1.07, 1.05],
+    "surface": 1.05,
+    "altitude": 2962,
+    "country": "Europe (Alpes)",
+    "source": "RGI + Glacioclim + estimations 2025"
+},
+ "RGI60-11.03586": {
+    "title": "FR4N01146C04 de la Vuzelle 1",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [0.05, 0.04, 0.03, 0.02, 0.015, 0.012, 0.011, 0.01],
+    "surface": 0.01,
+    "altitude": 3275,
+    "country": "Europe (Alpes)",
+    "source": "RGI + Glacioclim + estimations 2025"
+},
+"RGI60-11.0XXX": {
+    "title": "FR4N011444A10 d'Enclave",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [0.20, 0.15, 0.12, 0.10, 0.08, 0.07, 0.065, 0.06],
+    "surface": 0.06,
+    "altitude": 2851,
+    "country": "Europe (Alpes)",
+    "source": "RGI + Glacioclim + estimations 2025"
+},
+"RGI60-11.03552": {
+    "title": "FR4N01151B05 de Polset Ouest",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.37, 0.35],
+    "surface": 0.35,
+    "altitude": 3240,
+    "country": "Europe (Alpes)",
+    "source": "RGI + Glacioclim + estimations 2025"
+},
+"RGI60-11.03718": {
+    "title": "FR4N01146A12 du Midi de Bellecote 2",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [0.12, 0.10, 0.08, 0.06, 0.05, 0.045, 0.042, 0.04],
+    "surface": 0.04,
+    "altitude": 3009,
+    "country": "Europe (Alpes)",
+    "source": "RGI + Glacioclim + estimations 2025"
 }
 
 }
