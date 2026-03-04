@@ -100,190 +100,133 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ==========================
-     GRAPHIQUE ALTITUDE
-     ========================== */
-  const altitudeCtx = document.getElementById("chartAltitude");
-  if (altitudeCtx) {
-    new Chart(altitudeCtx, {
-      type: "bar",
-      data: {
-        labels: [
-          "Mer de Glace (France)",
-          "Aletsch (Suisse)",
-          "Pasterze (Autriche)",
-          "Blaueis (Allemagne)",
-          "Ghiacciaio del Forni (Italie)"
-        ],
-        datasets: [{
-          label: "Altitude (m)",
-          data: [2500, 2300, 2100, 2400, 3650],
-          backgroundColor: "#4da3ff"
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: true }
-        }
-      }
-    });
-  }
+    /* ==========================
+       GRAPHIQUE ALTITUDE
+       ========================== */
+    const altitudeCtx = document.getElementById("chartAltitude");
+    if (altitudeCtx) {
+        new Chart(altitudeCtx, {
+            type: "bar",
+            data: {
+                labels: [
+                    "Mer de Glace (France)",
+                    "Aletsch (Suisse)",
+                    "Pasterze (Autriche)",
+                    "Blaueis (Allemagne)",
+                    "Ghiacciaio del Forni (Italie)"
+                ],
+                datasets: [{
+                    label: "Altitude (m)",
+                    data: [2500, 2300, 2100, 2400, 3650],
+                    backgroundColor: "#4da3ff"
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: true } }
+            }
+        });
+    }
 
-});
-document.addEventListener("DOMContentLoaded", function () {
+    /* ==========================
+       GRAPHIQUE SURFACE ACTUELLE
+       ========================== */
+    const surfaceCtx = document.getElementById("chartSurface");
+    if (surfaceCtx) {
+        new Chart(surfaceCtx, {
+            type: "bar",
+            data: {
+                labels: [
+                    "Mer de Glace (France)",
+                    "Aletsch (Suisse)",
+                    "Pasterze (Autriche)",
+                    "Blaueis (Allemagne)",
+                    "Ghiacciaio del Forni (Italie)"
+                ],
+                datasets: [{
+                    label: "Surface (km²)",
+                    data: [12.3, 17.3, 9.6, 1.1, 11.3],
+                    backgroundColor: "#3fe02e"
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: true } }
+            }
+        });
+    }
 
-  /* ==========================
-     GRAPHIQUE ALTITUDE
-     ========================== */
-  const altitudeCtx = document.getElementById("chartAltitude");
-  if (altitudeCtx) {
-    new Chart(altitudeCtx, {
-      type: "bar",
-      data: {
-        labels: [
-          "Mer de Glace (France)",
-          "Aletsch (Suisse)",
-          "Pasterze (Autriche)",
-          "Blaueis (Allemagne)",
-          "Ghiacciaio del Forni (Italie)"
-        ],
-        datasets: [{
-          label: "Altitude (m)",
-          data: [2500, 2300, 2100, 2400, 3650],
-          backgroundColor: "#4da3ff"
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: true } }
-      }
-    });
-  }
+    /* ==========================
+       GRAPHIQUE ÉVOLUTION
+       ========================== */
+    const evolutionCtx = document.getElementById("chartEvolution");
+    if (evolutionCtx) {
+        new Chart(evolutionCtx, {
+            type: "line",
+            data: {
+                labels: ["1850", "1900", "1950", "2000", "2025"],
+                datasets: [{
+                    label: "Surface (km²)",
+                    data: [40, 35, 30, 27, 24],
+                    borderColor: "#2c7ed6",
+                    backgroundColor: "rgba(28,126,214,0.2)",
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: true } }
+            }
+        });
+    }
 
-  /* ==========================
-     GRAPHIQUE SURFACE
-     ========================== */
-  const surfaceCtx = document.getElementById("chartSurface");
-  if (surfaceCtx) {
-    new Chart(surfaceCtx, {
-      type: "bar",
-      data: {
-        labels: [
-          "Mer de Glace (France)",
-          "Aletsch (Suisse)",
-          "Pasterze (Autriche)",
-          "Blaueis (Allemagne)",
-          "Ghiacciaio del Forni (Italie)"
-        ],
-        datasets: [{
-          label: "Surface (km²)",
-          data: [30, 78, 17, 0.7, 11],
-          backgroundColor: "#74c0fc"
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: true } }
-      }
-    });
-  }
+    /* ==========================
+       GRAPHIQUE VOLUME PERDU
+       ========================== */
+    const volumeCtx = document.getElementById("chartVolume");
+    if (volumeCtx) {
+        new Chart(volumeCtx, {
+            type: "bar",
+            data: {
+                labels: ["1850", "1900", "1950", "2000", "2025"],
+                datasets: [{
+                    label: "Volume perdu (km³)",
+                    data: [0, 5, 12, 20, 28],
+                    backgroundColor: "#ff8c42"
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: true } }
+            }
+        });
+    }
 
-  /* ==========================
-     GRAPHIQUE ÉVOLUTION
-     ========================== */
-  const evolutionCtx = document.getElementById("chartEvolution");
-  if (evolutionCtx) {
-    new Chart(evolutionCtx, {
-      type: "line",
-      data: {
-        labels: ["1850", "1900", "1950", "2000", "2025"],
-        datasets: [{
-          label: "Surface (km²)",
-          data: [40, 35, 30, 27, 24],
-          borderColor: "#1c7ed6",
-          backgroundColor: "rgba(28,126,214,0.2)",
-          fill: true,
-          tension: 0.3
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: true } }
-      }
-    });
-  }
+    /* ==========================
+       GRAPHIQUE TAUX DE RECUL
+       ========================== */
+    const reculCtx = document.getElementById("chartRecul");
+    if (reculCtx) {
+        new Chart(reculCtx, {
+            type: "line",
+            data: {
+                labels: ["2010", "2015", "2020", "2025"],
+                datasets: [{
+                    label: "Recul (m/an)",
+                    data: [12, 18, 22, 30],
+                    borderColor: "#d9534f",
+                    backgroundColor: "rgba(217,83,79,0.2)",
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: true } }
+            }
+        });
+    }
 
 });
 </script>
-
-  /* =======================
-     GRAPHIQUE SURFACE
-  ======================== */
-  const surfaceCtx = document.getElementById("surfaceChart");
-  if (surfaceCtx) {
-    new Chart(surfaceCtx, {
-      type: "bar",
-      data: {
-        labels: [
-          "Mer de Glace (France)",
-          "Aletsch (Suisse)",
-          "Pasterze (Autriche)",
-          "Blaueis (Allemagne)",
-          "Ghiacciaio del Forni (Italie)"
-        ],
-        datasets: [{
-          label: "Surface (km²)",
-          data: [12.3, 17.3, 9.6, 1.1, 11.3],
-          backgroundColor: "#3fe0c2"
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: true }
-        }
-      }
-    });
-  }
-
-  /* =======================
-   ÉVOLUTION — MER DE GLACE
-======================== */
-
-const historyCtx = document.getElementById("historyChart");
-if (!historyCtx) {
-  console.error("Canvas historyChart introuvable");
-  return;
-}
-
-const historyChart = new Chart(historyCtx, {
-  type: "line",
-  data: { ... },
-  options: { ... }
-});
-
-// ===============================
-// INTERACTION DIRECTE SUR LE CANVAS (FIABLE)
-// ===============================
-historyCtx.addEventListener("click", function (evt) {
-
-  const points = historyChart.getElementsAtEventForMode(
-    evt,
-    'nearest',
-    { intersect: true },
-    false
-  );
-
-  if (!points.length) {
-    alert("Clic détecté, mais pas sur un point.");
-    return;
-  }
-
-  const index = points[0].index;
-  const year = historyChart.data.labels[index];
-  const value = historyChart.data.datasets[0].data[index];
-
-  alert(`Année ${year} : ${value} km²`);
-});
-
