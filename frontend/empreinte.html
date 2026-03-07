@@ -1,4 +1,3 @@
-<body class="page-empreinte">
 <!doctype html>
 <html lang="fr">
 <head>
@@ -6,35 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Empreinte carbone — Glaciers alpins</title>
   <link rel="stylesheet" href="style.css" />
+
   <style>
-    /* mini-styles locaux pour ne pas toucher style.css */
-    .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
-    .card { background: #fff; border-radius: 10px; padding: 16px; margin: 16px 0; box-shadow: 0 1px 6px rgba(0,0,0,.08); }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    @media (max-width: 900px){ .grid { grid-template-columns: 1fr; } }
-    label { display:block; margin: 8px 0 6px; font-weight: 600; }
-    select, input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
-    .btnrow { display:flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
-    .btn { padding: 10px 14px; border-radius: 8px; border: 1px solid #ddd; background:#f7f7f7; cursor:pointer; }
-    .btn.primary { background:#e9f2ff; border-color:#cfe3ff; }
-    .muted { opacity: .75; font-size: 0.95em; }
-    .kpi { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    @media (max-width: 900px){ .kpi { grid-template-columns: 1fr; } }
-    .kpi .box { background:#fafafa; border:1px solid #eee; border-radius: 10px; padding: 12px; }
-    .kpi .value { font-size: 1.4em; font-weight: 800; margin-top: 6px; }
-    .note { background: #fffbe6; border: 1px solid #ffe58f; padding: 12px; border-radius: 10px; }
-    .topbar { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
-    .topbar a { text-decoration:none; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      margin: 16px 0;
+      box-shadow: 0 1px 6px rgba(0,0,0,.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    label {
+      display: block;
+      margin: 8px 0 6px;
+      font-weight: 600;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: #f7f7f7;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: #e9f2ff;
+      border-color: #cfe3ff;
+    }
+
+    .muted {
+      opacity: .75;
+      font-size: 0.95em;
+    }
+
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .kpi {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kpi .box {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .kpi .value {
+      font-size: 1.2em;
+      font-weight: 800;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .note {
+      background: #fffbe6;
+      border: 1px solid #ffe58f;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .topbar a {
+      text-decoration: none;
+    }
   </style>
 </head>
 
-<body>
+<body class="page-empreinte">
   <div class="container">
+
     <div class="topbar">
       <div>
         <h1>Empreinte carbone</h1>
         <p class="muted">Estimation pédagogique basée sur des facteurs d’émission moyens.</p>
       </div>
+
       <div class="btnrow">
         <a class="btn" href="index.html">Accueil</a>
         <a class="btn" href="map.html">Carte</a>
@@ -44,6 +136,7 @@
 
     <div class="card">
       <h2>Paramètres</h2>
+
       <div class="grid">
         <div>
           <label for="profile">Profil</label>
@@ -89,24 +182,26 @@
         <div class="box">
           <div class="muted">Émissions estimées</div>
           <div class="value" id="outCo2">—</div>
-          <div class="muted">kg CO₂</div>
         </div>
 
         <div class="box">
           <div class="muted">Équivalent fonte (est.)</div>
           <div class="value" id="outDays">—</div>
-          <div class="muted">jours</div>
         </div>
 
         <div class="box">
           <div class="muted">Surface impactée (est.)</div>
           <div class="value" id="outM2">—</div>
-          <div class="muted">m²</div>
         </div>
       </div>
 
-      <p class="muted" id="outDetails" style="margin-top:12px;">Sélectionne un glacier puis clique sur “Calculer”.</p>
+      <p class="muted" id="outDetails" style="margin-top:12px;">
+        Sélectionne un glacier puis clique sur "Calculer".
+      </p>
+        
+      <div id="equivalent" class="muted" style="margin-top:12px;"></div>
     </div>
+
   </div>
 
   <script src="empreinte.js" defer></script>

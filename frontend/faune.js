@@ -70,8 +70,41 @@ const ANIMAUX = [
     altitude: "1500-2400 m",
     menaces: "Stations de ski, dérangement humain",
     description: "Oiseau discret des forêts subalpines très sensible aux perturbations."
-  }
-];
+  },
+  {
+    nom: "Lynx boréal",
+    image: "faune-img/lynx.jpg",
+    statut: "Quasi menacé",
+    altitude: "500–2000 m",
+    menaces: "Fragmentation de l'habitat, braconnage",
+    description: "Grand félin discret des forêts alpines, très rare à observer."
+  },
+  {
+   nom: "Loup gris",
+   image: "faune-img/loup.jpg",
+   statut: "Préoccupation mineure",
+   altitude: "500–2500 m",
+   menaces: "Conflits avec l’élevage, fragmentation de l’habitat",
+   description: "Grand prédateur revenu naturellement dans les Alpes depuis l’Italie dans les années 1990."
+  },
+  {
+  nom: "Aigle royal",
+  image: "faune-img/aigle.jpg",
+  statut: "Préoccupation mineure",
+  altitude: "800–3000 m",
+  menaces: "Dérangement humain, collisions",
+  description: "Grand rapace emblématique des montagnes alpines capable de planer sur de longues distances."
+  },
+  {
+  nom: "Crave à bec rouge",
+  image: "faune-img/crave.jpg",
+  statut: "Préoccupation mineure",
+  altitude: "1500–3500 m",
+  menaces: "Changement climatique, perturbation touristique",
+  description: "Oiseau montagnard très agile reconnaissable à son bec rouge et à ses acrobaties en vol."
+  },
+
+  ];
 
 function $(id) { return document.getElementById(id); }
 
@@ -111,16 +144,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// --- ZOOM SUR L’IMAGE ---
+// --- ZOOM IMAGE ---
+const overlay = document.getElementById("zoom-overlay");
+const zoomImg = document.getElementById("zoom-img");
+
 document.addEventListener("click", (e) => {
-  const img = e.target.closest(".faune-photo");
-  if (!img) return;
+  if (e.target.classList.contains("faune-photo")) {
+    zoomImg.src = e.target.src;
+    overlay.style.display = "flex";
+  }
+});
 
-  if (!img.complete || img.naturalWidth === 0) return;
+overlay.addEventListener("click", () => {
+  overlay.style.display = "none";
+});
 
-  const overlay = document.getElementById("zoom-overlay");
-  const zoomImg = document.getElementById("zoom-img");
+// clic sur une image
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("faune-photo")) {
+    zoomImg.src = e.target.src;
+    overlay.classList.remove("zoom-hidden");
+  }
+});
 
-  zoomImg.src = img.src;
-  overlay.classList.remove("zoom-hidden");
+// clic pour fermer
+overlay.addEventListener("click", () => {
+  overlay.classList.add("zoom-hidden");
 });

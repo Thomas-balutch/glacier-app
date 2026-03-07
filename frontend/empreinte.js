@@ -69,14 +69,25 @@ document.getElementById("btnCalc").addEventListener("click", () => {
   const m2Impact = tonnes * 1;     // pédagogique
 
   // ⚠️ IMPORTANT : ton HTML utilise outCo2 (pas outCO2)
-  document.getElementById("outCo2").textContent = kgCO2.toFixed(1);
-  document.getElementById("outDays").textContent = joursFonte.toFixed(1);
-  document.getElementById("outM2").textContent = m2Impact.toFixed(1);
+document.getElementById("outCo2").textContent =
+kgCO2.toFixed(1) + " kg CO2";
+
+document.getElementById("outDays").textContent =
+joursFonte.toFixed(1) + " jours de fonte";
+
+document.getElementById("outM2").textContent =
+m2Impact.toFixed(1) + " m² impactés";
 
   document.getElementById("outDetails").textContent =
     `Trajet ${distance} km en ${transport}. Glacier : ${glacier.title}.`;
 });
+const eq = document.getElementById("equivalent");
 
+eq.innerHTML = `
+Equivalent :
+<br>🚗 ${(kgCO2*5).toFixed(0)} km en voiture
+<br>🌳 ${(kgCO2/20).toFixed(1)} arbres pour compenser
+`;
 
 // ===============================
 // 4) Réinitialisation
