@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Faune alpine menacée</title>
-  <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Faune alpine menacée</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body class="page-faune">
-  <div class="container">
 
-    <h1>Faune alpine menacée</h1>
+<div class="container">
 
-    <div style="margin: 12px 0; display:flex; gap:12px; flex-wrap:wrap;">
+<h1>Faune alpine menacée</h1>
 
-      <a href="map.html"
-         style="padding:10px 14px; background:#f0f0f0; border:1px solid #ddd; border-radius:8px; text-decoration:none;">
-        Accueil
-      </a>
 
-      <a href="stats.html"
-         style="padding:10px 14px; background:#f0f0f0; border:1px solid #ddd; border-radius:8px; text-decoration:none;">
-        Statistiques
-      </a>
+<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
 
-      <a href="empreinte.html"
-         style="padding:10px 14px; background:#f0f0f0; border:1px solid #ddd; border-radius:8px; text-decoration:none;">
-        Impact carbone
-      </a>
+<a href="map.html"
+style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
+Accueil
+</a>
 
-      <a href="faune.html"
-         style="padding:10px 14px; background:#e2f1ff; border:1px solid #cfe3ff; border-radius:8px; text-decoration:none;">
-        Faune alpine
-      </a>
+<a href="stats.html"
+style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
+Statistiques
+</a>
 
-    </div>
+<a href="empreinte.html"
+style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
+Impact carbone
+</a>
 
-    <p class="muted">
-      Certaines espèces alpines sont particulièrement vulnérables au réchauffement climatique
-      et à la disparition progressive des glaciers.
-    </p>
+<a href="faune.html"
+style="padding:10px 14px;background:#e2f1ff;border:1px solid #cfe3ff;border-radius:8px;text-decoration:none;">
+Faune alpine
+</a>
 
-    <div id="faune-grid" class="faune-grid"></div>
+<a href="about.html"
+style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
+About
+</a>
 
-    <!-- Un SEUL faune-detail -->
-    <div id="faune-detail" class="card" style="display:none;"></div>
-
-  </div>
-<!-- ZOOM OVERLAY -->
-<div id="zoom-overlay">
-  <img id="zoom-img" src="" alt="">
 </div>
 
+
+<p class="muted">
+
+Certaines espèces alpines sont particulièrement vulnérables au réchauffement climatique
+et à la disparition progressive des glaciers.
+
+</p>
+
+
+<div id="faune-grid" class="faune-grid"></div>
+
+
+<div id="faune-detail" class="card" style="display:none;"></div>
+
+
+</div>
+
+
+<!-- ZOOM OVERLAY -->
+
+<div id="zoom-overlay">
+<img id="zoom-img" src="" alt="">
+</div>
+
+
 <script src="faune.js"></script>
+
 </body>
 </html>
