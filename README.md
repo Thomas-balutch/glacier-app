@@ -26,7 +26,14 @@ https://glacier-map.org
 ![Glacier Map](frontend/map.png)
 
 ### Glacier Statistics Dashboard
-![Statistics](frontend/stats.png)
+### Glacier Statistics Dashboard
+
+![Altitude](frontend/stats-altitude.png)
+
+![Surface](frontend/stats-surface.png)
+
+![Evolution](frontend/stats-evolution.png)
+
 
 ### Carbon Footprint Estimator
 ![Carbon](frontend/carbon.png)
