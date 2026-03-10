@@ -1,24 +1,24 @@
-
-
 # 🌍 Glacier Map — Alpine Glacier Visualization Platform
 
-Glacier Map is a scientific web platform designed to visualize and understand the evolution of Alpine glaciers.
+![Python](https://img.shields.io/badge/python-3.x-blue)
+![Flask](https://img.shields.io/badge/backend-flask-green)
+![Docker](https://img.shields.io/badge/container-docker-blue)
+![Leaflet](https://img.shields.io/badge/map-leaflet-brightgreen)
+![Chart.js](https://img.shields.io/badge/charts-chart.js-orange)
 
-The goal of the project is to make glaciological and climate data accessible to the public, students, and local institutions through interactive maps and visual dashboards.
+Glacier Map is an educational and scientific web platform designed to visualize and understand the evolution of Alpine glaciers.
 
-The platform combines geospatial visualization, climate data interpretation and modern web infrastructure.
+The goal of the project is to make glaciological and climate data accessible to the public, students and local institutions through interactive maps and visual dashboards.
+
+The platform combines **geospatial visualization**, **climate indicators**, and **modern web infrastructure**.
 
 ---
 
 # 🚀 Live Demo
 
-*(soon available)*
-
-Example deployment:
-
+Coming soon:
 
 https://glacier-map.org
-
 
 ---
 
@@ -32,24 +32,24 @@ https://glacier-map.org
 
 ![Statistics](docs/screenshots/stats.png)
 
-## Carbon Impact Calculator
+## Carbon Footprint Estimator
 
-![Carbon Impact](docs/screenshots/carbon.png)
+![Carbon](docs/screenshots/carbon.png)
 
-## Alpine Wildlife
+## Alpine Wildlife Awareness
 
-![Wildlife](docs/screenshots/fauna.png)
+![Fauna](docs/screenshots/fauna.png)
 
 ---
 
-# 🎯 Project Features
+# 🎯 Features
 
 • Interactive map of Alpine glaciers (Leaflet)
 
-• Data dashboards (Chart.js):
-- glacier altitude
-- glacier surface
-- glacier evolution
+• Glacier statistics dashboards (Chart.js)
+  - altitude
+  - surface
+  - evolution
 
 • Educational carbon footprint estimator
 
@@ -57,17 +57,27 @@ https://glacier-map.org
 
 • Scientific sources and references
 
+• Responsive web interface
+
 ---
 
-# 🧱 Architecture Overview
+# 🧱 Architecture
 
-The project follows a simple and clear architecture:
-
-
-Frontend → API Backend → Database
+The application follows a simple modular architecture:
 
 
-### Frontend
+Users
+│
+Frontend (Leaflet + Chart.js)
+│
+Flask REST API
+│
+Glacier datasets / Database
+
+
+---
+
+# 🖥️ Frontend
 
 Technologies:
 
@@ -77,46 +87,59 @@ Technologies:
 
 Libraries:
 
-- Leaflet (interactive maps)
-- Chart.js (data visualization)
+- **Leaflet** — interactive maps
+- **Chart.js** — data visualization
 
 Responsibilities:
 
-- user interface
-- map interaction
-- dashboards rendering
+- glacier map rendering
+- dashboards display
+- user interaction
 
 ---
 
-### Backend
+# ⚙️ Backend
 
-Python + Flask REST API
+Backend built with:
+
+- **Python**
+- **Flask REST API**
 
 Handles:
 
-- glacier data
+- glacier datasets
 - statistics
-- evolution datasets
-- API responses
+- glacier evolution data
+- API responses for dashboards
 
 ---
 
-### Data Layer
+# 🗄️ Data
 
-Currently using:
+Current data sources include:
+
+- glacier altitude
+- glacier surface
+- geographic coordinates
+- evolution indicators
+
+Data currently stored in:
 
 - JSON datasets
 
-Future evolution:
+Future evolution may include:
 
 - PostgreSQL database
 - scientific datasets integration
 
 ---
 
-### Containerization
+# 🐳 Containerization
 
-Docker + Docker Compose
+Infrastructure uses:
+
+- Docker
+- Docker Compose
 
 Services:
 
@@ -128,7 +151,7 @@ Benefits:
 
 - reproducible environment
 - easy deployment
-- cloud-ready architecture
+- cloud-ready infrastructure
 
 ---
 
@@ -137,17 +160,13 @@ Benefits:
 
 glacier-map/
 │
-├── backend/
-│ └── Flask API
-│
-├── frontend/
-│ └── HTML / CSS / JS interface
-│
-├── data/
-│ └── glacier datasets
+├── backend/ # Flask API
+├── frontend/ # Web interface (HTML/CSS/JS)
+├── data/ # Glacier datasets
+├── docs/
+│ └── screenshots/ # README images
 │
 ├── docker-compose.yml
-│
 └── README.md
 
 
@@ -155,19 +174,19 @@ glacier-map/
 
 # ⚙️ Getting Started
 
-Clone the repository
+Clone the repository:
 
 
-git clone https://github.com/username/glacier-map.git
+git clone https://github.com/your-username/glacier-map.git
 
 
-Run with Docker
+Run with Docker:
 
 
 docker compose up --build
 
 
-Open in browser
+Open in browser:
 
 
 http://localhost:8080
@@ -177,50 +196,50 @@ http://localhost:8080
 
 # 🚧 Project Status
 
-Current progress: **functional prototype**
+Current stage: **functional prototype**
 
 Implemented:
 
-✔ interactive glacier map  
-✔ altitude dashboard  
-✔ glacier surface dashboard  
+✔ Interactive glacier map  
+✔ Glacier altitude dashboard  
+✔ Glacier surface dashboard  
 ✔ Alpine wildlife section  
-✔ carbon impact estimation  
+✔ Carbon impact estimator  
 
 In progress:
 
-• glacier historical evolution dashboard  
-• data harmonization across Alpine countries  
-• scientific sources documentation  
+• glacier historical evolution charts  
+• scientific data sources integration  
+• harmonization of Alpine glacier datasets  
 
 ---
 
 # 🛣️ Roadmap
 
-### Short term
+## Short term
 
-- finalize glacier evolution charts
+- finalize glacier evolution dashboards
 - improve datasets quality
 - add scientific references
 
-### Mid term
+## Mid term
 
 - climate indicators
-- temperature data
-- glacier historical datasets
+- temperature datasets
+- glacier historical comparisons
 
-### Long term
+## Long term
 
 - VPS deployment
 - HTTPS (Let's Encrypt)
 - public educational platform
-- potential partnerships with Alpine institutions
+- collaboration with Alpine institutions
 
 ---
 
 # 🌱 Vision
 
-Glacier Map aims to become an educational and scientific visualization tool to better understand glacier retreat and climate change impacts in the Alpine region.
+Glacier Map aims to become an educational and scientific visualization platform to better understand glacier retreat and climate change impacts in the Alpine region.
 
 The project also serves as a practical experiment in:
 
@@ -237,5 +256,4 @@ The project also serves as a practical experiment in:
 Linux System & Network Administrator  
 DevOps-oriented engineer
 
-Personal project combining infrastructure, data visualization and climate awareness.
-3️⃣ Où mettre les images
+Personal project combining **infrastructure**, **data visualization**, and **climate awareness**.
