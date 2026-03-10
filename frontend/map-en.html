@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Interactive Glacier Map</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="hero">
+  <img src="images/glacier-alpes.jpg" alt="Alpine glacier">
+</div>
+
+<header class="header">
+
+<h1>Interactive Glacier Map</h1>
+
+<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
+
+<a class="btn" href="map-en.html">Home</a>
+<a class="btn" href="stats-en.html">Statistics</a>
+<a class="btn" href="empreinte-en.html">Carbon impact</a>
+<a class="btn" href="faune-en.html">Alpine wildlife</a>
+<a class="btn" href="about-en.html">About</a>
+<a class="btn" href="sources-en.html">Sources</a>
+
+<a class="btn" href="map.html">FR</a>
+<a class="btn" href="map-en.html">EN</a>
+
+</div>
+
+<p class="subtitle">
+Click on a glacier: the information panel and dashboards update automatically.
+</p>
+
+</header>
+
+<main class="container">
+
+<div id="map"></div>
+
+<section class="panel">
+
+<div class="card card-wide" id="glacier-card">
+
+<h2>Glacier information</h2>
+
+<p class="muted">
+Click on a glacier on the map.
+</p>
+
+<div class="info">
+<span class="label">Name:</span>
+<span id="g-name">—</span>
+</div>
+
+<div class="info">
+<span class="label">Country:</span>
+<span id="g-country">—</span>
+</div>
+
+<div class="info">
+<span class="label">Average altitude:</span>
+<span id="g-alt">—</span>
+</div>
+
+<div class="info">
+<span class="label">Surface area:</span>
+<span id="g-area">—</span>
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Altitude (Top 10 France)</h3>
+<canvas id="chartAlt"></canvas>
+</div>
+
+<div class="card">
+<h3>Surface area (Top 10 France)</h3>
+<canvas id="chartArea"></canvas>
+</div>
+
+<div class="card card-wide evolution-card">
+
+<h3 id="lineTitle">Glacier evolution</h3>
+
+<div class="chart-wrapper">
+<canvas id="chartline"></canvas>
+</div>
+
+<p id="lineHint" class="muted"></p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<script src="evolution.js"></script>
+<script src="map.js"></script>
+
+<footer class="footer">
+<p>Alpine Glacier Observatory</p>
+<p>Personal project — Thomas Balutch — 2026</p>
+</footer>
+
+</body>
+</html>

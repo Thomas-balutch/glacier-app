@@ -88,11 +88,12 @@ function updateUI(props) {
       }]
     },
     options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false }
-      }
-    }
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false }
+  }
+}
   });
 
   // -------- DASHBOARD 2 : SURFACE --------
@@ -108,11 +109,13 @@ function updateUI(props) {
       }]
     },
     options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false }
-      }
-    }
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false }
+  }
+}
+
   });
 }
 
@@ -127,83 +130,136 @@ fetch("glaciers_centraleurope.geojson")
       style: defaultStyle,
 
       onEachFeature: (feature, layer) => {
-    layer.on('click', () => {
-        updateUI(feature.properties);         // Dashboards 1+2
-        updateDashboard3(feature.properties); // Dashboard 3
-        lastClickedLayer = layer;             // Optionnel pour highlight
-    });
+
+  const props = feature.properties;
+
+  // Nom du glacier
+  // Code RGI
+const rgi =
+  props.RGIId ||
+  props.RGID ||
+  props.rgi_id ||
+  null;
+
+// Nom du glacier
+const name =
+  props.Name ||
+  props.NAME ||
+  props.glac_name ||
+  props.GLAC_NAME ||
+  props.Glacier ||
+  (rgi ? `Glacier ${rgi}` : "Glacier sans nom");
+
+  // Tooltip au survol (NOM + RGI UNIQUEMENT)
+  layer.bindTooltip(
+    `<strong>${name}</strong><br>${rgi ?? ""}`,
+    {
+      sticky: true,
+      opacity: 0.9
+    }
+  );
+
+  // Clic (logique existante)
+  layer.on("click", () => {
+    console.log("Glacier cliqué - RGIId :", rgi);
+
+    updateUI(props);
+
+    if (rgi) {
+      updateDashboardEvolution(rgi);
+    } else {
+      console.warn("Aucun RGI pour ce glacier");
+      updateDashboardEvolution(null);
+    }
+
+    lastClickedLayer = layer;
+  });
 }
+
     }).addTo(map);
+
+// === CHARGEMENT DES DONNÉES D'ÉVOLUTION (fichier 1 + fichier 2) ===
+let evolutionData = {};
+
+fetch('evolution_glaciers.json', { cache: 'no-cache' })
+  .then(response => {
+    if (!response.ok) throw new Error('Fichier 1 non trouvé: ' + response.status);
+    return response.json();
+  })
+  .then(data1 => {
+    evolutionData = data1; // fichier 1 chargé
+
+    fetch('evolution_glaciers_2.json', { cache: 'no-cache' })
+      .then(response => {
+        if (!response.ok) {
+          console.warn('Fichier 2 non trouvé (404 ou autre): ' + response.status + ' → on continue avec fichier 1');
+          return {}; // continue sans fichier 2
+        }
+        return response.json();
+      })
+      .then(data2 => {
+        Object.assign(evolutionData, data2);
+        console.log("Évolution chargée :", Object.keys(evolutionData).length, "glaciers au total");
+      })
+      .catch(err => console.error("Erreur chargement fichier 2 :", err));
+  })
+  .catch(err => console.error("Erreur chargement fichier 1 :", err));
 
   })
   .catch(err => {
     console.error("Erreur chargement GeoJSON :", err);
   });
-// ================================
-// DASHBOARD 3 — ÉVOLUTION MER DE GLACE
-// ================================
-function updateDashboard3(props) {
-    const canvas = document.getElementById("chartline");  // ou "chartLine" selon ton choix
-    const title = document.getElementById("lineTitle");
-    const hint = document.getElementById("lineHint");
+// ==========================
+// DASHBOARD — ÉVOLUTION (TOUS GLACIERS)
+// ==========================
+function updateDashboardEvolution(rgi) {
 
-    if (!canvas) {
-        console.error("🚨 Canvas #chartline introuvable ! Vérifie l'id dans HTML.");
-        return;
-    }
+  const db = window.glacierEvolution;
+
+  const title = document.getElementById("lineTitle");
+  const hint  = document.getElementById("lineHint");
+  const canvas = document.getElementById("chartline");
+
+  if (!canvas) {
+    console.error("Canvas #chartline introuvable");
+    return;
+  }
+
+  if (!db || !db[rgi]) {
+    title.textContent = "Évolution";
+    hint.textContent = "Pas de données pour " + rgi;
 
     if (window.chartLineInstance) {
-        window.chartLineInstance.destroy();
-        window.chartLineInstance = null;
+      window.chartLineInstance.destroy();
+      window.chartLineInstance = null;
     }
+    return;
+  }
 
-    const glacierName = getGlacierName(props).toLowerCase().trim();
-    console.log("Glacier cliqué :", glacierName);  // Debug : ouvre la console (F12) et vérifie le nom exact !
+  const g = db[rgi];
 
-    // Condition tolérante (accents, espaces, "geant", casse)
-    if (glacierName.includes("mer de glace") || glacierName.includes("mer de glage") || glacierName.includes("geant") || glacierName.includes("236a01")) {
-        title.textContent = "Évolution de la surface – Mer de Glace";
-        hint.textContent = "Données historiques & estimations récentes (Glacioclim, IGE Grenoble, 2025)";
+  title.textContent = "Évolution — " + g.title;
+  hint.textContent = "Source : " + g.source;
 
-        // Données approx. réalistes (surface en km² ; perte ~2-3 km² depuis 2000)
-        const years = [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025];
-        const surfaces = [40.0, 38.0, 35.0, 32.0, 30.5, 29.0, 27.5, 26.5];
+  if (window.chartLineInstance) {
+    window.chartLineInstance.destroy();
+  }
 
-        window.chartLineInstance = new Chart(canvas, {
-            type: 'line',
-            data: {
-                labels: years,
-                datasets: [{
-                    label: "Surface (km²)",
-                    data: surfaces,
-                    borderColor: "#1e90ff",
-                    backgroundColor: "rgba(30, 144, 255, 0.2)",
-                    fill: true,
-                    tension: 0.3,
-                    pointRadius: 5,
-                    pointBackgroundColor: "#0066cc"
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: true, position: 'top' }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: false,
-                        min: 20,
-                        title: { display: true, text: 'Surface (km²)' }
-                    },
-                    x: {
-                        title: { display: true, text: 'Année' }
-                    }
-                }
-            }
-        });
-    } else {
-        title.textContent = "Évolution";
-        hint.textContent = "Données d'évolution (pédagogiques) : sélectionne la Mer de Glace !";
-        // Option : un chart vide ou placeholder si tu veux
+  window.chartLineInstance = new Chart(
+    canvas.getContext("2d"),
+    {
+      type: "line",
+      data: {
+        labels: g.years,
+        datasets: [{
+          label: g.unit,
+          data: g.values,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true
+      }
     }
+  );
 }

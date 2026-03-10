@@ -1,147 +1,33 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta charset="UTF-8">
+<title>Observatoire des glaciers alpins</title>
 
-  <title>Glaciers – Carte & Indicateurs</title>
+<script>
 
+const lang = navigator.language || navigator.userLanguage;
 
-  <!-- Leaflet -->
+if (lang.startsWith("en")) {
 
-  <link
+window.location.href = "map-en.html";
 
-    rel="stylesheet"
+} else {
 
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+window.location.href = "map.html";
 
-  />
+}
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-
-  <!-- CSS MINIMAL ET OBLIGATOIRE -->
-
-  <style>
-
-    body {
-
-      margin: 0;
-
-      font-family: Arial, sans-serif;
-
-      background: #f5f6fa;
-
-    }
-
-
-    h1 {
-
-      text-align: center;
-
-      padding: 20px 0;
-
-      margin: 0;
-
-    }
-
-
-    /* 🔴 OBLIGATOIRE POUR LEAFLET */
-
-    #map {
-
-      width: 100%;
-
-      height: 520px;
-
-      margin-bottom: 40px;
-
-      border-bottom: 3px solid #ddd;
-
-    }
-
-
-    .section {
-
-      max-width: 1200px;
-
-      margin: auto;
-
-      padding: 20px;
-
-      background: white;
-
-      margin-bottom: 40px;
-
-      border-radius: 8px;
-
-    }
-
-  </style>
+</script>
 
 </head>
 
-
 <body>
 
-
-  <h1>Carte interactive des glaciers</h1>
-
-
-  <!-- ✅ LA CARTE (NE PEUT PAS DISPARAÎTRE) -->
-
-  <div id="map"></div>
-
-
-  <!-- ✅ ZONE DASHBOARDS (ON NE LES TOUCHE PAS ENCORE) -->
-
-  <div class="section">
-
-    <h2>Indicateurs climatiques</h2>
-
-    <p>Ici viennent les dashboards (Chart.js, etc.).</p>
-
-  </div>
-
-
-  <!-- JS CARTE -->
-
-  <script>
-
-    // Initialisation de la carte
-
-    const map = L.map('map').setView([45.9, 6.9], 6);
-
-
-    // Fond de carte
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-
-      attribution: '© OpenStreetMap'
-
-    }).addTo(map);
-
-
-    // Exemple de point glacier (Mer de Glace)
-
-    const merDeGlace = L.marker([45.9237, 6.9186]).addTo(map);
-
-    merDeGlace.bindPopup(`
-
-      <b>Mer de Glace (France)</b><br>
-
-      Altitude moyenne : 2500 m<br>
-
-      Surface : 32 km²
-
-    `);
-
-  </script>
-
+Redirection...
 
 </body>
-
 </html>
-

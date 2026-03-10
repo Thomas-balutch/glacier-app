@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Carbon footprint — Alpine glaciers</title>
+
+<link rel="stylesheet" href="style.css"/>
+
+<style>
+
+.container{
+max-width:1100px;
+margin:0 auto;
+padding:16px;
+}
+
+.card{
+background:#fff;
+border-radius:10px;
+padding:16px;
+margin:16px 0;
+box-shadow:0 1px 6px rgba(0,0,0,.08);
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
+
+@media (max-width:900px){
+.grid{
+grid-template-columns:1fr;
+}
+}
+
+label{
+display:block;
+margin:8px 0 6px;
+font-weight:600;
+}
+
+select,input{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.btnrow{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:12px;
+}
+
+.btn{
+padding:10px 14px;
+border-radius:8px;
+border:1px solid #ddd;
+background:#f7f7f7;
+cursor:pointer;
+}
+
+.btn.primary{
+background:#e9f2ff;
+border-color:#cfe3ff;
+}
+
+.muted{
+opacity:.75;
+font-size:.95em;
+}
+
+.kpi{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+}
+
+@media (max-width:900px){
+.kpi{
+grid-template-columns:1fr;
+}
+}
+
+.kpi .box{
+background:#fafafa;
+border:1px solid #eee;
+border-radius:10px;
+padding:12px;
+}
+
+.kpi .value{
+font-size:1.2em;
+font-weight:800;
+margin-top:6px;
+line-height:1.5;
+}
+
+.note{
+background:#fffbe6;
+border:1px solid #ffe58f;
+padding:12px;
+border-radius:10px;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.topbar a{
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body class="page-empreinte">
+
+<div class="container">
+
+<div class="topbar">
+
+<div>
+<h1>Carbon footprint</h1>
+<p class="muted">
+Educational estimation based on average emission factors
+</p>
+</div>
+
+<div class="btnrow">
+
+<a class="btn" href="map-en.html">Home</a>
+<a class="btn" href="stats-en.html">Statistics</a>
+<a class="btn primary" href="empreinte-en.html">Carbon impact</a>
+<a class="btn" href="faune-en.html">Alpine wildlife</a>
+<a class="btn" href="about-en.html">About</a>
+<a class="btn" href="sources-en.html">Sources</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Parameters</h2>
+
+<div class="grid">
+
+<div>
+
+<label for="profile">Profile</label>
+
+<select id="profile">
+<option value="resident">Alpine resident</option>
+<option value="tourist">Tourist</option>
+</select>
+
+<label for="transport">Transport</label>
+
+<select id="transport">
+<option value="car">Car</option>
+<option value="train">Train</option>
+<option value="plane">Plane</option>
+</select>
+
+<label for="distance">Distance (km)</label>
+
+<input id="distance" type="number" min="0" step="1" value="200"/>
+
+</div>
+
+<div>
+
+<label for="glacier">Glacier</label>
+
+<select id="glacier">
+<option value="">Loading…</option>
+</select>
+
+<div class="note" style="margin-top:14px;">
+
+<strong>Methodological note</strong><br/>
+
+Results are orders of magnitude intended to illustrate the relationship between CO₂ emissions and glacier impact.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="btnrow">
+
+<button class="btn primary" id="btnCalc">Calculate</button>
+
+<button class="btn" id="btnReset">Reset</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Results</h2>
+
+<div class="kpi">
+
+<div class="box">
+<div class="muted">Estimated emissions</div>
+<div class="value" id="outCo2">—</div>
+</div>
+
+<div class="box">
+<div class="muted">Estimated glacier melt equivalent</div>
+<div class="value" id="outDays">—</div>
+</div>
+
+<div class="box">
+<div class="muted">Estimated impacted glacier surface</div>
+<div class="value" id="outM2">—</div>
+</div>
+
+</div>
+
+<p class="muted" id="outDetails" style="margin-top:12px;">
+Select a glacier and click "Calculate".
+</p>
+
+<div id="equivalent" class="muted" style="margin-top:12px;"></div>
+
+</div>
+
+</div>
+
+<script src="empreinte.js" defer></script>
+
+</body>
+</html>

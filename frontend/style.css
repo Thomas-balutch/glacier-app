@@ -3,6 +3,7 @@
   margin-bottom: 20px;
 }
 
+/* cartes */
 .card {
   background: #fff;
   padding: 15px;
@@ -11,13 +12,504 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-#chartLine {
+/* grille des dashboards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* carte large (évolution) */
+.card-wide {
+  grid-column: auto;
+}
+
+/* taille standard des graphiques */
+.card canvas {
   width: 100% !important;
-  height: 320px !important;
+  height: 200px !important;
+}
+
+/* graphique évolution : plus large mais pas trop haut */
+/* graphique évolution : taille contrôlée */
+.card-wide {
+  grid-column: auto;
+}
+
+.card-wide canvas {
+  height: 180px !important;
+  max-height: 180px !important;
 }
 
 .muted {
   color: #777;
   font-style: italic;
 }
+/* --- Amélioration esthétique sans toucher à la largeur --- */
 
+/* Titres */
+h1, h2 {
+  font-family: Inter, sans-serif;
+  color: #2a6f97;
+  margin-bottom: 10px;
+}
+
+/* Sous-texte */
+.muted {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Boutons */
+.btn {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #e8f4ff;
+  border-color: #2a6f97;
+}
+
+.btn.primary {
+  background: #2a6f97;
+  color: white;
+  border-color: #2a6f97;
+}
+
+.btn.primary:hover {
+  background: #1f5878;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+/* Inputs */
+input, select {
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  width: 100%;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #2a6f97;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(42,111,151,0.15);
+}
+
+/* KPI (résultats) */
+.kpi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.box {
+  background: #e8f4ff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #cfe2f3;
+}
+
+.box .value {
+  font-size: 34px;
+  font-weight: 700;
+  color: #2a6f97;
+  margin: 6px 0;
+}
+
+/* Note méthodologique */
+.note {
+  background: #fff7e6;
+  border: 1px solid #ffe8b3;
+  padding: 14px;
+  border-radius: 10px;
+  margin-top: 16px;
+}
+/* Largeur identique à la page Carte */
+.container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+
+/* Cartes plus modernes */
+.card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+/* Grille large pour les paramètres */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes comme la page Stats */
+  gap: 24px;
+}
+
+/* Résultats (KPI) */
+.kpi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.box {
+  background: #e8f4ff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #cfe2f3;
+}
+
+.box .value {
+  font-size: 34px;
+  font-weight: 700;
+  color: #2a6f97;
+}
+
+/* Boutons */
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn.primary {
+  background: #2a6f97;
+  color: white;
+  border-color: #2a6f97;
+}
+.page-empreinte .card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.page-empreinte .btn {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.page-empreinte .btn.primary {
+  background: #2a6f97;
+  color: white;
+  border-color: #2a6f97;
+}
+
+.page-empreinte .box {
+  background: #e8f4ff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #cfe2f3;
+}
+
+.page-empreinte .box .value {
+  font-size: 34px;
+  font-weight: 700;
+  color: #2a6f97;
+}
+
+.page-empreinte .note {
+  background: #fff7e6;
+  border: 1px solid #ffe8b3;
+  padding: 14px;
+  border-radius: 10px;
+}
+/* --- Réduction des espaces verticaux (page large conservée) --- */
+
+/* Conteneur plus compact */
+.container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Moins d’espace entre les sections */
+.card {
+  margin-top: 14px;
+  margin-bottom: 14px;
+  padding: 18px; /* au lieu de 24–28 */
+}
+
+/* Réduction de l’espace sous la carte */
+#map {
+  margin-bottom: 12px !important;
+}
+
+/* Fiche glacier plus compacte */
+.fiche-glacier {
+  padding: 14px !important;
+}
+
+/* Graphiques plus rapprochés */
+.grid {
+  gap: 14px !important;
+}
+
+/* Titres moins espacés */
+h2 {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+/* KPI plus compacts */
+.kpi {
+  gap: 14px !important;
+}
+
+.box {
+  padding: 14px !important;
+}
+/* --- Amélioration esthétique des 3 dashboards glacier --- */
+
+.dashboard-card {
+  background: #ffffff;
+  padding: 22px 26px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.dashboard-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a6f97;
+  margin-bottom: 14px;
+}
+
+/* Graphiques plus respirants */
+.dashboard-card canvas {
+  width: 100% !important;
+  height: 260px !important;
+  margin-top: 10px;
+}
+
+/* Espacement entre les 3 colonnes */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Style des axes / labels Chart.js (si utilisé) */
+.chartjs-render-monitor {
+  font-family: Inter, sans-serif;
+}
+
+/* Optionnel : fond léger derrière les graphiques */
+.chart-background {
+  background: #f7fbff;
+  border-radius: 10px;
+  padding: 10px;
+}
+/* --- Amélioration esthétique des 3 dashboards glacier --- */
+
+.dashboard-card {
+  background: #ffffff;
+  padding: 22px 26px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.dashboard-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a6f97;
+  margin-bottom: 14px;
+}
+
+.dashboard-card canvas {
+  width: 100% !important;
+  height: 260px !important;
+  margin-top: 10px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+/* --- PAGE FAUNE ALPINE --- */
+
+.page-faune .container {
+  max-width: 1080px;
+}
+
+.faune-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.faune-card {
+  cursor: pointer;
+}
+
+.faune-card h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.faune-photo {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+#zoom-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.8);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 999;
+}
+
+#zoom-overlay img {
+max-width: 90%;
+max-height: 90%;
+border-radius: 8px;
+cursor: pointer;
+}
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .faune-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* ===== MOBILE TELEPHONE ===== */
+
+@media (max-width: 768px) {
+
+.container {
+padding: 12px;
+}
+
+h1 {
+font-size: 24px;
+}
+
+h2 {
+font-size: 20px;
+}
+
+.card {
+padding: 16px;
+}
+
+.box {
+padding: 12px;
+}
+
+#map {
+height: 320px;
+}
+
+/* boutons plus grands pour mobile */
+
+.btn {
+width: 100%;
+margin-top: 8px;
+}
+
+/* champs formulaire */
+
+input, select {
+font-size: 16px;
+}
+
+/* graphiques */
+
+.card canvas {
+height: 180px !important;
+}
+
+}
+.footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #e5e5e5;
+}
+.hero img{
+width:100%;
+height:350px;
+object-fit:cover;
+display:block;
+}
+.hero{
+margin-bottom:20px;
+}
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+.header{
+background:#ffffff;
+padding:10px 0;
+}
+body{
+font-family:Inter, Arial, sans-serif;
+background:#f4f6f8;
+margin:0;
+}
+#map{
+border-radius:8px;
+margin-top:20px;
+}

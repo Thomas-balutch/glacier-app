@@ -1,0 +1,16 @@
+{
+  "RGI60-11.03259": {
+    "title": "Sonnales / des Nants",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.0, 2.8, 2.5, 2.2, 1.9, 1.7, 1.36, 1.21],
+    "source": "Glacioclim + estimations 2025 (2020 synchronisé GeoJSON)"
+  },
+  "RGI60-11.03569": {
+    "title": "Glacier des Volnets",
+    "unit": "km²",
+    "years": [1850, 1900, 1950, 1980, 2000, 2010, 2020, 2025],
+    "values": [3.0, 2.8, 2.5, 2.2, 1.9, 1.7, 1.25, 1.10],
+    "source": "Glacioclim + estimations 2025 (2020 synchronisé GeoJSON)"
+  }
+}

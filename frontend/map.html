@@ -1,117 +1,137 @@
 <!doctype html>
-
 <html lang="fr">
 
 <head>
 
-  <meta charset="utf-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Carte interactive des glaciers</title>
 
-  <title>Carte interactive des glaciers</title>
+<!-- Leaflet -->
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-
-  <!-- Leaflet -->
-
-  <link
-
-    rel="stylesheet"
-
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-
-  />
-
-
-  <!-- Ton CSS -->
-
-  <link rel="stylesheet" href="./style.css" />
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
+<div class="hero">
+  <img src="images/glacier-alpes.jpg" alt="Glacier des Alpes">
+</div>
+<header class="header">
 
-  <header class="header">
+<h1>Carte interactive des glaciers</h1>
 
-    <h1>Carte interactive des glaciers</h1>
+<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
 
-    <p class="subtitle">Clique sur un glacier : la fiche et les dashboards se mettent à jour.</p>
+<a class="btn" href="map.html">Accueil</a>
 
-  </header>
+<a class="btn" href="stats.html">Statistiques</a>
 
+<a class="btn" href="empreinte.html">Impact carbone</a>
 
-  <main class="container">
+<a class="btn" href="faune.html">Faune alpine</a>
 
-    <div id="map"></div>
+<a class="btn" href="about.html">About</a>
+<a class="btn" href="sources.html">Sources</a>
+<a class="btn" href="map.html">FR</a>
+<a class="btn" href="map-en.html">EN</a>
+</div>
 
+<p class="subtitle">
+Clique sur un glacier : la fiche et les dashboards se mettent à jour.
+</p>
 
-    <section class="panel">
-
-      <div class="card card-wide" id="glacier-card">
-
-        <h2>Fiche glacier</h2>
-
-        <p class="muted">Clique sur un glacier sur la carte.</p>
-
-
-        <div class="info"><span class="label">Nom :</span> <span id="g-name">—</span></div>
-
-        <div class="info"><span class="label">Pays :</span> <span id="g-country">—</span></div>
-
-        <div class="info"><span class="label">Altitude moyenne :</span> <span id="g-alt">—</span></div>
-
-        <div class="info"><span class="label">Surface :</span> <span id="g-area">—</span></div>
-
-      </div>
+</header>
 
 
-      <div class="grid">
+<main class="container">
 
-        <div class="card">
+<div id="map"></div>
 
-          <h3>Altitude (Top 10 France)</h3>
+<section class="panel">
 
-          <canvas id="chartAlt"></canvas>
+<div class="card card-wide" id="glacier-card">
 
-        </div>
+<h2>Fiche glacier</h2>
 
+<p class="muted">
+Clique sur un glacier sur la carte.
+</p>
 
-        <div class="card">
+<div class="info">
+<span class="label">Nom :</span>
+<span id="g-name">—</span>
+</div>
 
-          <h3>Surface (Top 10 France)</h3>
+<div class="info">
+<span class="label">Pays :</span>
+<span id="g-country">—</span>
+</div>
 
-          <canvas id="chartArea"></canvas>
+<div class="info">
+<span class="label">Altitude moyenne :</span>
+<span id="g-alt">—</span>
+</div>
 
-        </div>
+<div class="info">
+<span class="label">Surface :</span>
+<span id="g-area">—</span>
+</div>
 
-
-        <div class="card card-wide">
-    <h3 id="lineTitle">Évolution</h3>
-    <canvas id="chartline" width="600" height="400"></canvas>  <!-- ← change "chartLine" en "chartline" -->
-    <p id="lineHint" class="muted"></p>
 </div>
 
 
-      </div>
+<div class="grid">
 
-    </section>
+<div class="card">
+<h3>Altitude (Top 10 France)</h3>
+<canvas id="chartAlt"></canvas>
+</div>
 
-  </main>
+<div class="card">
+<h3>Surface (Top 10 France)</h3>
+<canvas id="chartArea"></canvas>
+</div>
 
 
-  <!-- Leaflet + Chart.js -->
+<div class="card card-wide evolution-card">
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<h3 id="lineTitle">Évolution</h3>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<div class="chart-wrapper">
+<canvas id="chartline"></canvas>
+</div>
+
+<p id="lineHint" class="muted"></p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
 
 
-  <!-- Ton JS -->
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
+<!-- Evolution -->
+<script src="evolution.js"></script>
+
+<!-- Map -->
 <script src="map.js"></script>
+<footer class="footer">
+  <p>Observatoire des glaciers alpins</p>
+  <p>Projet personnel — Thomas Balutch — 2026</p>
+</footer>
+
 </body>
 </html>
-
