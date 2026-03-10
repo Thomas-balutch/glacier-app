@@ -20,25 +20,21 @@ Coming soon:
 
 https://glacier-map.org
 
----
+## 📸 Screenshots
 
-# 📸 Screenshots
+### Interactive Glacier Map
+![Glacier Map](frontend/map.png)
 
-## Interactive Glacier Map
+### Glacier Statistics Dashboard
+![Statistics](frontend/stats.png)
 
-![Glacier Map](docs/screenshots/map.png)
+### Carbon Footprint Estimator
+![Carbon](frontend/carbon.png)
 
-## Glacier Statistics Dashboard
+### Alpine Wildlife Awareness
+![Fauna](frontend/fauna.png)---
 
-![Statistics](docs/screenshots/stats.png)
 
-## Carbon Footprint Estimator
-
-![Carbon](docs/screenshots/carbon.png)
-
-## Alpine Wildlife Awareness
-
-![Fauna](docs/screenshots/fauna.png)
 
 ---
 
