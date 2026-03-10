@@ -1,241 +1,241 @@
-🌍 Présentation du projet
 
-Application Glacier est une plateforme web scientifique dédiée à la visualisation, l’analyse et la sensibilisation autour de l’évolution des glaciers alpins.
 
-Le projet a pour objectif de rendre accessibles au grand public, aux étudiants et aux collectivités des données climatiques et glaciologiques à travers :
+# 🌍 Glacier Map — Alpine Glacier Visualization Platform
 
-une carte interactive des glaciers,
+Glacier Map is a scientific web platform designed to visualize and understand the evolution of Alpine glaciers.
 
-des dashboards dynamiques (altitude, surface, évolution),
+The goal of the project is to make glaciological and climate data accessible to the public, students, and local institutions through interactive maps and visual dashboards.
 
-une API backend permettant l’exploitation des données,
+The platform combines geospatial visualization, climate data interpretation and modern web infrastructure.
 
-une infrastructure moderne basée sur Docker.
+---
 
-L’application vise à devenir un outil pédagogique et scientifique pour illustrer concrètement les effets du changement climatique en zone alpine.
+# 🚀 Live Demo
 
-🎯 Objectifs
+*(soon available)*
 
-Montrer visuellement le recul des glaciers alpins
+Example deployment:
 
-Centraliser des données fiables sur plusieurs pays (France, Suisse, Italie, Autriche, Allemagne)
 
-Proposer une lecture simple et claire des phénomènes climatiques
+https://glacier-map.org
 
-Préparer une plateforme évolutive vers :
 
-analyse scientifique,
+---
 
-sensibilisation environnementale,
+# 📸 Screenshots
 
-projets éducatifs,
+## Interactive Glacier Map
 
-partenariats avec collectivités.
+![Glacier Map](docs/screenshots/map.png)
 
-🕰️ Historique du projet
+## Glacier Statistics Dashboard
 
-Le projet est né d’un constat simple :
-les données climatiques existent, mais sont souvent peu accessibles au grand public.
+![Statistics](docs/screenshots/stats.png)
 
-Étapes clés
+## Carbon Impact Calculator
 
-Phase laboratoire
+![Carbon Impact](docs/screenshots/carbon.png)
 
-Mise en place d’un environnement multi-VM.
+## Alpine Wildlife
 
-Tests réseau, sécurité, conteneurs Docker.
+![Wildlife](docs/screenshots/fauna.png)
 
-Phase backend
+---
 
-Développement d’une API en Flask.
+# 🎯 Project Features
 
-Structuration des données glaciers.
+• Interactive map of Alpine glaciers (Leaflet)
 
-Mise en place des routes REST.
+• Data dashboards (Chart.js):
+- glacier altitude
+- glacier surface
+- glacier evolution
 
-Phase frontend
+• Educational carbon footprint estimator
 
-Intégration de Leaflet pour la cartographie.
+• Alpine wildlife awareness section
 
-Intégration de Chart.js pour les dashboards.
+• Scientific sources and references
 
-Liaison API ↔ interface web.
+---
 
-Phase stabilisation
+# 🧱 Architecture Overview
 
-Docker Compose multi-services.
+The project follows a simple and clear architecture:
 
-Gestion du firewall, des ports, du réseau.
 
-Débogage réel (CORS, binding, routes, conteneurs).
+Frontend → API Backend → Database
 
-Aujourd’hui, l’application dispose d’une base fonctionnelle solide :
 
-carte interactive opérationnelle,
+### Frontend
 
-dashboards altitude et surface actifs,
+Technologies:
 
-infrastructure prête pour l’extension scientifique.
+- HTML
+- CSS
+- JavaScript
 
-🧱 Architecture technique
-Vue d’ensemble
+Libraries:
 
-L’architecture repose sur une séparation claire :
+- Leaflet (interactive maps)
+- Chart.js (data visualization)
 
-Frontend  →  API Backend  →  Base de données
+Responsibilities:
 
-🖥️ Frontend
+- user interface
+- map interaction
+- dashboards rendering
 
-HTML / CSS / JavaScript
+---
 
-Librairies :
+### Backend
 
-Leaflet → cartographie interactive
+Python + Flask REST API
 
-Chart.js → graphiques et dashboards
+Handles:
 
-Rôle :
+- glacier data
+- statistics
+- evolution datasets
+- API responses
 
-affichage des glaciers,
+---
 
-interaction utilisateur,
+### Data Layer
 
-visualisation des indicateurs.
+Currently using:
 
-⚙️ Backend
+- JSON datasets
 
-Python + Flask
+Future evolution:
 
-Fournit une API REST
+- PostgreSQL database
+- scientific datasets integration
 
-Gère :
+---
 
-les glaciers,
+### Containerization
 
-les statistiques,
+Docker + Docker Compose
 
-les évolutions historiques.
+Services:
 
-🗄️ Données
+- frontend
+- backend API
+- database
 
-Stockage structuré (JSON / base SQL selon évolution)
+Benefits:
 
-Données prévues :
+- reproducible environment
+- easy deployment
+- cloud-ready architecture
 
-altitude moyenne,
+---
 
-surface,
+# 📂 Project Structure
 
-évolution temporelle,
 
-localisation géographique.
-
-🐳 Conteneurisation
-
-Docker
-
-Docker Compose
-
-Services isolés :
-
-frontend
-
-backend
-
-base de données
-
-Avantages :
-
-déploiement reproductible,
-
-environnement stable,
-
-facilité de migration vers VPS.
-
-📁 Organisation du dépôt
-application-glacier/
+glacier-map/
 │
-├── backend/            → API Flask
-├── base de données/    → données & scripts
-├── extremité avant/    → frontend (HTML/CSS/JS)
-├── docker-compose.yml  → orchestration des services
-├── statistiques.html  → interface principale
-└── README.md           → documentation du projet
+├── backend/
+│ └── Flask API
+│
+├── frontend/
+│ └── HTML / CSS / JS interface
+│
+├── data/
+│ └── glacier datasets
+│
+├── docker-compose.yml
+│
+└── README.md
 
-🚀 État actuel du projet
-Fonctionnel
 
-Carte interactive des glaciers
+---
 
-Dashboards :
+# ⚙️ Getting Started
 
-altitude
+Clone the repository
 
-surface
 
-Communication frontend ↔ backend
+git clone https://github.com/username/glacier-map.git
 
-Environnement Docker stable
 
-En cours
+Run with Docker
 
-Dashboard 3 :
-Évolution historique de la Mer de Glace
 
-Harmonisation des noms des glaciers européens
+docker compose up --build
 
-Ajout des sources scientifiques
 
-🔮 Roadmap
-Court terme
+Open in browser
 
-Finaliser les dashboards
 
-Ajouter les évolutions temporelles
+http://localhost:8080
 
-Stabiliser les données
 
-Moyen terme
+---
 
-Ajouter :
+# 🚧 Project Status
 
-températures alpines,
+Current progress: **functional prototype**
 
-indicateurs climatiques
+Implemented:
 
-Mettre en place :
+✔ interactive glacier map  
+✔ altitude dashboard  
+✔ glacier surface dashboard  
+✔ Alpine wildlife section  
+✔ carbon impact estimation  
 
-page scientifique,
+In progress:
 
-méthodologie des données
+• glacier historical evolution dashboard  
+• data harmonization across Alpine countries  
+• scientific sources documentation  
 
-Long terme
+---
 
-Déploiement sur VPS OVH
+# 🛣️ Roadmap
 
-HTTPS (Let’s Encrypt)
+### Short term
 
-Nom de domaine
+- finalize glacier evolution charts
+- improve datasets quality
+- add scientific references
 
-Page dons & soutien
+### Mid term
 
-Version éducative pour écoles et collectivités
+- climate indicators
+- temperature data
+- glacier historical datasets
 
-🌱 Vision du projet
+### Long term
 
-Application Glacier n’est pas seulement un site web.
-C’est une plateforme de sensibilisation climatique, conçue pour :
+- VPS deployment
+- HTTPS (Let's Encrypt)
+- public educational platform
+- potential partnerships with Alpine institutions
 
-informer,
+---
 
-Ce projet s’inscrit dans une démarche d’apprentissage, d’expérimentation et de mise en pratique des bonnes pratiques système, conteneurisation et déploiement applicatif.
+# 🌱 Vision
 
-documenter,
+Glacier Map aims to become an educational and scientific visualization tool to better understand glacier retreat and climate change impacts in the Alpine region.
 
-alerter.
+The project also serves as a practical experiment in:
 
-À terme, le projet ambitionne de devenir un outil de référence local sur l’évolution des glaciers alpins.
+- system administration
+- containerized infrastructure
+- scientific data visualization
 
-👤 Auteur
-Thomas Balutch
-Administrateur système é réseaux Linux orienté DevOps
+---
+
+# 👤 Author
+
+**Thomas Balutch**
+
+Linux System & Network Administrator  
+DevOps-oriented engineer
+
+Personal project combining infrastructure, data visualization and climate awareness.
+3️⃣ Où mettre les images
