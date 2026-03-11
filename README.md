@@ -1,5 +1,7 @@
 # 🌍 Glacier Map — Alpine Glacier Visualization Platform
 
+![Glacier Map Banner](frontend/glacier-banner.png)
+
 ![Python](https://img.shields.io/badge/python-3.x-blue)
 ![Flask](https://img.shields.io/badge/backend-flask-green)
 ![Docker](https://img.shields.io/badge/container-docker-blue)
