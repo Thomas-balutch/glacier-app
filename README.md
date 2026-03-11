@@ -26,7 +26,6 @@ https://glacier-map.org
 ![Glacier Map](frontend/map.png)
 
 ### Glacier Statistics Dashboard
-### Glacier Statistics Dashboard
 
 ![Altitude](frontend/stats-altitude.png)
 
