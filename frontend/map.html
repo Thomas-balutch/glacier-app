@@ -25,21 +25,20 @@ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <h1>Carte interactive des glaciers</h1>
 
-<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-<a class="btn" href="map.html">Accueil</a>
+<nav id="mobileMenu" class="mobile-menu">
 
-<a class="btn" href="stats.html">Statistiques</a>
+<a href="index.html">Accueil</a>
+<a href="stats.html">Statistiques</a>
+<a href="empreinte.html">Impact carbone</a>
+<a href="faune.html">Faune alpine</a>
+<a href="about.html">À propos</a>
+<a href="sources.html">Sources</a>
+<a href="map.html">FR</a>
+<a href="map-en.html">EN</a>
 
-<a class="btn" href="empreinte.html">Impact carbone</a>
-
-<a class="btn" href="faune.html">Faune alpine</a>
-
-<a class="btn" href="about.html">About</a>
-<a class="btn" href="sources.html">Sources</a>
-<a class="btn" href="map.html">FR</a>
-<a class="btn" href="map-en.html">EN</a>
-</div>
+</nav>
 
 <p class="subtitle">
 Clique sur un glacier : la fiche et les dashboards se mettent à jour.
@@ -128,10 +127,17 @@ Clique sur un glacier sur la carte.
 
 <!-- Map -->
 <script src="map.js"></script>
+
 <footer class="footer">
-  <p>Observatoire des glaciers alpins</p>
-  <p>Projet personnel — Thomas Balutch — 2026</p>
+<p>Observatoire des glaciers alpins</p>
+<p>Projet personnel — Thomas Balutch — 2026</p>
 </footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("open");
+}
+</script>
 
 </body>
 </html>
