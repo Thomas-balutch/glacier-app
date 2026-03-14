@@ -92,17 +92,18 @@ display:flex;
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <nav id="mobileMenu" class="mobile-menu">
-
+<a href="index.html">Accueil</a>
 <a href="map.html">Carte</a>
 <a href="stats.html">Statistiques</a>
 <a href="empreinte.html">Impact carbone</a>
 <a href="faune.html">Faune alpine</a>
 <a href="about.html">À propos</a>
 <a href="sources.html">Sources</a>
-<a href="map.html">FR</a>
-<a href="map-en.html">EN</a>
-
+<hr>
+<a href="#">FR</a>
+<a href="#">EN</a>
 </nav>
+
 
 <section class="hero">
 
@@ -120,11 +121,10 @@ Explorer la carte interactive
 </section>
 
 <script>
-
-function toggleMenu(){
-document.getElementById("mobileMenu").classList.toggle("open");
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("open");
 }
-
 </script>
 
 </body>

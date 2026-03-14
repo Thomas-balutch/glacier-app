@@ -6,7 +6,78 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Atlas interactif des glaciers alpins</title>
+
+<!-- Leaflet -->
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<!-- HERO IMAGE -->
+
+<div class="hero">
+
+<img src="images/glacier-alpes.jpg" alt="Glacier des Alpes">
+
+<div class="hero-text">
+
 <h1>Atlas interactif des glaciers alpins</h1>
+
+<p>
+Explorez les glaciers des Alpes : altitude, surface et évolution
+depuis la fin du XIXᵉ siècle.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index.html">Accueil</a>
+<a href="map.html">Carte</a>
+<a href="stats.html">Statistiques</a>
+<a href="empreinte.html">Impact carbone</a>
+<a href="faune.html">Faune alpine</a>
+<a href="about.html">À propos</a>
+<a href="sources.html">Sources</a>
+
+<hr>
+
+<a href="map.html">FR</a>
+<a href="map-en.html">EN</a>
+
+</nav>
+
+<h2>Exploration cartographique des glaciers alpins</h2>
+
+<p class="subtitle">
+Clique sur un glacier : la fiche et les dashboards se mettent à jour.
+</p>
+
+</header>
+
+
+<!-- CONTENU PRINCIPAL -->
+
+<main class="container">
+
+<!-- CONTEXTE SCIENTIFIQUE -->
+
 <div class="card">
 
 <h2>Contexte scientifique</h2>
@@ -31,50 +102,16 @@ Une extension future pourra intégrer d'autres glaciers alpins européens.
 
 </div>
 
-<!-- Leaflet -->
-<link rel="stylesheet"
-href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-<div class="hero">
-  <img src="images/glacier-alpes.jpg" alt="Glacier des Alpes">
-</div>
-<header class="header">
-
-<h2>Exploration cartographique des glaciers alpins</h2>
-
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-<nav id="mobileMenu" class="mobile-menu">
-
-<a href="index.html">Accueil</a>
-<a href="stats.html">Statistiques</a>
-<a href="empreinte.html">Impact carbone</a>
-<a href="faune.html">Faune alpine</a>
-<a href="about.html">À propos</a>
-<a href="sources.html">Sources</a>
-<a href="map.html">FR</a>
-<a href="map-en.html">EN</a>
-
-</nav>
-
-<p class="subtitle">
-Clique sur un glacier : la fiche et les dashboards se mettent à jour.
-</p>
-
-</header>
-
-
-<main class="container">
+<!-- CARTE -->
 
 <div id="map"></div>
 
+
 <section class="panel">
+
+
+<!-- FICHE GLACIER -->
 
 <div class="card card-wide" id="glacier-card">
 
@@ -107,12 +144,15 @@ Clique sur un glacier sur la carte.
 </div>
 
 
+<!-- GRAPHIQUES -->
+
 <div class="grid">
 
 <div class="card">
 <h3>Altitude (Top 10 France)</h3>
 <canvas id="chartAlt"></canvas>
 </div>
+
 
 <div class="card">
 <h3>Surface (Top 10 France)</h3>
@@ -139,28 +179,29 @@ Clique sur un glacier sur la carte.
 </main>
 
 
-<!-- Leaflet -->
+<!-- SCRIPTS -->
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
-<!-- Evolution -->
 <script src="evolution.js"></script>
 
-<!-- Map -->
 <script src="map.js"></script>
+
 
 <footer class="footer">
 <p>Observatoire des glaciers alpins</p>
 <p>Projet personnel — Thomas Balutch — 2026</p>
 </footer>
 
+
 <script>
 function toggleMenu(){
 document.getElementById("mobileMenu").classList.toggle("open");
 }
 </script>
+
 
 </body>
 </html>

@@ -12,53 +12,72 @@
 
 </head>
 
+
 <body class="page-faune">
+
+
+<!-- MENU BURGER -->
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index.html">Accueil</a>
+<a href="map.html">Carte</a>
+<a href="stats.html">Statistiques</a>
+<a href="empreinte.html">Impact carbone</a>
+<a href="faune.html">Faune alpine</a>
+<a href="about.html">À propos</a>
+<a href="sources.html">Sources</a>
+
+<hr>
+
+<a href="#">FR</a>
+<a href="#">EN</a>
+
+</nav>
+
 
 <div class="container">
 
-<h1>Faune alpine menacée</h1>
 
+<div class="card">
 
-<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
+<h2>Contexte écologique des espèces alpines</h2>
 
-<a href="map.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Accueil
-</a>
+<p>
+Les écosystèmes alpins abritent une biodiversité remarquable adaptée à des
+conditions environnementales extrêmes. Les espèces de montagne ont développé
+des adaptations spécifiques pour survivre aux hivers rigoureux, aux faibles
+températures et aux variations importantes de l’enneigement.
+</p>
 
-<a href="stats.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Statistiques
-</a>
+<p>
+Cependant, le réchauffement climatique modifie progressivement ces milieux.
+La réduction de l’enneigement, la transformation des habitats et la pression
+humaine liée au tourisme ou aux infrastructures peuvent fragiliser certaines
+espèces emblématiques des Alpes.
+</p>
 
-<a href="empreinte.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Impact carbone
-</a>
-
-<a href="faune.html"
-style="padding:10px 14px;background:#e2f1ff;border:1px solid #cfe3ff;border-radius:8px;text-decoration:none;">
-Faune alpine
-</a>
-
-<a href="about.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-About
-</a>
+<p>
+Cette page présente plusieurs espèces caractéristiques de la faune alpine
+ainsi que des informations synthétiques sur leur altitude de répartition,
+leur statut de conservation et les principales menaces pesant sur elles.
+</p>
 
 </div>
 
 
-<p class="muted">
+<h1>Faune alpine menacée</h1>
 
+
+<p class="muted">
 Certaines espèces alpines sont particulièrement vulnérables au réchauffement climatique
 et à la disparition progressive des glaciers.
-
 </p>
 
 
 <div id="faune-grid" class="faune-grid"></div>
-
 
 <div id="faune-detail" class="card" style="display:none;"></div>
 
@@ -66,7 +85,7 @@ et à la disparition progressive des glaciers.
 </div>
 
 
-<!-- ZOOM OVERLAY -->
+<!-- ZOOM IMAGE -->
 
 <div id="zoom-overlay">
 <img id="zoom-img" src="" alt="">
@@ -74,6 +93,55 @@ et à la disparition progressive des glaciers.
 
 
 <script src="faune.js"></script>
+
+
+<!-- SOURCES SCIENTIFIQUES -->
+
+<div class="container">
+
+<div class="card">
+
+<h2>Sources scientifiques</h2>
+
+<ul>
+
+<li>Muséum national d’Histoire naturelle — Inventaire national du patrimoine naturel (INPN)</li>
+
+<li>UICN — Liste rouge des espèces menacées</li>
+
+<li>Office français de la biodiversité — Biodiversité des Alpes</li>
+
+<li>Parcs nationaux alpins (Vanoise, Écrins, Mercantour)</li>
+
+</ul>
+
+<p>
+<b>Statuts de conservation :</b> basés sur les catégories de la Liste rouge de l’UICN.
+</p>
+
+<p>
+Les informations présentées sur cette page sont des synthèses pédagogiques
+basées sur ces sources scientifiques et sur la littérature consacrée aux
+écosystèmes alpins.
+</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function toggleMenu() {
+
+const menu = document.getElementById("mobileMenu");
+
+menu.classList.toggle("open");
+
+}
+
+</script>
+
 
 </body>
 </html>

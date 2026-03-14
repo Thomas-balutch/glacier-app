@@ -6,56 +6,84 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Sources — Observatoire des glaciers</title>
+<title>Sources — Observatoire des glaciers alpins</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
+
+
+<!-- MENU BURGER -->
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index.html">Accueil</a>
+<a href="stats.html">Statistiques</a>
+<a href="empreinte.html">Impact carbone</a>
+<a href="faune.html">Faune alpine</a>
+<a href="about.html">À propos</a>
+<a href="sources.html">Sources</a>
+
+<hr>
+
+<a href="#">FR</a>
+<a href="#">EN</a>
+
+</nav>
+
+
 
 <div class="container">
 
+
 <h1>Sources et références</h1>
 
-<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
-
-<a class="btn" href="map.html">Accueil</a>
-
-<a class="btn" href="stats.html">Statistiques</a>
-
-<a class="btn" href="empreinte.html">Impact carbone</a>
-
-<a class="btn" href="faune.html">Faune alpine</a>
-
-<a class="btn" href="about.html">About</a>
-
-<a class="btn" href="sources.html">Sources</a>
-
-</div>
 
 
 <div class="card">
 
-<h2>Données glaciaires</h2>
+<h2>Données glaciologiques</h2>
 
 <p>
-Les données utilisées pour la cartographie et l'évolution des glaciers
-proviennent de bases scientifiques internationales.
+Les données utilisées pour la cartographie et l’analyse de l’évolution
+des glaciers proviennent de bases scientifiques internationales
+consacrées à l’étude de la cryosphère.
 </p>
 
 <ul>
 
 <li>
-<strong>GLIMS</strong> — Global Land Ice Measurements from Space
+<strong>GLIMS — Global Land Ice Measurements from Space</strong><br>
+Inventaire mondial des glaciers basé sur l’observation satellitaire.<br>
+https://www.glims.org
 </li>
 
 <li>
-<strong>WGMS</strong> — World Glacier Monitoring Service
+<strong>WGMS — World Glacier Monitoring Service</strong><br>
+Programme international de suivi de l’évolution des glaciers.<br>
+https://wgms.ch
 </li>
 
 <li>
-<strong>ESA Climate Change Initiative</strong>
+<strong>Randolph Glacier Inventory (RGI)</strong><br>
+Inventaire global des glaciers utilisé dans de nombreuses études
+scientifiques sur la cryosphère.
+</li>
+
+<li>
+<strong>ESA Climate Change Initiative (CCI)</strong><br>
+Programme d’observation satellitaire du climat incluant
+des données sur les glaciers et la cryosphère.
+</li>
+
+<li>
+<strong>GLACIOCLIM</strong><br>
+Programme français d’observation à long terme des glaciers.
 </li>
 
 </ul>
@@ -63,27 +91,75 @@ proviennent de bases scientifiques internationales.
 </div>
 
 
+
 <div class="card">
 
-<h2>Données faune alpine</h2>
+<h2>Données sur la faune alpine</h2>
 
 <p>
-Les informations concernant les espèces alpines menacées sont basées sur
-des données issues de la littérature scientifique et de bases de données
-de conservation.
+Les informations concernant les espèces alpines et leur statut
+de conservation proviennent de bases de données scientifiques
+et d’organismes spécialisés dans l’étude de la biodiversité.
 </p>
 
 <ul>
 
-<li>IUCN Red List</li>
+<li>
+<strong>UICN Red List</strong><br>
+Base mondiale de référence pour l’évaluation du statut
+de conservation des espèces.<br>
+https://www.iucnredlist.org
+</li>
 
-<li>Muséum National d'Histoire Naturelle</li>
+<li>
+<strong>INPN — Inventaire National du Patrimoine Naturel</strong><br>
+Base de données du Muséum national d’Histoire naturelle
+sur la biodiversité française.<br>
+https://inpn.mnhn.fr
+</li>
 
-<li>Parcs naturels alpins</li>
+<li>
+<strong>Office Français de la Biodiversité (OFB)</strong><br>
+Institution publique chargée de la protection de la biodiversité.
+</li>
+
+<li>
+<strong>Parcs nationaux alpins</strong><br>
+Parc national de la Vanoise<br>
+Parc national des Écrins<br>
+Parc national du Mercantour
+</li>
 
 </ul>
 
 </div>
+
+
+
+<div class="card">
+
+<h2>Publications scientifiques</h2>
+
+<p>
+Les analyses relatives à l’évolution des glaciers s’appuient
+également sur la littérature scientifique consacrée à la
+glaciologie et à la cryosphère.
+</p>
+
+<ul>
+
+<li>Zemp et al. — Global glacier mass changes</li>
+
+<li>Huss & Hock — Global glacier volume change</li>
+
+<li>Rapports du GIEC (IPCC) sur le changement climatique</li>
+
+<li>Publications scientifiques sur la cryosphère et les glaciers alpins</li>
+
+</ul>
+
+</div>
+
 
 
 <div class="card">
@@ -92,32 +168,120 @@ de conservation.
 
 <ul>
 
-<li>HTML / CSS / JavaScript</li>
+<li>HTML5 / CSS3</li>
 
-<li>Leaflet (cartographie interactive)</li>
+<li>JavaScript</li>
 
-<li>Chart.js (visualisation des données)</li>
+<li>Leaflet — cartographie interactive</li>
+
+<li>Chart.js — visualisation de données</li>
+
+<li>Docker / Docker Compose</li>
+
+<li>PostgreSQL — base de données relationnelle</li>
 
 </ul>
 
-</div>
-
-
-<div class="card">
-
-<h2>Objectif du projet</h2>
-
 <p>
-
-Ce site est un projet pédagogique visant à rendre les données
-scientifiques sur les glaciers alpins accessibles au grand public
-et à sensibiliser aux impacts du changement climatique.
-
+Ces technologies permettent de construire une plateforme
+interactive combinant cartographie, visualisation de données
+et exploration d’informations scientifiques.
 </p>
 
 </div>
 
+
+
+<div class="card">
+
+<h2>Architecture technique</h2>
+
+<p>
+L’application repose sur une architecture web simple permettant
+d’explorer des données environnementales et glaciologiques à
+travers une interface interactive.
+</p>
+
+<pre>
+
+Utilisateur
+     ↓
+Interface Web (HTML / JavaScript / Leaflet)
+     ↓
+Visualisation des données (Chart.js)
+     ↓
+Base de données PostgreSQL
+     ↓
+Sources scientifiques glaciologiques
+
+</pre>
+
 </div>
+
+
+
+<div class="card">
+
+<h2>Nature pédagogique du projet</h2>
+
+<p>
+Les informations présentées sur cette plateforme constituent
+des synthèses pédagogiques basées sur des données scientifiques
+publiques et sur la littérature consacrée à l’étude des glaciers
+et des écosystèmes alpins.
+</p>
+
+<p>
+Certaines visualisations sont simplifiées afin de faciliter
+la compréhension des phénomènes climatiques.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Évolution du projet</h2>
+
+<p>
+Le projet est actuellement en <strong>version initiale (V1)</strong>
+et continuera d’évoluer avec l’intégration progressive
+de nouvelles sources de données, de nouveaux glaciers et
+de nouvelles visualisations scientifiques.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+<footer class="footer">
+
+<p>Observatoire des glaciers alpins</p>
+
+<p>Projet personnel — Thomas Balutch — 2026</p>
+
+</footer>
+
+
+
+<script>
+
+function toggleMenu() {
+
+const menu = document.getElementById("mobileMenu");
+
+menu.classList.toggle("open");
+
+}
+
+</script>
+
+
 
 </body>
 </html>

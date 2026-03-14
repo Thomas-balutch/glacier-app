@@ -2,70 +2,207 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About — Observatoire des glaciers</title>
+
+<title>À propos — Observatoire des glaciers alpins</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
+<!-- MENU BURGER -->
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index.html">Accueil</a>
+<a href="stats.html">Statistiques</a>
+<a href="empreinte.html">Impact carbone</a>
+<a href="faune.html">Faune alpine</a>
+<a href="about.html">À propos</a>
+<a href="sources.html">Sources</a>
+
+<hr>
+
+<a href="#">FR</a>
+<a href="#">EN</a>
+
+</nav>
+
+
 <div class="container">
+
 
 <h1>À propos du projet</h1>
 
-<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
-
-<a class="btn" href="map.html">Accueil</a>
-
-<a class="btn" href="stats.html">Statistiques</a>
-
-<a class="btn" href="empreinte.html">Impact carbone</a>
-
-<a class="btn" href="faune.html">Faune alpine</a>
-
-<a class="btn" href="about.html">About</a>
-
-<a class="btn" href="sources.html">Sources</a>
-
-</div>
 
 
 <div class="card">
 
-<h2>Le projet</h2>
+<h2>Présentation du projet</h2>
 
 <p>
-Ce site est une plateforme pédagogique consacrée aux glaciers alpins.
-Il permet de visualiser leur localisation, leur évolution et les impacts
-du changement climatique.
+L’Observatoire des glaciers alpins est une plateforme pédagogique
+permettant d’explorer la localisation, les caractéristiques et
+l’évolution de plusieurs glaciers situés dans le massif alpin.
 </p>
-
-<h2>Données utilisées</h2>
 
 <p>
-Les données glaciaires proviennent de bases scientifiques telles que
-GLIMS et WGMS. Elles permettent d'observer l'évolution de la surface
-des glaciers sur plus d'un siècle.
+La plateforme propose une visualisation interactive des glaciers
+à travers des cartes, des indicateurs et des graphiques permettant
+de mieux comprendre l’évolution de ces environnements sensibles
+face au changement climatique.
 </p>
-
-<h2>Technologies</h2>
 
 <p>
-Le site utilise des technologies web modernes :
-HTML, CSS, JavaScript, Leaflet pour la cartographie
-et Chart.js pour la visualisation des données.
+Les glaciers constituent en effet des indicateurs majeurs de
+l’évolution du climat. Leur recul progressif observé depuis
+plus d’un siècle dans les Alpes représente l’un des signes
+les plus visibles du réchauffement climatique.
 </p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Contexte scientifique</h2>
+
+<p>
+Les glaciers alpins font l’objet d’un suivi scientifique depuis
+la fin du XIXe siècle. Les observations glaciologiques montrent
+une diminution progressive de la surface et du volume de nombreux
+glaciers européens.
+</p>
+
+<p>
+Ces évolutions influencent plusieurs aspects des environnements
+de montagne :
+</p>
+
+<ul>
+
+<li>les ressources en eau</li>
+<li>les paysages alpins</li>
+<li>les écosystèmes de haute altitude</li>
+<li>les risques naturels liés aux milieux glaciaires</li>
+
+</ul>
+
+<p>
+La plateforme vise à proposer une représentation pédagogique
+de ces phénomènes à travers des outils interactifs accessibles
+au public.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Données scientifiques utilisées</h2>
+
+<p>
+Les données glaciaires utilisées dans ce projet proviennent
+de bases scientifiques et d’inventaires glaciologiques reconnus.
+Elles permettent d’observer l’évolution des glaciers sur
+plusieurs décennies.
+</p>
+
+<p>
+Les principales sources incluent notamment :
+</p>
+
+<ul>
+
+<li>GLIMS — Global Land Ice Measurements from Space</li>
+<li>WGMS — World Glacier Monitoring Service</li>
+<li>Inventaires glaciologiques alpins</li>
+<li>Publications scientifiques sur la cryosphère</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Architecture technique</h2>
+
+<p>
+Le projet repose sur une architecture web simple permettant
+de visualiser des données environnementales et glaciologiques
+à travers une interface cartographique interactive.
+</p>
+
+<p>
+L’infrastructure est conteneurisée afin de faciliter le
+déploiement et la reproductibilité de l’environnement
+applicatif.
+</p>
+
+<p>
+Les services sont orchestrés à l’aide de <strong>Docker Compose</strong>,
+incluant notamment un serveur web et une base de données relationnelle.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Technologies utilisées</h2>
+
+<ul>
+
+<li>HTML5 / CSS3</li>
+<li>JavaScript</li>
+<li>Leaflet — cartographie interactive</li>
+<li>Chart.js — visualisation de données</li>
+<li>Docker / Docker Compose</li>
+<li>PostgreSQL — base de données</li>
+
+</ul>
+
+<p>
+La base PostgreSQL permet de stocker les informations relatives
+aux glaciers, leurs caractéristiques et certaines séries
+temporelles d’évolution glaciologique.
+</p>
+
+</div>
+
+
+
+<div class="card">
 
 <h2>Objectif pédagogique</h2>
 
 <p>
-L'objectif est de rendre les données scientifiques accessibles
-au grand public et de sensibiliser aux impacts du changement
-climatique sur les glaciers et les écosystèmes alpins.
+L’objectif du projet est de rendre les données scientifiques
+plus accessibles à travers des outils interactifs permettant
+d’explorer les glaciers alpins et leur évolution.
+</p>
+
+<p>
+La plateforme vise également à sensibiliser aux impacts
+du changement climatique sur les environnements de montagne
+et sur la biodiversité associée aux écosystèmes alpins.
 </p>
 
 </div>
+
 
 
 <div class="card">
@@ -73,42 +210,61 @@ climatique sur les glaciers et les écosystèmes alpins.
 <h2>Auteur du projet</h2>
 
 <p>
-Ce site a été développé par <strong>Thomas Balutch</strong>,
-administrateur systèmes Linux orienté DevOps et passionné
-par les environnements alpins.
+Ce projet a été conçu et développé par
+<strong>Thomas Balutch</strong>, administrateur systèmes
+Linux orienté DevOps, travaillant sur les infrastructures
+techniques et les environnements open-source des applications web.
 </p>
 
 <p>
-Amoureux de la montagne et des paysages de haute altitude,
-il s’intéresse particulièrement à l’évolution des glaciers
-et aux impacts du changement climatique sur les écosystèmes alpins.
+Passionné par les environnements de montagne et les sciences
+de la Terre, il s’intéresse particulièrement à l’évolution
+des glaciers alpins et aux impacts du changement climatique
+sur les écosystèmes de haute altitude.
 </p>
 
 <p>
 Ce projet personnel combine cartographie interactive,
-visualisation de données et technologies web afin de rendre
-les informations scientifiques plus accessibles au grand public.
+visualisation de données et technologies web afin
+de rendre les informations scientifiques plus accessibles.
 </p>
 
 <p>
 <strong>État du projet :</strong>
-ce site est actuellement en <strong>version initiale (V1)</strong>
-et continue d’évoluer. De nouvelles fonctionnalités et données
-seront progressivement ajoutées.
+le site est actuellement en <strong>version initiale (V1)</strong>
+et continuera d’évoluer avec l’ajout progressif de nouvelles
+fonctionnalités et de nouvelles données.
 </p>
 
 </div>
 
 
+
 </div>
-</div>
+
+
 
 <footer class="footer">
-  <p>Observatoire des glaciers alpins</p>
-  <p>Projet personnel — Thomas Balutch — 2026</p>
+
+<p>Observatoire des glaciers alpins</p>
+<p>Projet personnel — Thomas Balutch — 2026</p>
+
 </footer>
 
-</body>
-</html>
+
+
+<script>
+
+function toggleMenu() {
+
+const menu = document.getElementById("mobileMenu");
+
+menu.classList.toggle("open");
+
+}
+
+</script>
+
+
 </body>
 </html>

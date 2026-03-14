@@ -530,11 +530,16 @@ gap:40px;
 align-items:center;
 }
 
+#map{
+height:500px;
+}
+
 .chart-text{
 font-size:16px;
 line-height:1.7;
 color:#333;
 }
+
 
 .chart-text h3{
 color:#2c5d7a;
@@ -548,22 +553,36 @@ border-radius:10px;
 box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 .menu-toggle{
+position:fixed;
+top:20px;
+left:20px;
+
 font-size:26px;
-background:none;
+background:rgba(255,255,255,0.9);
+
 border:none;
+border-radius:8px;
+
+padding:8px 12px;
+
 cursor:pointer;
-margin:10px;
+
+z-index:9999;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
 }
 
+
 .mobile-menu{
-position:absolute;
-top:50px;
-left:10px;
-background:rgba(0,0,0,0.85);
+position:fixed;
+top:60px;
+left:15px;
+background:rgba(0,0,0,0.9);
 padding:15px;
 border-radius:10px;
 display:none;
 flex-direction:column;
+z-index:1000;
 }
 
 .mobile-menu a{
@@ -576,4 +595,23 @@ font-size:16px;
 
 .mobile-menu.open{
 display:flex;
+}
+
+
+.menu-toggle{
+position:fixed;
+top:15px;
+left:15px;
+
+font-size:26px;
+background:white;
+
+border:none;
+border-radius:6px;
+
+padding:6px 10px;
+
+cursor:pointer;
+
+z-index:1100;
 }
