@@ -4,9 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Empreinte carbone — Glaciers alpins</title>
-  <link rel="stylesheet" href="style.css" />
+  
+<link rel="stylesheet" href="style.css" />
 
-  <style>
+<style>
+
+/* MENU BURGER */
+
+.menu-toggle{
+position:fixed;
+top:20px;
+left:20px;
+font-size:28px;
+background:white;
+border:2px solid #222;
+border-radius:6px;
+padding:6px 10px;
+cursor:pointer;
+z-index:10000;
+}
+
+.mobile-menu{
+display:none;
+flex-direction:column;
+position:fixed;
+top:70px;
+left:10px;
+background:rgba(0,0,0,0.92);
+padding:20px;
+border-radius:12px;
+z-index:9999;
+min-width:170px;
+box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+.mobile-menu a{
+color:white;
+text-decoration:none;
+padding:10px 0;
+font-size:16px;
+display:block;
+}
+
+.mobile-menu.open{
+display:flex;
+}
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -20,12 +62,12 @@
       margin: 16px 0;
       box-shadow: 0 1px 6px rgba(0,0,0,.08);
     }
-
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
+
 
     @media (max-width: 900px) {
       .grid {
@@ -119,22 +161,53 @@
 </head>
 
 <body class="page-empreinte">
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+<a href="index.html">Accueil</a>
+<a href="map.html">Carte</a>
+<a href="stats.html">Statistiques</a>
+<a href="empreinte.html">Impact carbone</a>
+<a href="faune.html">Faune alpine</a>
+<a href="about.html">À propos</a>
+<a href="sources.html">Sources</a>
+<a href="map.html">FR</a>
+<a href="map-en.html">EN</a>
+</nav>
+
   <div class="container">
 
     <div class="topbar">
       <div>
         <h1>Empreinte carbone</h1>
+<div class="card">
+<h2>Pourquoi calculer l'empreinte carbone liée aux glaciers ?</h2>
+
+<p>
+Les glaciers alpins sont particulièrement sensibles au réchauffement climatique.
+L'augmentation des émissions de gaz à effet de serre, notamment le dioxyde de carbone (CO₂),
+contribue à l'élévation des températures moyennes globales et accélère la fonte des glaciers.
+</p>
+
+<p>
+Cette page propose une estimation pédagogique permettant de relier des émissions
+de CO₂ issues d'activités humaines (comme les déplacements) à un impact potentiel
+sur les glaciers alpins. L'objectif est de rendre compréhensible le lien entre
+les comportements individuels et l'évolution des environnements de haute montagne.
+</p>
+
+<p>
+Les valeurs affichées sont des ordres de grandeur basés sur des facteurs d'émission
+moyens et des estimations scientifiques issues de la littérature sur le changement
+climatique et la cryosphère.
+</p>
+
+</div>
         <p class="muted">Estimation pédagogique basée sur des facteurs d’émission moyens.</p>
       </div>
 
-      <div class="btnrow">
-
-<a class="btn" href="map.html">Accueil</a>
-<a class="btn" href="stats.html">Statistiques</a>
-<a class="btn" href="faune.html">Faune alpine</a>
-<a class="btn" href="about.html">About</a>
-
-</div>
+      
     </div>
 
     <div class="card">
@@ -208,5 +281,13 @@
   </div>
 
   <script src="empreinte.js" defer></script>
+
+<script>
+function toggleMenu() {
+const menu = document.getElementById("mobileMenu");
+menu.classList.toggle("open");
+}
+</script>
+
 </body>
 </html>
