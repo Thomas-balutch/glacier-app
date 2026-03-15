@@ -12,64 +12,79 @@
 
 </head>
 
+
 <body class="page-faune">
+
+
+<!-- BURGER MENU -->
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index-en.html">Home</a>
+<a href="map-en.html">Map</a>
+<a href="stats-en.html">Statistics</a>
+<a href="empreinte-en.html">Carbon footprint</a>
+<a href="faune-en.html">Alpine wildlife</a>
+<a href="about-en.html">About</a>
+<a href="sources-en.html">Sources</a>
+
+<hr>
+
+<a href="faune.html">FR</a>
+<a href="faune-en.html">EN</a>
+
+</nav>
+
 
 <div class="container">
 
-<h1>Threatened Alpine Wildlife</h1>
 
+<div class="card">
 
-<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
+<h2>Ecological context of Alpine species</h2>
 
-<a href="map-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Home
-</a>
+<p>
+Alpine ecosystems host remarkable biodiversity adapted to extreme
+environmental conditions. Mountain species have developed specific
+adaptations that allow them to survive harsh winters, low temperatures,
+and strong variations in snow cover.
+</p>
 
-<a href="stats-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Statistics
-</a>
+<p>
+However, climate change is gradually modifying these environments.
+Reduced snow cover, habitat transformation and human pressure related
+to tourism or infrastructure can weaken several emblematic Alpine species.
+</p>
 
-<a href="empreinte-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Carbon impact
-</a>
-
-<a href="faune-en.html"
-style="padding:10px 14px;background:#e2f1ff;border:1px solid #cfe3ff;border-radius:8px;text-decoration:none;">
-Alpine wildlife
-</a>
-
-<a href="about-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-About
-</a>
-
-<a href="sources-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Sources
-</a>
+<p>
+This page presents several characteristic species of Alpine wildlife,
+along with summary information about their altitude range,
+their conservation status and the main threats affecting them.
+</p>
 
 </div>
 
 
+<h1>Threatened Alpine Wildlife</h1>
+
+
 <p class="muted">
-
-Some alpine species are particularly vulnerable to climate change
-and the progressive disappearance of glaciers.
-
+Some Alpine species are particularly vulnerable to climate change
+and to the progressive disappearance of glaciers.
 </p>
 
 
 <div id="faune-grid" class="faune-grid"></div>
+
 <div id="faune-detail" class="card" style="display:none;"></div>
 
 
 </div>
 
 
-<!-- ZOOM OVERLAY -->
+<!-- IMAGE ZOOM -->
 
 <div id="zoom-overlay">
 <img id="zoom-img" src="" alt="">
@@ -77,6 +92,55 @@ and the progressive disappearance of glaciers.
 
 
 <script src="faune-en.js"></script>
+
+
+<!-- SCIENTIFIC SOURCES -->
+
+<div class="container">
+
+<div class="card">
+
+<h2>Scientific sources</h2>
+
+<ul>
+
+<li>French National Museum of Natural History — National Inventory of Natural Heritage (INPN)</li>
+
+<li>IUCN — Red List of Threatened Species</li>
+
+<li>French Biodiversity Office — Alpine Biodiversity</li>
+
+<li>Alpine National Parks (Vanoise, Écrins, Mercantour)</li>
+
+</ul>
+
+<p>
+<b>Conservation status:</b> based on the categories of the IUCN Red List.
+</p>
+
+<p>
+The information presented on this page is an educational synthesis
+based on these scientific sources and on literature dedicated to
+Alpine ecosystems.
+</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function toggleMenu() {
+
+const menu = document.getElementById("mobileMenu");
+
+menu.classList.toggle("open");
+
+}
+
+</script>
+
 
 </body>
 </html>

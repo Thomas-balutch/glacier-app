@@ -1,15 +1,54 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carbon footprint — Alpine Glaciers</title>
 
-<title>Carbon footprint — Alpine glaciers</title>
-
-<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="style.css" />
 
 <style>
+
+/* BURGER MENU */
+
+.menu-toggle{
+position:fixed;
+top:20px;
+left:20px;
+font-size:28px;
+background:white;
+border:2px solid #222;
+border-radius:6px;
+padding:6px 10px;
+cursor:pointer;
+z-index:10000;
+}
+
+.mobile-menu{
+display:none;
+flex-direction:column;
+position:fixed;
+top:70px;
+left:10px;
+background:rgba(0,0,0,0.92);
+padding:20px;
+border-radius:12px;
+z-index:9999;
+min-width:170px;
+box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+.mobile-menu a{
+color:white;
+text-decoration:none;
+padding:10px 0;
+font-size:16px;
+display:block;
+}
+
+.mobile-menu.open{
+display:flex;
+}
 
 .container{
 max-width:1100px;
@@ -72,7 +111,7 @@ border-color:#cfe3ff;
 
 .muted{
 opacity:.75;
-font-size:.95em;
+font-size:0.95em;
 }
 
 .kpi{
@@ -125,25 +164,59 @@ text-decoration:none;
 
 <body class="page-empreinte">
 
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index-en.html">Home</a>
+<a href="map-en.html">Map</a>
+<a href="stats-en.html">Statistics</a>
+<a href="empreinte-en.html">Carbon footprint</a>
+<a href="faune-en.html">Alpine wildlife</a>
+<a href="about-en.html">About</a>
+<a href="sources-en.html">Sources</a>
+<hr>
+<a href="empreinte.html">FR</a>
+<a href="empreinte-en.html">EN</a>
+
+</nav>
+
 <div class="container">
 
 <div class="topbar">
 
 <div>
+
 <h1>Carbon footprint</h1>
-<p class="muted">
-Educational estimation based on average emission factors
+
+<div class="card">
+
+<h2>Why calculate the carbon footprint related to glaciers?</h2>
+
+<p>
+Alpine glaciers are particularly sensitive to global warming.
+The increase in greenhouse gas emissions, especially carbon dioxide (CO₂),
+contributes to rising global average temperatures and accelerates glacier melting.
 </p>
+
+<p>
+This page provides an educational estimate linking CO₂ emissions
+from human activities (such as travel) to a potential impact
+on Alpine glaciers. The objective is to make the connection between
+individual behaviour and changes in high-mountain environments easier to understand.
+</p>
+
+<p>
+The values displayed are orders of magnitude based on average
+emission factors and scientific estimates derived from
+climate change and cryosphere research literature.
+</p>
+
 </div>
 
-<div class="btnrow">
-
-<a class="btn" href="map-en.html">Home</a>
-<a class="btn" href="stats-en.html">Statistics</a>
-<a class="btn primary" href="empreinte-en.html">Carbon impact</a>
-<a class="btn" href="faune-en.html">Alpine wildlife</a>
-<a class="btn" href="about-en.html">About</a>
-<a class="btn" href="sources-en.html">Sources</a>
+<p class="muted">
+Educational estimate based on average emission factors.
+</p>
 
 </div>
 
@@ -160,21 +233,20 @@ Educational estimation based on average emission factors
 <label for="profile">Profile</label>
 
 <select id="profile">
-<option value="resident">Alpine resident</option>
-<option value="tourist">Tourist</option>
+<option value="habitant">Alpine resident</option>
+<option value="touriste">Tourist</option>
 </select>
 
 <label for="transport">Transport</label>
 
 <select id="transport">
-<option value="car">Car</option>
+<option value="voiture">Car</option>
 <option value="train">Train</option>
-<option value="plane">Plane</option>
+<option value="avion">Plane</option>
 </select>
 
 <label for="distance">Distance (km)</label>
-
-<input id="distance" type="number" min="0" step="1" value="200"/>
+<input id="distance" type="number" min="0" step="1" value="200" />
 
 </div>
 
@@ -187,11 +259,9 @@ Educational estimation based on average emission factors
 </select>
 
 <div class="note" style="margin-top:14px;">
-
-<strong>Methodological note</strong><br/>
-
-Results are orders of magnitude intended to illustrate the relationship between CO₂ emissions and glacier impact.
-
+<strong>Methodological note</strong><br />
+Results are orders of magnitude intended to link CO₂ emissions
+to glacier impacts in an understandable way.
 </div>
 
 </div>
@@ -199,11 +269,8 @@ Results are orders of magnitude intended to illustrate the relationship between 
 </div>
 
 <div class="btnrow">
-
 <button class="btn primary" id="btnCalc">Calculate</button>
-
 <button class="btn" id="btnReset">Reset</button>
-
 </div>
 
 </div>
@@ -220,12 +287,12 @@ Results are orders of magnitude intended to illustrate the relationship between 
 </div>
 
 <div class="box">
-<div class="muted">Estimated glacier melt equivalent</div>
+<div class="muted">Melting equivalent (est.)</div>
 <div class="value" id="outDays">—</div>
 </div>
 
 <div class="box">
-<div class="muted">Estimated impacted glacier surface</div>
+<div class="muted">Impacted surface (est.)</div>
 <div class="value" id="outM2">—</div>
 </div>
 
@@ -242,6 +309,13 @@ Select a glacier and click "Calculate".
 </div>
 
 <script src="empreinte.js" defer></script>
+
+<script>
+function toggleMenu(){
+const menu=document.getElementById("mobileMenu");
+menu.classList.toggle("open");
+}
+</script>
 
 </body>
 </html>

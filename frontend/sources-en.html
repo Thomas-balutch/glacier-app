@@ -12,55 +12,81 @@
 
 </head>
 
+
 <body>
+
+<!-- MENU BURGER -->
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index-en.html">Home</a>
+<a href="map-en.html">Map</a>
+<a href="stats-en.html">Statistics</a>
+<a href="empreinte-en.html">Carbon footprint</a>
+<a href="faune-en.html">Alpine wildlife</a>
+<a href="about-en.html">About</a>
+<a href="sources-en.html">Sources</a>
+
+<hr>
+
+<a href="sources.html">FR</a>
+<a href="sources-en.html">EN</a>
+
+</nav>
+
+
 
 <div class="container">
 
 <h1>Sources and references</h1>
 
-<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
-
-<a class="btn" href="map-en.html">Home</a>
-
-<a class="btn" href="stats-en.html">Statistics</a>
-
-<a class="btn" href="empreinte-en.html">Carbon impact</a>
-
-<a class="btn" href="faune-en.html">Alpine wildlife</a>
-
-<a class="btn" href="about-en.html">About</a>
-
-<a class="btn" href="sources-en.html">Sources</a>
-
-</div>
-
 
 <div class="card">
 
-<h2>Glacier data</h2>
+<h2>Glaciological data</h2>
 
 <p>
-The data used for glacier mapping and evolution
-come from international scientific databases.
+The data used for glacier mapping and analysis of glacier evolution
+come from international scientific databases dedicated to the study
+of the cryosphere.
 </p>
 
 <ul>
 
 <li>
-<strong>GLIMS</strong> — Global Land Ice Measurements from Space
+<strong>GLIMS — Global Land Ice Measurements from Space</strong><br>
+Global glacier inventory based on satellite observations.<br>
+https://www.glims.org
 </li>
 
 <li>
-<strong>WGMS</strong> — World Glacier Monitoring Service
+<strong>WGMS — World Glacier Monitoring Service</strong><br>
+International program monitoring glacier evolution.<br>
+https://wgms.ch
 </li>
 
 <li>
-<strong>ESA Climate Change Initiative</strong>
+<strong>Randolph Glacier Inventory (RGI)</strong><br>
+Global glacier inventory widely used in cryosphere research.
+</li>
+
+<li>
+<strong>ESA Climate Change Initiative (CCI)</strong><br>
+Satellite climate observation program including data on glaciers
+and the cryosphere.
+</li>
+
+<li>
+<strong>GLACIOCLIM</strong><br>
+French long-term glacier monitoring program.
 </li>
 
 </ul>
 
 </div>
+
 
 
 <div class="card">
@@ -68,21 +94,65 @@ come from international scientific databases.
 <h2>Alpine wildlife data</h2>
 
 <p>
-Information about threatened alpine species is based on
-scientific literature and biodiversity conservation databases.
+Information about Alpine species and their conservation status
+comes from scientific databases and organizations specialized
+in biodiversity research.
 </p>
 
 <ul>
 
-<li>IUCN Red List</li>
+<li>
+<strong>IUCN Red List</strong><br>
+Global reference database for evaluating species conservation status.<br>
+https://www.iucnredlist.org
+</li>
 
-<li>National Museum of Natural History</li>
+<li>
+<strong>INPN — National Inventory of Natural Heritage</strong><br>
+Biodiversity database maintained by the French National Museum
+of Natural History.<br>
+https://inpn.mnhn.fr
+</li>
 
-<li>Alpine natural parks</li>
+<li>
+<strong>French Biodiversity Office (OFB)</strong><br>
+Public institution responsible for biodiversity protection.
+</li>
+
+<li>
+<strong>Alpine National Parks</strong><br>
+Vanoise National Park<br>
+Écrins National Park<br>
+Mercantour National Park
+</li>
 
 </ul>
 
 </div>
+
+
+
+<div class="card">
+
+<h2>Scientific publications</h2>
+
+<p>
+Analyses related to glacier evolution are also based on
+scientific literature dedicated to glaciology and
+cryosphere research.
+</p>
+
+<ul>
+
+<li>Zemp et al. — Global glacier mass changes</li>
+<li>Huss & Hock — Global glacier volume change</li>
+<li>IPCC reports on climate change</li>
+<li>Scientific publications on the cryosphere and Alpine glaciers</li>
+
+</ul>
+
+</div>
+
 
 
 <div class="card">
@@ -91,33 +161,109 @@ scientific literature and biodiversity conservation databases.
 
 <ul>
 
-<li>HTML / CSS / JavaScript</li>
-
-<li>Leaflet (interactive mapping)</li>
-
-<li>Chart.js (data visualization)</li>
+<li>HTML5 / CSS3</li>
+<li>JavaScript</li>
+<li>Leaflet — interactive mapping</li>
+<li>Chart.js — data visualization</li>
+<li>Docker / Docker Compose</li>
+<li>PostgreSQL — relational database</li>
 
 </ul>
+
+<p>
+These technologies allow the creation of an interactive platform
+combining mapping, data visualization and exploration of
+scientific information.
+</p>
 
 </div>
 
 
+
 <div class="card">
 
-<h2>Project objective</h2>
+<h2>Technical architecture</h2>
 
 <p>
+The application relies on a simple web architecture allowing
+environmental and glaciological data to be explored through
+an interactive interface.
+</p>
 
-This website is an educational project aiming to make
-scientific data about Alpine glaciers accessible to the
-general public and to raise awareness of climate change
-impacts.
+<pre>
 
+User
+   ↓
+Web Interface (HTML / JavaScript / Leaflet)
+   ↓
+Data Visualization (Chart.js)
+   ↓
+PostgreSQL Database
+   ↓
+Scientific glacier datasets
+
+</pre>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Educational purpose of the project</h2>
+
+<p>
+The information presented on this platform consists of
+educational summaries based on public scientific datasets
+and literature dedicated to the study of glaciers and
+Alpine ecosystems.
+</p>
+
+<p>
+Some visualizations are simplified in order to facilitate
+the understanding of climate-related processes.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Project evolution</h2>
+
+<p>
+The project is currently in its <strong>initial version (V1)</strong>
+and will continue to evolve with the progressive integration
+of new datasets, additional glaciers and new scientific
+visualizations.
 </p>
 
 </div>
 
 </div>
+
+
+
+<footer class="footer">
+
+<p>Alpine Glacier Observatory</p>
+<p>Personal project — Thomas Balutch — 2026</p>
+
+</footer>
+
+
+
+<script>
+
+function toggleMenu() {
+
+const menu = document.getElementById("mobileMenu");
+menu.classList.toggle("open");
+
+}
+
+</script>
 
 </body>
 </html>

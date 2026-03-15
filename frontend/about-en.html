@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,60 +14,177 @@
 
 <body>
 
+<!-- BURGER MENU -->
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index-en.html">Home</a>
+<a href="stats-en.html">Statistics</a>
+<a href="empreinte-en.html">Carbon footprint</a>
+<a href="faune-en.html">Alpine wildlife</a>
+<a href="about-en.html">About</a>
+<a href="sources-en.html">Sources</a>
+
+<hr>
+
+<a href="about.html">FR</a>
+<a href="about-en.html">EN</a>
+
+</nav>
+
+
 <div class="container">
 
 <h1>About the project</h1>
 
-<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap;">
 
-<a class="btn" href="map-en.html">Home</a>
+<div class="card">
 
-<a class="btn" href="stats-en.html">Statistics</a>
+<h2>Project overview</h2>
 
-<a class="btn" href="empreinte-en.html">Carbon impact</a>
+<p>
+The Alpine Glacier Observatory is an educational platform designed
+to explore the location, characteristics and evolution of several
+glaciers located in the Alpine mountain range.
+</p>
 
-<a class="btn" href="faune-en.html">Alpine wildlife</a>
+<p>
+The platform provides an interactive visualization of glaciers
+through maps, indicators and charts that help better understand
+how these sensitive environments evolve in response to climate change.
+</p>
 
-<a class="btn" href="about-en.html">About</a>
-
-<a class="btn" href="sources-en.html">Sources</a>
+<p>
+Glaciers are major indicators of climate evolution. Their progressive
+retreat observed for more than a century in the Alps represents
+one of the most visible signs of global warming.
+</p>
 
 </div>
 
 
 <div class="card">
 
-<h2>The project</h2>
+<h2>Scientific context</h2>
 
 <p>
-This website is an educational platform dedicated to Alpine glaciers.
-It allows users to visualize their location, their evolution and
-the impacts of climate change.
+Alpine glaciers have been scientifically monitored since the end
+of the 19th century. Glaciological observations show a progressive
+reduction in the surface area and volume of many European glaciers.
 </p>
-
-<h2>Data sources</h2>
 
 <p>
-Glacier data come from scientific databases such as
-GLIMS and WGMS. These sources make it possible to
-observe the evolution of glacier surface areas over more than a century.
+These changes influence several aspects of mountain environments:
 </p>
 
-<h2>Technologies</h2>
+<ul>
+
+<li>water resources</li>
+<li>Alpine landscapes</li>
+<li>high-altitude ecosystems</li>
+<li>natural hazards related to glacial environments</li>
+
+</ul>
 
 <p>
-The website uses modern web technologies:
-HTML, CSS and JavaScript.
-Leaflet is used for interactive mapping
-and Chart.js for data visualization.
+The platform aims to provide an educational representation
+of these phenomena through interactive tools accessible
+to the general public.
 </p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Scientific data sources</h2>
+
+<p>
+The glacier data used in this project come from recognized
+scientific databases and glaciological inventories.
+They make it possible to observe glacier evolution over
+several decades.
+</p>
+
+<p>
+Main sources include:
+</p>
+
+<ul>
+
+<li>GLIMS — Global Land Ice Measurements from Space</li>
+<li>WGMS — World Glacier Monitoring Service</li>
+<li>Alpine glacier inventories</li>
+<li>Scientific publications on the cryosphere</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>Technical architecture</h2>
+
+<p>
+The project relies on a simple web architecture allowing
+environmental and glaciological data to be visualized
+through an interactive cartographic interface.
+</p>
+
+<p>
+The infrastructure is containerized in order to facilitate
+deployment and reproducibility of the application environment.
+</p>
+
+<p>
+Services are orchestrated using <strong>Docker Compose</strong>,
+including a web server and a relational database.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Technologies used</h2>
+
+<ul>
+
+<li>HTML5 / CSS3</li>
+<li>JavaScript</li>
+<li>Leaflet — interactive mapping</li>
+<li>Chart.js — data visualization</li>
+<li>Docker / Docker Compose</li>
+<li>PostgreSQL — database</li>
+
+</ul>
+
+<p>
+The PostgreSQL database allows the storage of glacier information,
+their characteristics and certain time series describing
+glaciological evolution.
+</p>
+
+</div>
+
+
+<div class="card">
 
 <h2>Educational objective</h2>
 
 <p>
-The goal is to make scientific data about Alpine glaciers
-accessible to the general public and to raise awareness
-of the impacts of climate change on glaciers and alpine ecosystems.
+The objective of this project is to make scientific data
+more accessible through interactive tools allowing users
+to explore Alpine glaciers and their evolution.
+</p>
+
+<p>
+The platform also aims to raise awareness about the impacts
+of climate change on mountain environments and on biodiversity
+associated with Alpine ecosystems.
 </p>
 
 </div>
@@ -77,29 +195,29 @@ of the impacts of climate change on glaciers and alpine ecosystems.
 <h2>Project author</h2>
 
 <p>
-This website was developed by <strong>Thomas Balutch</strong>,
-Linux systems administrator with a DevOps orientation
-and passionate about alpine environments.
+This project was designed and developed by
+<strong>Thomas Balutch</strong>, a Linux systems administrator
+with a DevOps orientation, working on technical infrastructures
+and open-source environments for web applications.
 </p>
 
 <p>
-A mountain enthusiast who loves high-altitude landscapes,
-he is particularly interested in the evolution of glaciers
-and the impacts of climate change on alpine ecosystems.
+Passionate about mountain environments and Earth sciences,
+he is particularly interested in the evolution of Alpine glaciers
+and the impacts of climate change on high-altitude ecosystems.
 </p>
 
 <p>
 This personal project combines interactive mapping,
-data visualization and web technologies in order
-to make scientific information more accessible
-to the general public.
+data visualization and web technologies in order to
+make scientific information more accessible.
 </p>
 
 <p>
 <strong>Project status:</strong>
-this website is currently in <strong>initial version (V1)</strong>
-and continues to evolve.
-New features and datasets will be progressively added.
+the website is currently in <strong>initial version (V1)</strong>
+and will continue to evolve with the progressive addition
+of new features and datasets.
 </p>
 
 </div>
@@ -113,6 +231,18 @@ New features and datasets will be progressively added.
 <p>Personal project — Thomas Balutch — 2026</p>
 
 </footer>
+
+
+<script>
+
+function toggleMenu() {
+
+const menu = document.getElementById("mobileMenu");
+menu.classList.toggle("open");
+
+}
+
+</script>
 
 </body>
 </html>

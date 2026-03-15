@@ -6,9 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Statistics of European glacier evolution</title>
+<title>Statistics on the Evolution of European Glaciers</title>
 
-<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
@@ -28,6 +27,7 @@ margin:40px 0;
 .container{
 max-width:1100px;
 margin:auto;
+padding:20px;
 }
 
 .card{
@@ -42,115 +42,207 @@ canvas{
 max-width:100%;
 }
 
+/* MENU */
+
+.menu-toggle{
+font-size:28px;
+background:none;
+border:none;
+cursor:pointer;
+margin:15px;
+}
+
+.mobile-menu{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+left:10px;
+background:rgba(0,0,0,0.9);
+padding:15px;
+border-radius:10px;
+z-index:9999;
+}
+
+.mobile-menu a{
+color:white;
+text-decoration:none;
+padding:8px 12px;
+font-size:16px;
+display:block;
+}
+
+.mobile-menu.open{
+display:flex;
+}
+
+/* SCIENTIFIC TEXT */
+
+.chart-section{
+display:grid;
+grid-template-columns:350px 1fr;
+gap:40px;
+align-items:center;
+}
+
+.chart-text{
+font-size:16px;
+line-height:1.7;
+color:#333;
+}
+
+.chart-text h3{
+color:#2c5d7a;
+margin-bottom:10px;
+}
+
+.chart-graph{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<h1>Statistics of European glacier evolution</h1>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-<div style="margin:12px 0; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+<nav id="mobileMenu" class="mobile-menu">
 
-<a href="map-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Home
-</a>
+<a href="index-en.html">Home</a>
+<a href="map-en.html">Map</a>
+<a href="stats-en.html">Statistics</a>
+<a href="empreinte-en.html">Carbon footprint</a>
+<a href="faune-en.html">Alpine wildlife</a>
+<a href="about-en.html">About</a>
+<a href="sources-en.html">Sources</a>
+<hr>
+<a href="stats.html">FR</a>
+<a href="stats-en.html">EN</a>
 
-<a href="stats-en.html"
-style="padding:10px 14px;background:#e2f1ff;border:1px solid #cfe3ff;border-radius:8px;text-decoration:none;">
-Statistics
-</a>
+</nav>
 
-<a href="empreinte-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Carbon impact
-</a>
-
-<a href="faune-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Alpine wildlife
-</a>
-
-<a href="about-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-About
-</a>
-
-<a href="sources-en.html"
-style="padding:10px 14px;background:#f0f0f0;border:1px solid #ddd;border-radius:8px;text-decoration:none;">
-Sources
-</a>
-
-</div>
-
+<h1>Statistics on the Evolution of European Glaciers</h1>
 
 <div class="container">
 
 <div class="card">
-<h3>Current glacier surface</h3>
+
+<div class="chart-section">
+
+<div class="chart-text">
+
+<h3>Current Surface Area of Major Alpine Glaciers</h3>
+
+<p>
+Glacier surface area is a key indicator used to analyse
+the condition of Alpine glaciers. It reflects the balance
+between winter snow accumulation and summer melting.
+</p>
+
+<p>
+This chart compares the current surface area of several
+major glaciers in the European Alps. This comparison helps
+identify the largest glaciers and observe differences
+between Alpine massifs.
+</p>
+
+</div>
+
+<div class="chart-graph">
 <canvas id="chartSurface"></canvas>
 </div>
 
-<div class="card">
-<h3>Glacier surface evolution</h3>
-<canvas id="chartEvolution"></canvas>
+</div>
+
 </div>
 
 <div class="card">
-<h3>Average glacier altitude</h3>
+
+<div class="chart-section">
+
+<div class="chart-text">
+
+<h3>Historical Evolution of Glacier Surface Area</h3>
+
+<p>
+Changes in glacier surface area are among the most reliable
+indicators for analysing the impact of climate change
+in high mountain regions.
+</p>
+
+<p>
+Since the end of the Little Ice Age in the 19th century,
+most Alpine glaciers have experienced a progressive retreat
+linked to increasing temperatures and changes in
+precipitation patterns.
+</p>
+
+<p>
+This chart shows the gradual reduction in the surface area
+of a representative Alpine glacier between 1850 and today,
+illustrating a continuous trend of glacier mass loss.
+</p>
+
+</div>
+
+<div class="chart-graph">
+<canvas id="chartEvolution"></canvas>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="chart-section">
+
+<div class="chart-text">
+
+<h3>Average Altitude of Major Alpine Glaciers</h3>
+
+<p>
+The average altitude of a glacier plays a major role
+in its resistance to climate change. Glaciers located
+at higher elevations benefit from lower temperatures
+and greater snow accumulation.
+</p>
+
+<p>
+Conversely, glaciers located at lower elevations
+are more exposed to summer melting events and
+climatic variations.
+</p>
+
+<p>
+This chart compares the average altitude of several
+major glaciers in the European Alps in order to
+illustrate altitude differences between Alpine massifs.
+</p>
+
+</div>
+
+<div class="chart-graph">
 <canvas id="chartAltitude"></canvas>
 </div>
 
 </div>
 
+</div>
+
+</div>
 
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
 
-/* ALTITUDE */
+/* SURFACE */
 
-const altitudeCtx = document.getElementById("chartAltitude");
-
-if(altitudeCtx){
-
-new Chart(altitudeCtx,{
-
-type:"bar",
-
-data:{
-labels:[
-"Mer de Glace (France)",
-"Aletsch (Switzerland)",
-"Pasterze (Austria)",
-"Blaueis (Germany)",
-"Ghiacciaio del Forni (Italy)"
-],
-
-datasets:[{
-label:"Altitude (m)",
-data:[2500,2300,2100,2400,3650],
-backgroundColor:"#4da3ff"
-}]
-},
-
-options:{
-responsive:true
-}
-
-});
-
-}
-
-
-/* CURRENT SURFACE */
-
-const surfaceCtx = document.getElementById("chartSurface");
-
-if(surfaceCtx){
-
-new Chart(surfaceCtx,{
+new Chart(document.getElementById("chartSurface"),{
 
 type:"bar",
 
@@ -170,22 +262,14 @@ backgroundColor:"#3fe02e"
 }]
 },
 
-options:{
-responsive:true
-}
+options:{responsive:true}
 
 });
-
-}
 
 
 /* EVOLUTION */
 
-const evolutionCtx = document.getElementById("chartEvolution");
-
-if(evolutionCtx){
-
-new Chart(evolutionCtx,{
+new Chart(document.getElementById("chartEvolution"),{
 
 type:"line",
 
@@ -196,21 +280,50 @@ datasets:[{
 label:"Surface (km²)",
 data:[40,35,30,27,24],
 borderColor:"#2c7ed6",
-backgroundColor:"rgba(28,126,214,0.2)",
+backgroundColor:"rgba(44,126,214,0.2)",
 fill:true,
 tension:0.3
 }]
 },
 
-options:{
-responsive:true
-}
+options:{responsive:true}
 
 });
 
-}
+
+/* ALTITUDE */
+
+new Chart(document.getElementById("chartAltitude"),{
+
+type:"bar",
+
+data:{
+labels:[
+"Mer de Glace (France)",
+"Aletsch (Switzerland)",
+"Pasterze (Austria)",
+"Blaueis (Germany)",
+"Ghiacciaio del Forni (Italy)"
+],
+
+datasets:[{
+label:"Altitude (m)",
+data:[2500,2300,2100,2400,3650],
+backgroundColor:"#4da3ff"
+}]
+},
+
+options:{responsive:true}
 
 });
+
+});
+
+
+function toggleMenu() {
+const menu = document.getElementById("mobileMenu");
+menu.classList.toggle("open");
+}
 
 </script>
 
