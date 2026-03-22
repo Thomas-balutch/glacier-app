@@ -464,7 +464,22 @@ height: 320px;
 width: 100%;
 margin-top: 8px;
 }
+.chart-section{
+grid-template-columns:1fr;
+gap:20px;
+}
 
+.chart-graph{
+height:380px;
+}
+
+@media (max-width:768px){
+
+.chart-graph{
+height:480px;
+}
+
+}
 /* champs formulaire */
 
 input, select {
@@ -474,7 +489,7 @@ font-size: 16px;
 /* graphiques */
 
 .card canvas {
-height: 180px !important;
+height:auto !important;
 }
 
 }
@@ -509,6 +524,13 @@ font-family:Inter, Arial, sans-serif;
 background:#f4f6f8;
 margin:0;
 }
+.chart-graph{
+height:380px;
+}
+
+.chart-graph canvas{
+height:100% !important;
+}
 #map{
 border-radius:8px;
 margin-top:20px;
@@ -525,7 +547,7 @@ text-align:center;
 }
 .chart-section{
 display:grid;
-grid-template-columns:350px 1fr;
+grid-template-columns:420px 1fr;
 gap:40px;
 align-items:center;
 }
@@ -540,7 +562,6 @@ line-height:1.7;
 color:#333;
 }
 
-
 .chart-text h3{
 color:#2c5d7a;
 margin-bottom:10px;
@@ -551,6 +572,9 @@ background:white;
 padding:20px;
 border-radius:10px;
 box-shadow:0 4px 15px rgba(0,0,0,0.08);
+position:relative;
+height:320px;
+width:100%;
 }
 .menu-toggle{
 position:fixed;

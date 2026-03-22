@@ -18,6 +18,11 @@ new Chart(document.getElementById('altitudeChart'), {
 
     }]
 
+  },
+
+  options:{
+    responsive:true,
+    maintainAspectRatio:false
   }
 
 });
@@ -43,6 +48,11 @@ new Chart(document.getElementById('surfaceChart'), {
 
     }]
 
+  },
+
+  options:{
+    responsive:true,
+    maintainAspectRatio:false
   }
 
 });
@@ -70,7 +80,11 @@ new Chart(document.getElementById('evolutionChart'), {
 
     }]
 
+  },
+
+  options:{
+    responsive:true,
+    maintainAspectRatio:false
   }
 
 });
-
