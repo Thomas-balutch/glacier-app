@@ -24,22 +24,29 @@
   grid-column: auto;
 }
 
-/* taille standard des graphiques */
-.card canvas {
-  width: 100% !important;
-  height: 200px !important;
+.chart-graph{
+position:relative;
+height:320px;
+width:100%;
+}
+@media (max-width:768px){
+
+.chart-section{
+grid-template-columns:1fr;
+gap:20px;
 }
 
+.chart-graph{
+height:420px;
+}
+
+}
 /* graphique évolution : plus large mais pas trop haut */
 /* graphique évolution : taille contrôlée */
 .card-wide {
   grid-column: auto;
 }
 
-.card-wide canvas {
-  height: 180px !important;
-  max-height: 180px !important;
-}
 
 .muted {
   color: #777;
@@ -411,86 +418,83 @@ cursor: pointer;
    RESPONSIVE MOBILE
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 900px){
 
-  .faune-grid {
-    grid-template-columns: 1fr;
-  }
+.faune-grid{
+grid-template-columns:1fr;
+}
 
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
+.dashboard-grid{
+grid-template-columns:1fr;
+}
 
-  .kpi {
-    grid-template-columns: 1fr;
-  }
+.kpi{
+grid-template-columns:1fr;
+}
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
+.grid{
+grid-template-columns:1fr;
+}
 
 }
+
 /* ===== MOBILE TELEPHONE ===== */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-.container {
-padding: 12px;
+body{
+padding-top:80px;
 }
 
-h1 {
-font-size: 24px;
 }
 
-h2 {
-font-size: 20px;
+h1{
+font-size:24px;
 }
 
-.card {
-padding: 16px;
+h2{
+font-size:20px;
 }
 
-.box {
-padding: 12px;
+.card{
+padding:16px;
 }
 
-#map {
-height: 320px;
+.box{
+padding:12px;
 }
 
-/* boutons plus grands pour mobile */
-
-.btn {
-width: 100%;
-margin-top: 8px;
+#map{
+height:320px;
 }
+
+/* boutons */
+
+.btn{
+width:100%;
+margin-top:8px;
+}
+
+/* graphique mobile */
+
 .chart-section{
 grid-template-columns:1fr;
 gap:20px;
 }
 
 .chart-graph{
-height:380px;
-}
-
-@media (max-width:768px){
-
-.chart-graph{
 height:480px;
 }
 
-}
 /* champs formulaire */
 
-input, select {
-font-size: 16px;
+input, select{
+font-size:16px;
+}
+
 }
 
 /* graphiques */
-
-.card canvas {
-height:auto !important;
-}
 
 }
 .footer {
@@ -523,14 +527,14 @@ body{
 font-family:Inter, Arial, sans-serif;
 background:#f4f6f8;
 margin:0;
+padding-top:60px;
 }
-.chart-graph{
-height:380px;
+h1{
+text-align:center;
+margin-top:70px;
+padding-left:50px;
 }
 
-.chart-graph canvas{
-height:100% !important;
-}
 #map{
 border-radius:8px;
 margin-top:20px;

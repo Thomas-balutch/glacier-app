@@ -76,7 +76,7 @@ display:block;
 display:flex;
 }
 
-/* SCIENTIFIC TEXT */
+/* TEXT + GRAPH */
 
 .chart-section{
 display:grid;
@@ -102,6 +102,21 @@ padding:20px;
 border-radius:10px;
 }
 
+/* MOBILE */
+
+@media (max-width:900px){
+
+.chart-section{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.chart-graph{
+height:350px;
+}
+
+}
+
 </style>
 
 </head>
@@ -112,16 +127,15 @@ border-radius:10px;
 
 <nav id="mobileMenu" class="mobile-menu">
 
-<a href="index-en.html">Home</a>
-<a href="map-en.html">Map</a>
-<a href="stats-en.html">Statistics</a>
+<a href="index.html">Home</a>
+<a href="map.html">Map</a>
+<a href="stats.html">Statistics</a>
 <a href="empreinte-en.html">Carbon footprint</a>
-<a href="faune-en.html">Alpine wildlife</a>
-<a href="about-en.html">About</a>
-<a href="sources-en.html">Sources</a>
-<hr>
-<a href="stats.html">FR</a>
-<a href="stats-en.html">EN</a>
+<a href="faune.html">Alpine fauna</a>
+<a href="about.html">About</a>
+<a href="sources.html">Sources</a>
+<a href="map.html">FR</a>
+<a href="map-en.html">EN</a>
 
 </nav>
 
@@ -135,7 +149,7 @@ border-radius:10px;
 
 <div class="chart-text">
 
-<h3>Current Surface Area of Major Alpine Glaciers</h3>
+<h3>Current surface area of major Alpine glaciers</h3>
 
 <p>
 Glacier surface area is a key indicator used to analyse
@@ -166,25 +180,24 @@ between Alpine massifs.
 
 <div class="chart-text">
 
-<h3>Historical Evolution of Glacier Surface Area</h3>
+<h3>Historical evolution of glacier surface area</h3>
 
 <p>
 Changes in glacier surface area are among the most reliable
-indicators for analysing the impact of climate change
-in high mountain regions.
+indicators for analysing the impact of climate change in
+high mountain regions.
 </p>
 
 <p>
 Since the end of the Little Ice Age in the 19th century,
 most Alpine glaciers have experienced a progressive retreat
-linked to increasing temperatures and changes in
-precipitation patterns.
+linked to rising temperatures and changes in precipitation patterns.
 </p>
 
 <p>
-This chart shows the gradual reduction in the surface area
-of a representative Alpine glacier between 1850 and today,
-illustrating a continuous trend of glacier mass loss.
+This chart illustrates the continuous reduction in the
+surface area of a representative Alpine glacier
+between 1850 and today.
 </p>
 
 </div>
@@ -203,33 +216,29 @@ illustrating a continuous trend of glacier mass loss.
 
 <div class="chart-text">
 
-<h3>Average Altitude of Major Alpine Glaciers</h3>
+<h3>Average altitude of major Alpine glaciers</h3>
 
 <p>
-The average altitude of a glacier plays a major role
-in its resistance to climate change. Glaciers located
-at higher elevations benefit from lower temperatures
-and greater snow accumulation.
+The average altitude of a glacier plays a major role in
+its resistance to climate change. Glaciers located at
+higher altitudes benefit from lower temperatures and
+greater snow accumulation.
 </p>
 
 <p>
-Conversely, glaciers located at lower elevations
-are more exposed to summer melting events and
-climatic variations.
+Conversely, glaciers located at lower altitudes are
+more exposed to summer melting and climate variations.
 </p>
 
 <p>
 This chart compares the average altitude of several
-major glaciers in the European Alps in order to
-illustrate altitude differences between Alpine massifs.
+major glaciers in the European Alps.
 </p>
 
 </div>
 
 <div class="chart-graph">
 <canvas id="chartAltitude"></canvas>
-</div>
-
 </div>
 
 </div>
@@ -262,10 +271,12 @@ backgroundColor:"#3fe02e"
 }]
 },
 
-options:{responsive:true}
+options:{
+responsive:true,
+maintainAspectRatio:false
+}
 
 });
-
 
 /* EVOLUTION */
 
@@ -286,10 +297,12 @@ tension:0.3
 }]
 },
 
-options:{responsive:true}
+options:{
+responsive:true,
+maintainAspectRatio:false
+}
 
 });
-
 
 /* ALTITUDE */
 
@@ -313,12 +326,18 @@ backgroundColor:"#4da3ff"
 }]
 },
 
-options:{responsive:true}
+options:{
+responsive:true,
+maintainAspectRatio:false
+}
 
 });
 
 });
 
+</script>
+
+<script>
 
 function toggleMenu() {
 const menu = document.getElementById("mobileMenu");
