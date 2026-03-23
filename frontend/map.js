@@ -84,16 +84,15 @@ function updateUI(props) {
       labels: [getGlacierName(props)],
       datasets: [{
         label: "Altitude moyenne (m)",
-        data: [props.Zmed || 0]
+        data: [props.Zmed || 0],
+        backgroundColor: "#2a6f97"
       }]
     },
     options: {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false }
-  }
-}
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } }
+    }
   });
 
   // -------- DASHBOARD 2 : SURFACE --------
@@ -105,17 +104,15 @@ function updateUI(props) {
       labels: [getGlacierName(props)],
       datasets: [{
         label: "Surface (km²)",
-        data: [props.Area || 0]
+        data: [props.Area || 0],
+        backgroundColor: "#468faf"
       }]
     },
     options: {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false }
-  }
-}
-
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } }
+    }
   });
 }
 
@@ -131,86 +128,52 @@ fetch("glaciers_centraleurope.geojson")
 
       onEachFeature: (feature, layer) => {
 
-  const props = feature.properties;
+        const props = feature.properties;
 
-  // Nom du glacier
-  // Code RGI
-const rgi =
-  props.RGIId ||
-  props.RGID ||
-  props.rgi_id ||
-  null;
+        const rgi =
+          props.RGIId ||
+          props.RGID ||
+          props.rgi_id ||
+          null;
 
-// Nom du glacier
-const name =
-  props.Name ||
-  props.NAME ||
-  props.glac_name ||
-  props.GLAC_NAME ||
-  props.Glacier ||
-  (rgi ? `Glacier ${rgi}` : "Glacier sans nom");
+        const name =
+          props.Name ||
+          props.NAME ||
+          props.glac_name ||
+          props.GLAC_NAME ||
+          props.Glacier ||
+          (rgi ? `Glacier ${rgi}` : "Glacier sans nom");
 
-  // Tooltip au survol (NOM + RGI UNIQUEMENT)
-  layer.bindTooltip(
-    `<strong>${name}</strong><br>${rgi ?? ""}`,
-    {
-      sticky: true,
-      opacity: 0.9
-    }
-  );
+        layer.bindTooltip(
+          `<strong>${name}</strong><br>${rgi ?? ""}`,
+          { sticky: true, opacity: 0.9 }
+        );
 
-  // Clic (logique existante)
-  layer.on("click", () => {
-    console.log("Glacier cliqué - RGIId :", rgi);
+        layer.on("click", () => {
+          console.log("Glacier cliqué - RGIId :", rgi);
 
-    updateUI(props);
+          updateUI(props);
 
-    if (rgi) {
-      updateDashboardEvolution(rgi);
-    } else {
-      console.warn("Aucun RGI pour ce glacier");
-      updateDashboardEvolution(null);
-    }
+          if (rgi) {
+            updateDashboardEvolution(rgi);
+          } else {
+            console.warn("Aucun RGI pour ce glacier");
+            updateDashboardEvolution(null);
+          }
 
-    lastClickedLayer = layer;
-  });
-}
+          lastClickedLayer = layer;
+        });
+      }
 
     }).addTo(map);
-
-// === CHARGEMENT DES DONNÉES D'ÉVOLUTION (fichier 1 + fichier 2) ===
-let evolutionData = {};
-
-fetch('evolution_glaciers.json', { cache: 'no-cache' })
-  .then(response => {
-    if (!response.ok) throw new Error('Fichier 1 non trouvé: ' + response.status);
-    return response.json();
-  })
-  .then(data1 => {
-    evolutionData = data1; // fichier 1 chargé
-
-    fetch('evolution_glaciers_2.json', { cache: 'no-cache' })
-      .then(response => {
-        if (!response.ok) {
-          console.warn('Fichier 2 non trouvé (404 ou autre): ' + response.status + ' → on continue avec fichier 1');
-          return {}; // continue sans fichier 2
-        }
-        return response.json();
-      })
-      .then(data2 => {
-        Object.assign(evolutionData, data2);
-        console.log("Évolution chargée :", Object.keys(evolutionData).length, "glaciers au total");
-      })
-      .catch(err => console.error("Erreur chargement fichier 2 :", err));
-  })
-  .catch(err => console.error("Erreur chargement fichier 1 :", err));
 
   })
   .catch(err => {
     console.error("Erreur chargement GeoJSON :", err);
   });
+
 // ==========================
-// DASHBOARD — ÉVOLUTION (TOUS GLACIERS)
+// DASHBOARD — ÉVOLUTION
 // ==========================
 function updateDashboardEvolution(rgi) {
 
@@ -218,10 +181,10 @@ function updateDashboardEvolution(rgi) {
 
   const title = document.getElementById("lineTitle");
   const hint  = document.getElementById("lineHint");
-  const canvas = document.getElementById("chartline");
+  const canvas = document.getElementById("chartLine");
 
   if (!canvas) {
-    console.error("Canvas #chartline introuvable");
+    console.error("Canvas #chartLine introuvable");
     return;
   }
 
@@ -254,11 +217,15 @@ function updateDashboardEvolution(rgi) {
         datasets: [{
           label: g.unit,
           data: g.values,
-          fill: true
+          fill: true,
+          borderColor: "#2a6f97",
+          backgroundColor: "rgba(42,111,151,0.2)",
+          tension: 0.3
         }]
       },
       options: {
-        responsive: true
+        responsive: true,
+        maintainAspectRatio: false
       }
     }
   );

@@ -1,7 +1,8 @@
 // --- CHART 1 : Altitude par glacier ---
 const ctxAltitude = document.getElementById("chartAltitude");
+let chartAltitude = null;
 if (ctxAltitude) {
-    new Chart(ctxAltitude, {
+    chartAltitude = new Chart(ctxAltitude, {
         type: "bar",
         data: {
             labels: ["Glacier 1", "Glacier 2", "Glacier 3"],
@@ -13,6 +14,7 @@ if (ctxAltitude) {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: { legend: { display: false } }
         }
     });
@@ -20,8 +22,9 @@ if (ctxAltitude) {
 
 // --- CHART 2 : Surface actuelle ---
 const ctxSurface = document.getElementById("chartSurface");
+let chartSurface = null;
 if (ctxSurface) {
-    new Chart(ctxSurface, {
+    chartSurface = new Chart(ctxSurface, {
         type: "bar",
         data: {
             labels: ["Glacier 1", "Glacier 2", "Glacier 3"],
@@ -33,6 +36,7 @@ if (ctxSurface) {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: { legend: { display: false } }
         }
     });
@@ -40,8 +44,9 @@ if (ctxSurface) {
 
 // --- CHART 3 : Évolution ---
 const ctxEvolution = document.getElementById("chartEvolution");
+let chartEvolution = null;
 if (ctxEvolution) {
-    new Chart(ctxEvolution, {
+    chartEvolution = new Chart(ctxEvolution, {
         type: "line",
         data: {
             labels: ["1850", "1900", "1950", "2000", "2025"],
@@ -56,6 +61,7 @@ if (ctxEvolution) {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: { legend: { display: false } }
         }
     });

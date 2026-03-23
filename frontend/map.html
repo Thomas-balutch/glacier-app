@@ -21,63 +21,52 @@ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <body>
 
 <!-- HERO IMAGE -->
-
 <div class="hero">
+    <img src="images/glacier-alpes.jpg" alt="Glacier des Alpes">
 
-<img src="images/glacier-alpes.jpg" alt="Glacier des Alpes">
-
-<div class="hero-text">
-
-<h1>Atlas interactif des glaciers alpins</h1>
-
-<p>
-Explorez les glaciers des Alpes : altitude, surface et évolution
-depuis la fin du XIXᵉ siècle.
-</p>
-
-</div>
-
+    <div class="hero-text">
+        <h1>Atlas interactif des glaciers alpins</h1>
+        <p>
+            Explorez les glaciers des Alpes : altitude, surface et évolution
+            depuis la fin du XIXᵉ siècle.
+        </p>
+    </div>
 </div>
 
 
 <!-- HEADER -->
-
 <header class="header">
 
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="map.html">Carte</a>
+    <a href="stats.html">Statistiques</a>
+    <a href="empreinte.html">Impact carbone</a>
+    <a href="faune.html">Faune alpine</a>
+    <a href="about.html">À propos</a>
+    <a href="sources.html">Sources</a>
 
-<a href="index.html">Accueil</a>
-<a href="map.html">Carte</a>
-<a href="stats.html">Statistiques</a>
-<a href="empreinte.html">Impact carbone</a>
-<a href="faune.html">Faune alpine</a>
-<a href="about.html">À propos</a>
-<a href="sources.html">Sources</a>
+    <hr>
 
-<hr>
-
-<a href="map.html">FR</a>
-<a href="map-en.html">EN</a>
-
+    <a href="map.html">FR</a>
+    <a href="map-en.html">EN</a>
 </nav>
 
 <h2>Exploration cartographique des glaciers alpins</h2>
 
 <p class="subtitle">
-Clique sur un glacier : la fiche et les dashboards se mettent à jour.
+    Clique sur un glacier : la fiche et les dashboards se mettent à jour.
 </p>
 
 </header>
 
 
 <!-- CONTENU PRINCIPAL -->
-
 <main class="container">
 
 <!-- CONTEXTE SCIENTIFIQUE -->
-
 <div class="card">
 
 <h2>Contexte scientifique</h2>
@@ -104,15 +93,12 @@ Une extension future pourra intégrer d'autres glaciers alpins européens.
 
 
 <!-- CARTE -->
-
 <div id="map"></div>
 
 
 <section class="panel">
 
-
 <!-- FICHE GLACIER -->
-
 <div class="card card-wide" id="glacier-card">
 
 <h2>Fiche glacier</h2>
@@ -122,55 +108,50 @@ Clique sur un glacier sur la carte.
 </p>
 
 <div class="info">
-<span class="label">Nom :</span>
-<span id="g-name">—</span>
+    <span class="label">Nom :</span>
+    <span id="g-name">—</span>
 </div>
 
 <div class="info">
-<span class="label">Pays :</span>
-<span id="g-country">—</span>
+    <span class="label">Pays :</span>
+    <span id="g-country">—</span>
 </div>
 
 <div class="info">
-<span class="label">Altitude moyenne :</span>
-<span id="g-alt">—</span>
+    <span class="label">Altitude moyenne :</span>
+    <span id="g-alt">—</span>
 </div>
 
 <div class="info">
-<span class="label">Surface :</span>
-<span id="g-area">—</span>
+    <span class="label">Surface :</span>
+    <span id="g-area">—</span>
 </div>
 
 </div>
 
 
 <!-- GRAPHIQUES -->
-
 <div class="grid">
 
-<div class="card">
-<h3>Altitude (Top 10 France)</h3>
-<canvas id="chartAlt"></canvas>
-</div>
+    <div class="card">
+        <h3>Altitude (Top 10 France)</h3>
+        <canvas id="chartAlt"></canvas>
+    </div>
 
+    <div class="card">
+        <h3>Surface (Top 10 France)</h3>
+        <canvas id="chartArea"></canvas>
+    </div>
 
-<div class="card">
-<h3>Surface (Top 10 France)</h3>
-<canvas id="chartArea"></canvas>
-</div>
+    <div class="card card-wide evolution-card">
+        <h3 id="lineTitle">Évolution</h3>
 
+        <div class="chart-wrapper">
+            <canvas id="chartLine"></canvas>
+        </div>
 
-<div class="card card-wide evolution-card">
-
-<h3 id="lineTitle">Évolution</h3>
-
-<div class="chart-wrapper">
-<canvas id="chartline"></canvas>
-</div>
-
-<p id="lineHint" class="muted"></p>
-
-</div>
+        <p id="lineHint" class="muted"></p>
+    </div>
 
 </div>
 
@@ -180,28 +161,22 @@ Clique sur un glacier sur la carte.
 
 
 <!-- SCRIPTS -->
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
 <script src="evolution.js"></script>
-
 <script src="map.js"></script>
-
 
 <footer class="footer">
 <p>Observatoire des glaciers alpins</p>
 <p>Projet personnel — Thomas Balutch — 2026</p>
 </footer>
 
-
 <script>
 function toggleMenu(){
-document.getElementById("mobileMenu").classList.toggle("open");
+    document.getElementById("mobileMenu").classList.toggle("open");
 }
 </script>
-
 
 </body>
 </html>
