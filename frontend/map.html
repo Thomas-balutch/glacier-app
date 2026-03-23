@@ -134,21 +134,26 @@ Clique sur un glacier sur la carte.
 <div class="grid">
 
     <div class="card">
-        <h3>Altitude (Top 10 France)</h3>
-        <canvas id="chartAlt"></canvas>
-    </div>
+<h3>Altitude (Top 10 France)</h3>
+
+<div class="chart-graph">
+<canvas id="chartAlt"></canvas>
+</div>
+
+</div>
 
     <div class="card">
         <h3>Surface (Top 10 France)</h3>
-        <canvas id="chartArea"></canvas>
-    </div>
+        <div class="chart-graph">
+<canvas id="chartArea"></canvas>
+</div>
 
     <div class="card card-wide evolution-card">
         <h3 id="lineTitle">Évolution</h3>
 
-        <div class="chart-wrapper">
-            <canvas id="chartLine"></canvas>
-        </div>
+        <div class="chart-graph">
+<canvas id="chartLine"></canvas>
+</div>
 
         <p id="lineHint" class="muted"></p>
     </div>
