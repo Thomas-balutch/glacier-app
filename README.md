@@ -1,7 +1,25 @@
-🌍 Glacier Map — Alpine Glacier Visualization Platform
 
+# 🌍 Glacier Map — Alpine Glacier Visualization Platform
 
+![Glacier Map Banner](frontend/glacier-banner.png)
 
+Glacier Map is an experimental scientific web platform designed to visualize and explore the evolution of Alpine glaciers.
+
+The project aims to make glaciological and climate-related data accessible to students, researchers, and the general public through interactive maps and visual dashboards.
+
+---
+
+![Glacier Map](frontend/map.png)
+
+![Altitude](frontend/stats-altitude.png)
+
+![Surface](frontend/stats-surface.png)
+
+![Evolution](frontend/stats-evolution.png)
+
+![Carbon](frontend/carbon.png)
+
+![Fauna](frontend/fauna.png)
 
 
 
