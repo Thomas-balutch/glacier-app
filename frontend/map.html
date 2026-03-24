@@ -8,11 +8,9 @@
 
 <title>Atlas interactif des glaciers alpins</title>
 
-<!-- Leaflet -->
 <link rel="stylesheet"
 href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -20,17 +18,17 @@ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <body>
 
-<!-- HERO IMAGE -->
+<!-- HERO -->
 <div class="hero">
-    <img src="images/glacier-alpes.jpg" alt="Glacier des Alpes">
+<img src="images/glacier-alpes.jpg" alt="Glacier des Alpes">
 
-    <div class="hero-text">
-        <h1>Atlas interactif des glaciers alpins</h1>
-        <p>
-            Explorez les glaciers des Alpes : altitude, surface et évolution
-            depuis la fin du XIXᵉ siècle.
-        </p>
-    </div>
+<div class="hero-text">
+<h1>Atlas interactif des glaciers alpins</h1>
+<p>
+Plateforme d'exploration scientifique des glaciers alpins :
+altitude moyenne, surface glaciaire et évolution depuis la fin du XIXᵉ siècle.
+</p>
+</div>
 </div>
 
 
@@ -40,56 +38,73 @@ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <nav id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Accueil</a>
-    <a href="map.html">Carte</a>
-    <a href="stats.html">Statistiques</a>
-    <a href="empreinte.html">Impact carbone</a>
-    <a href="faune.html">Faune alpine</a>
-    <a href="about.html">À propos</a>
-    <a href="sources.html">Sources</a>
+<a href="index.html">Accueil</a>
+<a href="map.html">Carte</a>
+<a href="stats.html">Statistiques</a>
+<a href="empreinte.html">Impact carbone</a>
+<a href="faune.html">Faune alpine</a>
+<a href="about.html">À propos</a>
+<a href="sources.html">Sources</a>
 
-    <hr>
+<hr>
 
-    <a href="map.html">FR</a>
-    <a href="map-en.html">EN</a>
+<a href="map.html">FR</a>
+<a href="map-en.html">EN</a>
 </nav>
 
 <h2>Exploration cartographique des glaciers alpins</h2>
 
 <p class="subtitle">
-    Clique sur un glacier : la fiche et les dashboards se mettent à jour.
+Clique sur un glacier sur la carte pour afficher ses indicateurs scientifiques.
 </p>
 
 </header>
 
 
-<!-- CONTENU PRINCIPAL -->
 <main class="container">
 
-<!-- CONTEXTE SCIENTIFIQUE -->
+<!-- CONTEXTE -->
 <div class="card">
 
 <h2>Contexte scientifique</h2>
 
 <p>
-Les glaciers alpins constituent des indicateurs sensibles du changement
-climatique. Depuis la fin du XIXe siècle, les observations glaciologiques
-montrent un recul généralisé de nombreux glaciers dans le massif alpin.
+Les glaciers alpins constituent des indicateurs majeurs du changement climatique
+en zone de montagne. Leur évolution est étroitement liée aux variations de
+température et de précipitations, ce qui en fait des marqueurs sensibles
+des transformations climatiques observées depuis la fin du XIXᵉ siècle.
 </p>
 
 <p>
-Cette carte interactive permet d'explorer la localisation de plusieurs
-glaciers et d'accéder à des indicateurs descriptifs tels que l'altitude
-moyenne, la surface glaciaire et l'évolution estimée de leur surface.
+Dans l'ensemble du massif alpin, les observations glaciologiques montrent
+un recul progressif de la majorité des glaciers depuis plus d'un siècle.
+Cette tendance s'est accentuée au cours des dernières décennies sous
+l'effet du réchauffement climatique global.
 </p>
 
 <p>
-Actuellement, la base de données utilisée dans cet observatoire couvre
-les glaciers situés sur le territoire français du massif alpin.
-Une extension future pourra intégrer d'autres glaciers alpins européens.
+La cartographie interactive proposée dans cet atlas permet d'explorer
+plusieurs glaciers alpins et d'accéder à des indicateurs descriptifs
+essentiels :
 </p>
 
-</div>
+<ul class="science-list">
+<li><b>Altitude moyenne</b> du glacier</li>
+<li><b>Surface glaciaire estimée</b> en kilomètres carrés</li>
+<li><b>Évolution temporelle</b> de la surface glaciaire depuis le XIXᵉ siècle</li>
+</ul>
+
+<p>
+Ces indicateurs permettent d'analyser les dynamiques glaciaires et de
+mieux comprendre l'évolution récente des glaciers alpins dans le contexte
+du changement climatique.
+</p>
+
+<p class="muted">
+Les données utilisées dans cet observatoire couvrent actuellement
+plusieurs glaciers situés dans les Alpes françaises. Une extension future
+pourra intégrer d'autres glaciers du massif alpin européen.
+</p>
 
 
 <!-- CARTE -->
@@ -98,65 +113,108 @@ Une extension future pourra intégrer d'autres glaciers alpins européens.
 
 <section class="panel">
 
+
 <!-- FICHE GLACIER -->
 <div class="card card-wide" id="glacier-card">
 
 <h2>Fiche glacier</h2>
 
 <p class="muted">
-Clique sur un glacier sur la carte.
+Sélectionnez un glacier sur la carte pour afficher ses caractéristiques.
 </p>
 
 <div class="info">
-    <span class="label">Nom :</span>
-    <span id="g-name">—</span>
+<span class="label">Nom :</span>
+<span id="g-name">—</span>
 </div>
 
 <div class="info">
-    <span class="label">Pays :</span>
-    <span id="g-country">—</span>
+<span class="label">Pays :</span>
+<span id="g-country">—</span>
 </div>
 
 <div class="info">
-    <span class="label">Altitude moyenne :</span>
-    <span id="g-alt">—</span>
+<span class="label">Altitude moyenne :</span>
+<span id="g-alt">—</span>
 </div>
 
 <div class="info">
-    <span class="label">Surface :</span>
-    <span id="g-area">—</span>
+<span class="label">Surface actuelle :</span>
+<span id="g-area">—</span>
 </div>
 
 </div>
 
 
-<!-- GRAPHIQUES -->
+<!-- DASHBOARDS -->
+
 <div class="grid">
 
-    <div class="card">
-<h3>Altitude (Top 10 France)</h3>
+<!-- ALTITUDE -->
+
+<div class="card">
+
+<h3>Altitude moyenne du glacier</h3>
+
+<p class="chart-description">
+Altitude moyenne estimée du glacier sélectionné. Cette valeur permet
+de situer le glacier dans le contexte altitudinal des glaciers alpins français.
+</p>
 
 <div class="chart-graph">
 <canvas id="chartAlt"></canvas>
 </div>
 
+<p class="chart-foot">
+Indicateur : altitude moyenne (mètres).
+</p>
+
 </div>
 
-    <div class="card">
-        <h3>Surface (Top 10 France)</h3>
-        <div class="chart-graph">
+
+<!-- SURFACE -->
+
+<div class="card">
+
+<h3>Surface glaciaire</h3>
+
+<p class="chart-description">
+Comparaison de la surface du glacier sélectionné avec les principales
+surfaces glaciaires observées dans le massif alpin français.
+</p>
+
+<div class="chart-graph">
 <canvas id="chartArea"></canvas>
 </div>
 
-    <div class="card card-wide evolution-card">
-        <h3 id="lineTitle">Évolution</h3>
+<p class="chart-foot">
+Indicateur : surface glaciaire estimée (km²).
+</p>
 
-        <div class="chart-graph">
+</div>
+
+
+<!-- EVOLUTION -->
+
+<div class="card card-wide evolution-card">
+
+<h3 id="lineTitle">Évolution historique du glacier</h3>
+
+<p class="chart-description">
+Évolution estimée de la surface glaciaire depuis la fin du XIXᵉ siècle.
+La tendance générale observée dans les Alpes montre un recul
+progressif de la plupart des glaciers alpins.
+</p>
+
+<div class="chart-graph">
 <canvas id="chartLine"></canvas>
 </div>
 
-        <p id="lineHint" class="muted"></p>
-    </div>
+<p id="lineHint" class="chart-foot">
+Source : données glaciologiques historiques et estimations récentes.
+</p>
+
+</div>
 
 </div>
 
@@ -165,12 +223,12 @@ Clique sur un glacier sur la carte.
 </main>
 
 
-<!-- SCRIPTS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
 <script src="evolution.js"></script>
 <script src="map.js"></script>
+
 
 <footer class="footer">
 <p>Observatoire des glaciers alpins</p>
@@ -179,7 +237,7 @@ Clique sur un glacier sur la carte.
 
 <script>
 function toggleMenu(){
-    document.getElementById("mobileMenu").classList.toggle("open");
+document.getElementById("mobileMenu").classList.toggle("open");
 }
 </script>
 

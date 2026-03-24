@@ -12,7 +12,9 @@
 
 </head>
 
+
 <body>
+
 
 <!-- BURGER MENU -->
 
@@ -22,7 +24,7 @@
 
 <a href="index-en.html">Home</a>
 <a href="stats-en.html">Statistics</a>
-<a href="empreinte-en.html">Carbon footprint</a>
+<a href="empreinte-en.html">Carbon impact</a>
 <a href="faune-en.html">Alpine wildlife</a>
 <a href="about-en.html">About</a>
 <a href="sources-en.html">Sources</a>
@@ -30,14 +32,40 @@
 <hr>
 
 <a href="about.html">FR</a>
-<a href="about-en.html">EN</a>
+<a href="#">EN</a>
 
 </nav>
 
 
 <div class="container">
 
+
 <h1>About the project</h1>
+
+
+
+<div class="card">
+
+<h2>Why an Alpine Glacier Observatory?</h2>
+
+<p>
+Alpine glaciers are among the most visible indicators of climate change in Europe. Since the end of the 19th century, most glaciers in the Alpine massif have experienced a significant reduction in both surface area and volume.
+</p>
+
+<p>
+This rapid evolution profoundly transforms high-mountain landscapes and affects many natural balances: water availability, alpine ecosystem dynamics, stability of glacial environments and the evolution of natural habitats.
+</p>
+
+<p>
+Although a large amount of scientific data is produced by glaciological monitoring programs, this information often remains scattered across technical publications and specialized databases that are not easily accessible to the general public.
+</p>
+
+<p>
+The Alpine Glacier Observatory was designed as an educational tool aimed at making this information easier to understand through interactive visualizations and accessible educational content.
+</p>
+
+</div>
+
 
 
 <div class="card">
@@ -45,24 +73,29 @@
 <h2>Project overview</h2>
 
 <p>
-The Alpine Glacier Observatory is an educational platform designed
-to explore the location, characteristics and evolution of several
-glaciers located in the Alpine mountain range.
+The Alpine Glacier Observatory is an educational platform that allows users to explore the location, characteristics and evolution of several glaciers located across the Alpine massif.
 </p>
 
 <p>
-The platform provides an interactive visualization of glaciers
-through maps, indicators and charts that help better understand
-how these sensitive environments evolve in response to climate change.
+The website provides several interactive tools that help observe and understand the transformation of glacial environments:
 </p>
 
+<ul>
+
+<li>interactive mapping of Alpine glaciers</li>
+<li>visualization of glaciological data</li>
+<li>simplified indicators of glacier evolution</li>
+<li>educational content about mountain ecosystems</li>
+<li>presentation of emblematic Alpine wildlife species</li>
+
+</ul>
+
 <p>
-Glaciers are major indicators of climate evolution. Their progressive
-retreat observed for more than a century in the Alps represents
-one of the most visible signs of global warming.
+The objective is to provide a pedagogical approach combining scientific data, mapping and graphical visualization in order to improve the understanding of environmental changes occurring in the Alps.
 </p>
 
 </div>
+
 
 
 <div class="card">
@@ -70,46 +103,48 @@ one of the most visible signs of global warming.
 <h2>Scientific context</h2>
 
 <p>
-Alpine glaciers have been scientifically monitored since the end
-of the 19th century. Glaciological observations show a progressive
-reduction in the surface area and volume of many European glaciers.
+Alpine glaciers have been monitored scientifically for more than a century. The first systematic observations date back to the late 19th century and have helped document the long-term evolution of many European glaciers.
 </p>
 
 <p>
-These changes influence several aspects of mountain environments:
+Measurements carried out by international glacier monitoring programs show a general retreat trend affecting the majority of Alpine glaciers throughout the 20th and 21st centuries.
+</p>
+
+<p>
+These transformations have significant consequences for mountain environments:
 </p>
 
 <ul>
 
-<li>water resources</li>
-<li>Alpine landscapes</li>
-<li>high-altitude ecosystems</li>
-<li>natural hazards related to glacial environments</li>
+<li>changes in water resources feeding Alpine rivers</li>
+<li>progressive transformation of high-altitude landscapes</li>
+<li>evolution of Alpine and subalpine ecosystems</li>
+<li>emergence of new natural risks linked to glacial environments</li>
 
 </ul>
 
 <p>
-The platform aims to provide an educational representation
-of these phenomena through interactive tools accessible
-to the general public.
+Understanding these developments has become a major scientific and environmental challenge in the study of mountain regions.
 </p>
 
 </div>
 
 
+
 <div class="card">
 
-<h2>Scientific data sources</h2>
+<h2>Scientific data used</h2>
 
 <p>
-The glacier data used in this project come from recognized
-scientific databases and glaciological inventories.
-They make it possible to observe glacier evolution over
-several decades.
+The information presented in this observatory is based on data from well-established scientific programs in the fields of glaciology and cryosphere research.
 </p>
 
 <p>
-Main sources include:
+These databases make it possible to analyze glacier evolution over several decades using field observations, satellite imagery and glaciological measurements.
+</p>
+
+<p>
+The main sources include:
 </p>
 
 <ul>
@@ -117,11 +152,16 @@ Main sources include:
 <li>GLIMS — Global Land Ice Measurements from Space</li>
 <li>WGMS — World Glacier Monitoring Service</li>
 <li>Alpine glacier inventories</li>
-<li>Scientific publications on the cryosphere</li>
+<li>scientific publications dedicated to the cryosphere</li>
 
 </ul>
 
+<p>
+The information presented on this website is simplified for educational purposes and scientific outreach.
+</p>
+
 </div>
+
 
 
 <div class="card">
@@ -129,22 +169,27 @@ Main sources include:
 <h2>Technical architecture</h2>
 
 <p>
-The project relies on a simple web architecture allowing
-environmental and glaciological data to be visualized
-through an interactive cartographic interface.
+The project is based on a deliberately simple web architecture allowing environmental and glaciological data to be visualized through an interactive cartographic interface.
 </p>
 
 <p>
-The infrastructure is containerized in order to facilitate
-deployment and reproducibility of the application environment.
+The application infrastructure is containerized in order to facilitate deployment and ensure reproducibility of the technical environment used to develop the platform.
 </p>
 
 <p>
-Services are orchestrated using <strong>Docker Compose</strong>,
-including a web server and a relational database.
+Services are orchestrated using <strong>Docker Compose</strong> and include in particular:
 </p>
+
+<ul>
+
+<li>a web server hosting the user interface</li>
+<li>a relational database storing certain glaciological information</li>
+<li>data visualization components</li>
+
+</ul>
 
 </div>
+
 
 
 <div class="card">
@@ -163,12 +208,11 @@ including a web server and a relational database.
 </ul>
 
 <p>
-The PostgreSQL database allows the storage of glacier information,
-their characteristics and certain time series describing
-glaciological evolution.
+These technologies make it possible to build a lightweight and accessible web platform while offering visualization capabilities suitable for environmental data presentation.
 </p>
 
 </div>
+
 
 
 <div class="card">
@@ -176,18 +220,19 @@ glaciological evolution.
 <h2>Educational objective</h2>
 
 <p>
-The objective of this project is to make scientific data
-more accessible through interactive tools allowing users
-to explore Alpine glaciers and their evolution.
+One of the main objectives of this project is to facilitate access to scientific knowledge related to glaciers and Alpine environments.
 </p>
 
 <p>
-The platform also aims to raise awareness about the impacts
-of climate change on mountain environments and on biodiversity
-associated with Alpine ecosystems.
+By combining interactive mapping, data visualization and educational content, the platform aims to provide an accessible approach to better understand the transformations currently affecting high-mountain regions.
+</p>
+
+<p>
+The website also aims to raise awareness of the impacts of climate change on Alpine environments and on the biodiversity associated with these fragile ecosystems.
 </p>
 
 </div>
+
 
 
 <div class="card">
@@ -195,34 +240,31 @@ associated with Alpine ecosystems.
 <h2>Project author</h2>
 
 <p>
-This project was designed and developed by
-<strong>Thomas Balutch</strong>, a Linux systems administrator
-with a DevOps orientation, working on technical infrastructures
-and open-source environments for web applications.
+This project was designed and developed by <strong>Thomas Balutch</strong>, a Linux systems administrator working in infrastructure engineering, automation and open-source technologies used in web environments.
 </p>
 
 <p>
-Passionate about mountain environments and Earth sciences,
-he is particularly interested in the evolution of Alpine glaciers
-and the impacts of climate change on high-altitude ecosystems.
+Alongside his professional work in information technology, he is interested in mountain environments, Alpine geography and the rapid transformations currently affecting glacial regions under the influence of climate change.
 </p>
 
 <p>
-This personal project combines interactive mapping,
-data visualization and web technologies in order to
-make scientific information more accessible.
+The Alpine Glacier Observatory is a personal project exploring how web technologies can be used to represent and explain complex environmental processes through interactive tools.
 </p>
 
 <p>
-<strong>Project status:</strong>
-the website is currently in <strong>initial version (V1)</strong>
-and will continue to evolve with the progressive addition
-of new features and datasets.
+The project follows a scientific outreach approach aimed at making certain information related to glaciology and Alpine ecosystems more accessible to the general public.
+</p>
+
+<p>
+<strong>Project status:</strong> the website is currently in its <strong>initial version (V1)</strong> and will continue evolving with the addition of new datasets, improved visualizations and additional educational content.
 </p>
 
 </div>
 
+
+
 </div>
+
 
 
 <footer class="footer">
@@ -233,16 +275,19 @@ of new features and datasets.
 </footer>
 
 
+
 <script>
 
 function toggleMenu() {
 
 const menu = document.getElementById("mobileMenu");
+
 menu.classList.toggle("open");
 
 }
 
 </script>
+
 
 </body>
 </html>

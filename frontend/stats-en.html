@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Statistics on the Evolution of European Glaciers</title>
+<title>Statistics of Alpine Glacier Evolution</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -17,32 +17,37 @@ font-family: Arial, sans-serif;
 background:#f4f6f8;
 margin:0;
 padding:0;
+color:#333;
 }
 
 h1{
 text-align:center;
-margin:40px 0;
+margin:40px 0 10px 0;
+font-size:32px;
+}
+
+.subtitle{
+text-align:center;
+color:#666;
+max-width:800px;
+margin:auto;
+margin-bottom:40px;
+line-height:1.7;
 }
 
 .container{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 padding:20px;
 }
 
 .card{
 background:white;
-padding:25px;
+padding:30px;
 margin-bottom:40px;
-border-radius:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
-
-canvas{
-max-width:100%;
-}
-
-/* MENU */
 
 .menu-toggle{
 font-size:28px;
@@ -76,43 +81,60 @@ display:block;
 display:flex;
 }
 
-/* TEXT + GRAPH */
-
 .chart-section{
 display:grid;
-grid-template-columns:350px 1fr;
-gap:40px;
+grid-template-columns:380px 1fr;
+gap:50px;
 align-items:center;
 }
 
 .chart-text{
 font-size:16px;
-line-height:1.7;
-color:#333;
+line-height:1.8;
+color:#444;
 }
 
 .chart-text h3{
-color:#2c5d7a;
+color:#2a6f97;
 margin-bottom:10px;
+font-size:22px;
 }
 
 .chart-graph{
-background:white;
-padding:20px;
+background:#f7f9fb;
+padding:25px;
 border-radius:10px;
 }
 
-/* MOBILE */
+canvas{
+width:100% !important;
+height:380px !important;
+}
+
+.conclusion{
+line-height:1.8;
+color:#555;
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+color:#666;
+font-size:14px;
+}
 
 @media (max-width:900px){
 
 .chart-section{
 grid-template-columns:1fr;
-gap:20px;
+gap:30px;
 }
 
-.chart-graph{
-height:350px;
+canvas{
+height:320px !important;
 }
 
 }
@@ -127,21 +149,37 @@ height:350px;
 
 <nav id="mobileMenu" class="mobile-menu">
 
-<a href="index.html">Home</a>
-<a href="map.html">Map</a>
-<a href="stats.html">Statistics</a>
-<a href="empreinte-en.html">Carbon footprint</a>
-<a href="faune.html">Alpine fauna</a>
-<a href="about.html">About</a>
-<a href="sources.html">Sources</a>
-<a href="map.html">FR</a>
-<a href="map-en.html">EN</a>
+<a href="index-en.html">Home</a>
+<a href="map-en.html">Map</a>
+<a href="stats-en.html">Statistics</a>
+<a href="empreinte-en.html">Carbon impact</a>
+<a href="faune-en.html">Alpine wildlife</a>
+<a href="about-en.html">About</a>
+<a href="sources-en.html">Sources</a>
+
+<hr>
+
+<a href="stats.html">FR</a>
+<a href="stats-en.html">EN</a>
 
 </nav>
 
-<h1>Statistics on the Evolution of European Glaciers</h1>
+<h1>Statistics of Alpine Glacier Evolution</h1>
+
+<p class="subtitle">
+Alpine glaciers are highly sensitive indicators of climate variability
+in mountain environments. Studying their evolution helps scientists
+understand long-term environmental transformations associated with
+climate change.
+<br><br>
+The indicators presented on this page allow exploration of several
+dimensions of glacier dynamics, including their current surface area,
+historical evolution and the influence of altitude on glacier stability.
+</p>
 
 <div class="container">
+
+<!-- SURFACE -->
 
 <div class="card">
 
@@ -149,19 +187,27 @@ height:350px;
 
 <div class="chart-text">
 
-<h3>Current surface area of major Alpine glaciers</h3>
+<h3>Current surface of major Alpine glaciers</h3>
 
 <p>
-Glacier surface area is a key indicator used to analyse
-the condition of Alpine glaciers. It reflects the balance
-between winter snow accumulation and summer melting.
+The surface area of a glacier is one of the most important indicators
+used to evaluate its condition and dynamics. It reflects the balance
+between winter snow accumulation in the upper zones of the glacier
+and ice melting occurring at lower elevations.
 </p>
 
 <p>
-This chart compares the current surface area of several
-major glaciers in the European Alps. This comparison helps
-identify the largest glaciers and observe differences
-between Alpine massifs.
+Large glaciers generally contain extensive accumulation zones,
+which may allow them to maintain relative stability despite short-term
+climate fluctuations. Smaller glaciers, however, are often more
+sensitive to warming periods and intense summer melting events.
+</p>
+
+<p>
+Comparing several representative glaciers from the European Alpine
+massif helps illustrate the diversity of glacier systems and the
+different environmental conditions influencing glacier evolution
+across the Alpine region.
 </p>
 
 </div>
@@ -174,30 +220,38 @@ between Alpine massifs.
 
 </div>
 
+<!-- EVOLUTION -->
+
 <div class="card">
 
 <div class="chart-section">
 
 <div class="chart-text">
 
-<h3>Historical evolution of glacier surface area</h3>
-
-<p>
-Changes in glacier surface area are among the most reliable
-indicators for analysing the impact of climate change in
-high mountain regions.
-</p>
+<h3>Historical evolution of glacier surface</h3>
 
 <p>
 Since the end of the Little Ice Age in the 19th century,
-most Alpine glaciers have experienced a progressive retreat
-linked to rising temperatures and changes in precipitation patterns.
+most Alpine glaciers have experienced a progressive reduction
+in both surface area and volume.
 </p>
 
 <p>
-This chart illustrates the continuous reduction in the
-surface area of a representative Alpine glacier
-between 1850 and today.
+Glaciological observations across the Alps indicate that this
+decline has accelerated since the second half of the 20th century,
+in parallel with the increase in average temperatures observed
+in mountain regions.
+</p>
+
+<p>
+Changes in snowfall patterns and longer summer melting periods
+also contribute significantly to glacier retreat.
+</p>
+
+<p>
+The time series displayed in this chart illustrate these long-term
+trends and help visualize the progressive transformation of Alpine
+glacier landscapes over the past century.
 </p>
 
 </div>
@@ -210,6 +264,8 @@ between 1850 and today.
 
 </div>
 
+<!-- ALTITUDE -->
+
 <div class="card">
 
 <div class="chart-section">
@@ -219,20 +275,21 @@ between 1850 and today.
 <h3>Average altitude of major Alpine glaciers</h3>
 
 <p>
-The average altitude of a glacier plays a major role in
-its resistance to climate change. Glaciers located at
-higher altitudes benefit from lower temperatures and
-greater snow accumulation.
+Altitude plays a crucial role in glacier stability and evolution.
+Glaciers located at higher elevations generally benefit from
+lower temperatures and greater snow accumulation, conditions
+that favor long-term ice preservation.
 </p>
 
 <p>
-Conversely, glaciers located at lower altitudes are
-more exposed to summer melting and climate variations.
+In contrast, glaciers situated at lower altitudes are often more
+exposed to climatic variations and intense summer melting events.
 </p>
 
 <p>
-This chart compares the average altitude of several
-major glaciers in the European Alps.
+Analyzing the average altitude of glaciers therefore helps explain
+differences in climate sensitivity among the various glacier systems
+across the Alpine mountain range.
 </p>
 
 </div>
@@ -245,48 +302,70 @@ major glaciers in the European Alps.
 
 </div>
 
+<!-- CONCLUSION -->
+
+<div class="card">
+
+<div class="conclusion">
+
+<h3>General interpretation</h3>
+
+<p>
+All indicators presented on this page confirm the overall trend
+observed across the Alpine region: a progressive decline in glacier
+surface area and volume over the past century.
+</p>
+
+<p>
+These transformations represent one of the most visible signals
+of climate change in high-mountain environments. Alpine glaciers
+therefore act as key environmental indicators for monitoring
+long-term climate evolution.
+</p>
+
+<p>
+Studying glacier evolution also contributes to a better
+understanding of potential impacts on water resources,
+mountain landscapes and high-altitude ecosystems.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="footer">
+Alpine Glacier Observatory — Personal project
+</footer>
+
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
-
-/* SURFACE */
+document.addEventListener("DOMContentLoaded",function(){
 
 new Chart(document.getElementById("chartSurface"),{
-
 type:"bar",
-
 data:{
 labels:[
 "Mer de Glace (France)",
 "Aletsch (Switzerland)",
 "Pasterze (Austria)",
 "Blaueis (Germany)",
-"Ghiacciaio del Forni (Italy)"
+"Forni Glacier (Italy)"
 ],
-
 datasets:[{
 label:"Surface (km²)",
 data:[12.3,17.3,9.6,1.1,11.3],
-backgroundColor:"#3fe02e"
+backgroundColor:"#2ecc71"
 }]
 },
-
-options:{
-responsive:true,
-maintainAspectRatio:false
-}
-
+options:{responsive:true,maintainAspectRatio:false}
 });
 
-/* EVOLUTION */
-
 new Chart(document.getElementById("chartEvolution"),{
-
 type:"line",
-
 data:{
 labels:["1850","1900","1950","2000","2025"],
-
 datasets:[{
 label:"Surface (km²)",
 data:[40,35,30,27,24],
@@ -296,52 +375,32 @@ fill:true,
 tension:0.3
 }]
 },
-
-options:{
-responsive:true,
-maintainAspectRatio:false
-}
-
+options:{responsive:true,maintainAspectRatio:false}
 });
 
-/* ALTITUDE */
-
 new Chart(document.getElementById("chartAltitude"),{
-
 type:"bar",
-
 data:{
 labels:[
 "Mer de Glace (France)",
 "Aletsch (Switzerland)",
 "Pasterze (Austria)",
 "Blaueis (Germany)",
-"Ghiacciaio del Forni (Italy)"
+"Forni Glacier (Italy)"
 ],
-
 datasets:[{
 label:"Altitude (m)",
 data:[2500,2300,2100,2400,3650],
 backgroundColor:"#4da3ff"
 }]
 },
-
-options:{
-responsive:true,
-maintainAspectRatio:false
-}
-
+options:{responsive:true,maintainAspectRatio:false}
 });
 
 });
 
-</script>
-
-<script>
-
-function toggleMenu() {
-const menu = document.getElementById("mobileMenu");
-menu.classList.toggle("open");
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("open");
 }
 
 </script>

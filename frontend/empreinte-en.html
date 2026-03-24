@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Carbon footprint — Alpine Glaciers</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Carbon footprint — Alpine glaciers</title>
 
 <link rel="stylesheet" href="style.css" />
 
@@ -59,9 +62,9 @@ padding:16px;
 .card{
 background:#fff;
 border-radius:10px;
-padding:16px;
-margin:16px 0;
-box-shadow:0 1px 6px rgba(0,0,0,.08);
+padding:20px;
+margin:20px 0;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 .grid{
@@ -147,19 +150,12 @@ padding:12px;
 border-radius:10px;
 }
 
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.topbar a{
-text-decoration:none;
+ul{
+line-height:1.6;
 }
 
 </style>
+
 </head>
 
 <body class="page-empreinte">
@@ -167,101 +163,135 @@ text-decoration:none;
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <nav id="mobileMenu" class="mobile-menu">
-
 <a href="index-en.html">Home</a>
 <a href="map-en.html">Map</a>
 <a href="stats-en.html">Statistics</a>
-<a href="empreinte-en.html">Carbon footprint</a>
+<a href="empreinte-en.html">Carbon impact</a>
 <a href="faune-en.html">Alpine wildlife</a>
 <a href="about-en.html">About</a>
 <a href="sources-en.html">Sources</a>
-<hr>
 <a href="empreinte.html">FR</a>
 <a href="empreinte-en.html">EN</a>
-
 </nav>
 
 <div class="container">
 
-<div class="topbar">
-
-<div>
-
-<h1>Carbon footprint</h1>
+<h1>Carbon footprint and Alpine glaciers</h1>
 
 <div class="card">
 
-<h2>Why calculate the carbon footprint related to glaciers?</h2>
+<h2>Why calculate a carbon footprint related to glaciers?</h2>
 
 <p>
 Alpine glaciers are particularly sensitive to global warming.
 The increase in greenhouse gas emissions, especially carbon dioxide (CO₂),
-contributes to rising global average temperatures and accelerates glacier melting.
+contributes to rising global temperatures and accelerates glacier melting.
 </p>
 
 <p>
-This page provides an educational estimate linking CO₂ emissions
-from human activities (such as travel) to a potential impact
-on Alpine glaciers. The objective is to make the connection between
-individual behaviour and changes in high-mountain environments easier to understand.
+This page offers an educational estimation that connects CO₂ emissions
+from human activities (such as transportation) to a potential impact
+on Alpine glaciers.
 </p>
 
 <p>
-The values displayed are orders of magnitude based on average
-emission factors and scientific estimates derived from
-climate change and cryosphere research literature.
+The goal is to make the link between individual behaviour and the
+evolution of high-mountain environments easier to understand.
 </p>
-
-</div>
-
-<p class="muted">
-Educational estimate based on average emission factors.
-</p>
-
-</div>
 
 </div>
 
 <div class="card">
 
-<h2>Parameters</h2>
+<h2>Why are Alpine glaciers disappearing?</h2>
+
+<p>
+Since the end of the 19th century, most Alpine glaciers have lost
+a significant portion of their surface area and volume.
+</p>
+
+<p>
+This evolution is mainly linked to the increase in global
+average temperatures caused by the accumulation of greenhouse gases
+in the atmosphere.
+</p>
+
+<ul>
+<li>less snow accumulation in winter</li>
+<li>faster melting in summer</li>
+<li>longer melting seasons</li>
+</ul>
+
+<p>
+When melting becomes stronger than snow accumulation,
+glaciers gradually retreat.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>What is the link between CO₂ and glacier melting?</h2>
+
+<p>
+Human activities — transport, heating and industry —
+emit carbon dioxide into the atmosphere.
+</p>
+
+<p>
+This greenhouse gas traps part of the Earth's heat,
+leading to a progressive increase in global temperatures.
+</p>
+
+<p>
+In mountain regions, this warming accelerates
+summer glacier melting and modifies the balance
+between snow accumulation and ice loss.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Carbon footprint simulator</h2>
+
+<p class="muted">
+Educational estimation based on average emission factors.
+</p>
 
 <div class="grid">
 
 <div>
 
 <label for="profile">Profile</label>
-
 <select id="profile">
 <option value="habitant">Alpine resident</option>
 <option value="touriste">Tourist</option>
 </select>
 
 <label for="transport">Transport</label>
-
 <select id="transport">
 <option value="voiture">Car</option>
 <option value="train">Train</option>
-<option value="avion">Plane</option>
+<option value="avion">Airplane</option>
 </select>
 
 <label for="distance">Distance (km)</label>
-<input id="distance" type="number" min="0" step="1" value="200" />
+<input id="distance" type="number" min="0" step="1" value="200">
 
 </div>
 
 <div>
 
 <label for="glacier">Glacier</label>
-
 <select id="glacier">
 <option value="">Loading…</option>
 </select>
 
 <div class="note" style="margin-top:14px;">
-<strong>Methodological note</strong><br />
-Results are orders of magnitude intended to link CO₂ emissions
-to glacier impacts in an understandable way.
+<strong>Methodological note</strong><br>
+The results are approximate orders of magnitude designed
+to link CO₂ emissions to glacier impact in an understandable way.
 </div>
 
 </div>
@@ -292,7 +322,7 @@ to glacier impacts in an understandable way.
 </div>
 
 <div class="box">
-<div class="muted">Impacted surface (est.)</div>
+<div class="muted">Estimated surface impact</div>
 <div class="value" id="outM2">—</div>
 </div>
 
@@ -303,6 +333,25 @@ Select a glacier and click "Calculate".
 </p>
 
 <div id="equivalent" class="muted" style="margin-top:12px;"></div>
+
+</div>
+
+<div class="card">
+
+<h2>How can we reduce our climate impact?</h2>
+
+<ul>
+<li>Prefer trains or public transportation</li>
+<li>Limit air travel whenever possible</li>
+<li>Use low-carbon mobility (walking, cycling)</li>
+<li>Reduce energy consumption in buildings</li>
+</ul>
+
+<p>
+Individual actions may seem small, but when combined
+at large scale they contribute to reducing global
+greenhouse gas emissions.
+</p>
 
 </div>
 

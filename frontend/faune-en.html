@@ -6,15 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Threatened Alpine Wildlife</title>
+<title>Threatened Alpine wildlife</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body class="page-faune">
-
 
 <!-- BURGER MENU -->
 
@@ -25,7 +23,7 @@
 <a href="index-en.html">Home</a>
 <a href="map-en.html">Map</a>
 <a href="stats-en.html">Statistics</a>
-<a href="empreinte-en.html">Carbon footprint</a>
+<a href="empreinte-en.html">Carbon impact</a>
 <a href="faune-en.html">Alpine wildlife</a>
 <a href="about-en.html">About</a>
 <a href="sources-en.html">Sources</a>
@@ -37,52 +35,110 @@
 
 </nav>
 
-
 <div class="container">
 
+<!-- ECOLOGICAL CONTEXT -->
 
 <div class="card">
 
 <h2>Ecological context of Alpine species</h2>
 
 <p>
-Alpine ecosystems host remarkable biodiversity adapted to extreme
-environmental conditions. Mountain species have developed specific
-adaptations that allow them to survive harsh winters, low temperatures,
-and strong variations in snow cover.
+The Alps are one of Europe’s major biodiversity reservoirs.
+The diversity of relief, climate and altitude creates a mosaic
+of natural habitats ranging from mountain forests to alpine grasslands,
+rocky areas and glacial environments.
 </p>
 
 <p>
-However, climate change is gradually modifying these environments.
-Reduced snow cover, habitat transformation and human pressure related
-to tourism or infrastructure can weaken several emblematic Alpine species.
+More than 30,000 animal and plant species have been identified
+across the Alpine arc. Some of them are endemic, meaning that
+they live nowhere else in the world. These species have developed
+remarkable adaptations to survive in extreme conditions: low temperatures,
+long snow cover and strong climatic variability.
 </p>
 
 <p>
-This page presents several characteristic species of Alpine wildlife,
-along with summary information about their altitude range,
-their conservation status and the main threats affecting them.
+However, Alpine ecosystems are particularly sensitive to environmental
+change. Rising temperatures, reduced snow cover and habitat transformation
+can deeply alter the ecological balance of these fragile mountain environments.
 </p>
 
 </div>
 
+<!-- ROLE OF GLACIERS -->
 
-<h1>Threatened Alpine Wildlife</h1>
+<div class="card">
 
+<h2>Role of glaciers in Alpine ecosystems</h2>
 
-<p class="muted">
-Some Alpine species are particularly vulnerable to climate change
-and to the progressive disappearance of glaciers.
+<p>
+Glaciers play a key role in the functioning of mountain ecosystems.
+They act as natural freshwater reservoirs that feed many Alpine rivers
+during the summer season.
 </p>
 
+<p>
+The gradual melting of glaciers also helps regulate river flow
+and influences the hydrological conditions of Alpine valleys.
+Many aquatic and terrestrial habitats depend directly on this dynamic.
+</p>
+
+<p>
+The progressive disappearance of glaciers can therefore lead
+to major changes in water cycles, resource availability and
+the living conditions of many animal and plant species.
+</p>
+
+</div>
+
+<!-- CLIMATE CHANGE IMPACT -->
+
+<div class="card">
+
+<h2>Impact of climate change on Alpine wildlife</h2>
+
+<p>
+Since the end of the 19th century, the Alps have been warming
+faster than the global average. This climatic evolution has
+several consequences for mountain species.
+</p>
+
+<ul>
+
+<li>species moving to higher elevations</li>
+
+<li>reduction of cold habitats suitable for Alpine species</li>
+
+<li>changes in breeding or hibernation periods</li>
+
+<li>increased thermal stress for some species</li>
+
+<li>emergence of new diseases or parasites</li>
+
+</ul>
+
+<p>
+Species specialized in cold environments are particularly vulnerable,
+because they have less space to migrate upward as temperatures rise.
+</p>
+
+</div>
+
+<h1>Threatened Alpine wildlife</h1>
+
+<p class="muted">
+Some Alpine species are particularly vulnerable to global warming
+and to the progressive transformation of high-mountain ecosystems.
+</p>
+
+<!-- ANIMAL GRID -->
 
 <div id="faune-grid" class="faune-grid"></div>
 
 <div id="faune-detail" class="card" style="display:none;"></div>
 
-
 </div>
-
 
 <!-- IMAGE ZOOM -->
 
@@ -90,9 +146,44 @@ and to the progressive disappearance of glaciers.
 <img id="zoom-img" src="" alt="">
 </div>
 
-
 <script src="faune-en.js"></script>
 
+<!-- CONSERVATION -->
+
+<div class="container">
+
+<div class="card">
+
+<h2>Conservation measures</h2>
+
+<p>
+In order to preserve Alpine biodiversity, several conservation
+actions have been implemented at national and European levels.
+</p>
+
+<ul>
+
+<li>creation of national parks and nature reserves</li>
+
+<li>scientific monitoring programs for animal populations</li>
+
+<li>protection of sensitive habitats</li>
+
+<li>sustainable management of tourism activities</li>
+
+<li>preservation of ecological corridors allowing species to move</li>
+
+</ul>
+
+<p>
+These initiatives aim to maintain the ecological balance of
+the Alpine mountains and reduce the impacts of environmental
+change on the most vulnerable species.
+</p>
+
+</div>
+
+</div>
 
 <!-- SCIENTIFIC SOURCES -->
 
@@ -108,30 +199,33 @@ and to the progressive disappearance of glaciers.
 
 <li>IUCN — Red List of Threatened Species</li>
 
-<li>French Biodiversity Office — Alpine Biodiversity</li>
+<li>French Biodiversity Office — Alpine biodiversity</li>
 
-<li>Alpine National Parks (Vanoise, Écrins, Mercantour)</li>
+<li>Alpine Convention — Biodiversity in the Alps</li>
+
+<li>European Environment Agency — Mountain ecosystems</li>
+
+<li>Alpine national parks (Vanoise, Écrins, Mercantour)</li>
 
 </ul>
 
 <p>
-<b>Conservation status:</b> based on the categories of the IUCN Red List.
+<b>Conservation status:</b> based on IUCN Red List categories.
 </p>
 
 <p>
 The information presented on this page is an educational synthesis
-based on these scientific sources and on literature dedicated to
-Alpine ecosystems.
+based on these scientific sources and on the literature dedicated
+to Alpine ecosystems.
 </p>
 
 </div>
 
 </div>
 
-
 <script>
 
-function toggleMenu() {
+function toggleMenu(){
 
 const menu = document.getElementById("mobileMenu");
 
@@ -140,7 +234,6 @@ menu.classList.toggle("open");
 }
 
 </script>
-
 
 </body>
 </html>

@@ -1,111 +1,165 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
 
 <meta charset="UTF-8">
 
-<title>Statistiques de l’évolution des glaciers d’Europe</title>
-
-
-<!-- Chart.js -->
+<title>Statistiques de l’évolution des glaciers alpins</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
 <style>
 
-body {
-
-    font-family: Arial, sans-serif;
-
-    background: #f4f6f8;
-
-    margin: 0;
-
-    padding: 40px;
-
+body{
+font-family: Arial, sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:40px;
 }
 
-
-h1 {
-
-    text-align: center;
-
-    margin-bottom: 40px;
-
+h1{
+text-align:center;
+margin-bottom:20px;
 }
 
-
-.section {
-
-    max-width: 1100px;
-
-    margin: 0 auto 40px auto;
-
-    background: white;
-
-    padding: 30px;
-
-    border-radius: 12px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-
+.intro{
+max-width:1100px;
+margin:auto;
+margin-bottom:40px;
+text-align:center;
+color:#555;
+line-height:1.6;
 }
 
-
-h2 {
-
-    text-align: center;
-
-    margin-bottom: 20px;
-
+.section{
+max-width:1100px;
+margin:0 auto 40px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
+.section h2{
+margin-bottom:10px;
+color:#2a6f97;
+}
 
-canvas {
+.description{
+color:#666;
+font-size:15px;
+line-height:1.6;
+margin-bottom:20px;
+}
 
-    width: 100% !important;
+canvas{
+width:100% !important;
+height:400px !important;
+}
 
-    height: 400px !important;
-
+.conclusion{
+max-width:1100px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+line-height:1.6;
+color:#444;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
+<h1>Statistiques de l’évolution des glaciers alpins</h1>
 
-<h1>Statistiques de l’évolution des glaciers d’Europe</h1>
+<div class="intro">
 
+<p>
+Les glaciers alpins constituent des indicateurs particulièrement sensibles du changement climatique.
+L’analyse de leur altitude, de leur surface et de leur évolution historique permet de mieux comprendre
+les transformations environnementales observées dans les régions de haute montagne depuis plus d’un siècle.
+</p>
 
-<div class="section">
-
-    <h2>Altitude par glacier</h2>
-
-    <canvas id="altitudeChart"></canvas>
-
-</div>
-
-
-<div class="section">
-
-    <h2>Surface actuelle par glacier</h2>
-
-    <canvas id="surfaceChart"></canvas>
+<p>
+Les graphiques ci-dessous présentent une comparaison de plusieurs glaciers représentatifs du massif
+alpin européen ainsi que l’évolution récente de leur surface glaciaire.
+</p>
 
 </div>
 
 
+<!-- ALTITUDE -->
+
 <div class="section">
 
-    <h2>Évolution de la surface du glacier (Mer de Glace)</h2>
+<h2>Altitude moyenne des principaux glaciers alpins</h2>
 
-    <canvas id="evolutionChart"></canvas>
+<p class="description">
+L’altitude moyenne d’un glacier influence directement sa résistance au réchauffement climatique.
+Les glaciers situés à haute altitude bénéficient généralement de températures plus basses et d’une
+accumulation de neige plus importante, ce qui peut ralentir leur fonte.
+</p>
+
+<canvas id="altitudeChart"></canvas>
+
+</div>
+
+
+<!-- SURFACE -->
+
+<div class="section">
+
+<h2>Surface actuelle des principaux glaciers alpins</h2>
+
+<p class="description">
+La surface d’un glacier est un indicateur essentiel de son état de santé.
+Ce graphique compare la superficie actuelle de plusieurs glaciers majeurs
+du massif alpin européen.
+</p>
+
+<canvas id="surfaceChart"></canvas>
+
+</div>
+
+
+<!-- EVOLUTION -->
+
+<div class="section">
+
+<h2>Évolution récente de la surface glaciaire (Mer de Glace)</h2>
+
+<p class="description">
+Depuis la fin du Petit Âge glaciaire au XIXᵉ siècle, la majorité des glaciers alpins
+ont connu un recul progressif. Ce graphique illustre la diminution récente de la
+surface de la Mer de Glace, l’un des glaciers les plus emblématiques des Alpes françaises.
+</p>
+
+<canvas id="evolutionChart"></canvas>
+
+</div>
+
+
+<div class="conclusion">
+
+<h2>Interprétation des tendances observées</h2>
+
+<p>
+Les données présentées confirment une tendance générale de recul des glaciers alpins
+au cours des dernières décennies. Cette évolution est principalement liée à
+l’augmentation des températures moyennes et à des modifications du régime de précipitations.
+</p>
+
+<p>
+Les glaciers situés à plus basse altitude apparaissent généralement plus sensibles
+aux variations climatiques. La surveillance continue de ces indicateurs glaciologiques
+permet de mieux comprendre l’évolution des environnements de montagne dans le
+contexte du changement climatique global.
+</p>
 
 </div>
 
@@ -114,152 +168,103 @@ canvas {
 
 /* ================= ALTITUDE ================= */
 
-new Chart(document.getElementById('altitudeChart'), {
-
-    type: 'bar',
-
-    data: {
-
-        labels: [
-
-            'Mer de Glace (France)',
-
-            'Aletsch (Suisse)',
-
-            'Pasterze (Autriche)',
-
-            'Blaueis (Allemagne)',
-
-            'Ghiacciaio del Forni (Italie)'
-
-        ],
-
-        datasets: [{
-
-            label: 'Altitude (m)',
-
-            data: [2500, 2300, 2100, 2400, 3650],
-
-            backgroundColor: '#4da3ff'
-
-        }]
-
-    },
-
-    options: {
-
-        responsive: true,
-
-        scales: {
-
-            y: { beginAtZero: true }
-
-        }
-
-    }
-
+new Chart(document.getElementById('altitudeChart'),{
+type:'bar',
+data:{
+labels:[
+'Mer de Glace (France)',
+'Aletsch (Suisse)',
+'Pasterze (Autriche)',
+'Blaueis (Allemagne)',
+'Ghiacciaio del Forni (Italie)'
+],
+datasets:[{
+label:'Altitude moyenne (m)',
+data:[2500,2300,2100,2400,3650],
+backgroundColor:'#4da3ff'
+}]
+},
+options:{
+responsive:true,
+plugins:{
+legend:{position:'top'}
+},
+scales:{
+y:{
+beginAtZero:true,
+title:{display:true,text:'Altitude (mètres)'}
+}
+}
+}
 });
 
 
-/* ================= SURFACE ACTUELLE ================= */
+/* ================= SURFACE ================= */
 
-new Chart(document.getElementById('surfaceChart'), {
-
-    type: 'bar',
-
-    data: {
-
-        labels: [
-
-            'Mer de Glace (France)',
-
-            'Aletsch (Suisse)',
-
-            'Pasterze (Autriche)',
-
-            'Blaueis (Allemagne)',
-
-            'Ghiacciaio del Forni (Italie)'
-
-        ],
-
-        datasets: [{
-
-            label: 'Surface (km²)',
-
-            data: [12.2, 17.3, 9.6, 1.0, 11.3],
-
-            backgroundColor: '#3ddcc0'
-
-        }]
-
-    },
-
-    options: {
-
-        responsive: true,
-
-        scales: {
-
-            y: { beginAtZero: true }
-
-        }
-
-    }
-
+new Chart(document.getElementById('surfaceChart'),{
+type:'bar',
+data:{
+labels:[
+'Mer de Glace (France)',
+'Aletsch (Suisse)',
+'Pasterze (Autriche)',
+'Blaueis (Allemagne)',
+'Ghiacciaio del Forni (Italie)'
+],
+datasets:[{
+label:'Surface glaciaire (km²)',
+data:[12.2,17.3,9.6,1.0,11.3],
+backgroundColor:'#3ddcc0'
+}]
+},
+options:{
+responsive:true,
+plugins:{
+legend:{position:'top'}
+},
+scales:{
+y:{
+beginAtZero:true,
+title:{display:true,text:'Surface (km²)'}
+}
+}
+}
 });
 
 
-/* ================= ÉVOLUTION ================= */
+/* ================= EVOLUTION ================= */
 
-new Chart(document.getElementById('evolutionChart'), {
-
-    type: 'line',
-
-    data: {
-
-        labels: ['1990', '2000', '2010', '2020', '2024'],
-
-        datasets: [{
-
-            label: 'Surface (km²)',
-
-            data: [18.0, 16.2, 14.0, 12.3, 11.8],
-
-            fill: true,
-
-            borderColor: '#2962ff',
-
-            backgroundColor: 'rgba(41,98,255,0.15)',
-
-            tension: 0.3,
-
-            pointRadius: 5
-
-        }]
-
-    },
-
-    options: {
-
-        responsive: true,
-
-        scales: {
-
-            x: { title: { display: true, text: 'Année' } },
-
-            y: { title: { display: true, text: 'Surface (km²)' } }
-
-        }
-
-    }
-
+new Chart(document.getElementById('evolutionChart'),{
+type:'line',
+data:{
+labels:['1990','2000','2010','2020','2024'],
+datasets:[{
+label:'Surface glaciaire (km²)',
+data:[18.0,16.2,14.0,12.3,11.8],
+fill:true,
+borderColor:'#2962ff',
+backgroundColor:'rgba(41,98,255,0.15)',
+tension:0.3,
+pointRadius:5
+}]
+},
+options:{
+responsive:true,
+plugins:{
+legend:{position:'top'}
+},
+scales:{
+x:{
+title:{display:true,text:'Année'}
+},
+y:{
+title:{display:true,text:'Surface (km²)'}
+}
+}
+}
 });
 
 </script>
 
-
 </body>
-
 </html>
-

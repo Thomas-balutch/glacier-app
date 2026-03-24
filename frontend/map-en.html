@@ -8,11 +8,9 @@
 
 <title>Interactive Atlas of Alpine Glaciers</title>
 
-<!-- Leaflet -->
 <link rel="stylesheet"
 href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -20,154 +18,203 @@ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <body>
 
-<!-- HERO IMAGE -->
-
+<!-- HERO -->
 <div class="hero">
-
 <img src="images/glacier-alpes.jpg" alt="Alpine Glacier">
 
 <div class="hero-text">
-
 <h1>Interactive Atlas of Alpine Glaciers</h1>
-
 <p>
-Explore Alpine glaciers: altitude, surface area and evolution
-since the late 19th century.
+Scientific exploration platform of Alpine glaciers:
+average altitude, glacier surface area and evolution since the end of the 19th century.
 </p>
-
 </div>
-
 </div>
 
 
 <!-- HEADER -->
-
 <header class="header">
 
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <nav id="mobileMenu" class="mobile-menu">
-
 <a href="index-en.html">Home</a>
 <a href="map-en.html">Map</a>
 <a href="stats-en.html">Statistics</a>
 <a href="empreinte-en.html">Carbon footprint</a>
 <a href="faune-en.html">Alpine wildlife</a>
 <a href="about-en.html">About</a>
-<a href="sources-en.html">Sources</a><hr>
+<a href="sources-en.html">Sources</a>
+
+<hr>
 
 <a href="map.html">FR</a>
 <a href="map-en.html">EN</a>
-
 </nav>
 
 <h2>Cartographic exploration of Alpine glaciers</h2>
 
 <p class="subtitle">
-Click on a glacier: the information panel and dashboards will update.
+Click on a glacier on the map to display its scientific indicators.
 </p>
 
 </header>
 
 
-<!-- MAIN CONTENT -->
-
 <main class="container">
 
-<!-- SCIENTIFIC CONTEXT -->
-
+<!-- CONTEXT -->
 <div class="card">
 
 <h2>Scientific context</h2>
 
 <p>
-Alpine glaciers are sensitive indicators of climate change.
-Since the end of the 19th century, glaciological observations
-have shown a widespread retreat of many glaciers in the Alpine massif.
+Alpine glaciers are major indicators of climate change in mountain
+environments. Their evolution is closely linked to variations in
+temperature and precipitation, making them sensitive markers of
+climatic transformations observed since the end of the 19th century.
 </p>
 
 <p>
-This interactive map allows users to explore the location of several
-glaciers and access descriptive indicators such as average altitude,
-glacier surface area and the estimated evolution of their surface.
+Across the Alpine massif, glaciological observations show a progressive
+retreat of most glaciers for more than a century. This trend has
+accelerated over recent decades under the influence of global warming.
 </p>
 
 <p>
-Currently, the database used in this observatory covers glaciers
-located in the French territory of the Alpine massif.
-A future extension may integrate other European Alpine glaciers.
+The interactive map presented in this atlas allows users to explore
+several Alpine glaciers and access key descriptive indicators:
+</p>
+
+<ul class="science-list">
+<li><b>Average glacier altitude</b></li>
+<li><b>Estimated glacier surface area</b> in square kilometers</li>
+<li><b>Temporal evolution</b> of glacier surface since the 19th century</li>
+</ul>
+
+<p>
+These indicators help analyze glacier dynamics and better understand
+recent changes affecting Alpine glaciers in the context of climate change.
+</p>
+
+<p class="muted">
+The dataset currently used in this observatory covers several glaciers
+located in the French Alps. A future extension may integrate other
+glaciers across the European Alpine massif.
 </p>
 
 </div>
 
 
 <!-- MAP -->
-
 <div id="map"></div>
 
 
 <section class="panel">
 
 
-<!-- GLACIER CARD -->
-
+<!-- GLACIER INFO -->
 <div class="card card-wide" id="glacier-card">
-<h2>Glacier profile</h2>
+
+<h2>Glacier information</h2>
 
 <p class="muted">
-Click on a glacier on the map.
+Select a glacier on the map to display its characteristics.
 </p>
 
 <div class="info">
-<span class="label">Name :</span>
+<span class="label">Name:</span>
 <span id="g-name">—</span>
 </div>
 
 <div class="info">
-<span class="label">Country :</span>
+<span class="label">Region:</span>
 <span id="g-country">—</span>
 </div>
 
 <div class="info">
-<span class="label">Average altitude :</span>
+<span class="label">Average altitude:</span>
 <span id="g-alt">—</span>
 </div>
 
 <div class="info">
-<span class="label">Surface area :</span>
+<span class="label">Current surface area:</span>
 <span id="g-area">—</span>
 </div>
 
 </div>
 
 
-<!-- CHARTS -->
+<!-- DASHBOARDS -->
 
 <div class="grid">
 
+<!-- ALTITUDE -->
+
 <div class="card">
-<h3>Altitude (Top 10 France)</h3>
+
+<h3>Average glacier altitude</h3>
+
+<p class="chart-description">
+Estimated average altitude of the selected glacier. This value
+helps position the glacier within the altitudinal context of
+glaciers in the French Alps.
+</p>
+
+<div class="chart-graph">
 <canvas id="chartAlt"></canvas>
 </div>
 
+<p class="chart-foot">
+Indicator: average altitude (meters).
+</p>
+
+</div>
+
+
+<!-- SURFACE -->
 
 <div class="card">
-<h3>Surface area (Top 10 France)</h3>
+
+<h3>Glacier surface area</h3>
+
+<p class="chart-description">
+Comparison of the selected glacier surface area with major
+glacier surfaces observed in the French Alpine massif.
+</p>
+
+<div class="chart-graph">
 <canvas id="chartArea"></canvas>
 </div>
 
+<p class="chart-foot">
+Indicator: estimated glacier surface area (km²).
+</p>
+
+</div>
+
+
+<!-- EVOLUTION -->
 
 <div class="card card-wide evolution-card">
 
-<h3 id="lineTitle">Evolution</h3>
+<h3 id="lineTitle">Historical glacier evolution</h3>
 
-<div class="chart-wrapper">
-<canvas id="chartline"></canvas>
+<p class="chart-description">
+Estimated evolution of glacier surface area since the end of
+the 19th century. The general trend observed across the Alps
+shows a progressive retreat of most glaciers.
+</p>
+
+<div class="chart-graph">
+<canvas id="chartLine"></canvas>
 </div>
 
-<p id="lineHint" class="muted"></p>
+<p id="lineHint" class="chart-foot">
+Source: historical glaciological datasets and recent estimates.
+</p>
 
-</div></div>
+</div>
 
 </div>
 
@@ -176,14 +223,10 @@ Click on a glacier on the map.
 </main>
 
 
-<!-- SCRIPTS -->
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
 <script src="evolution.js"></script>
-
 <script src="map.js"></script>
 
 
@@ -192,13 +235,11 @@ Click on a glacier on the map.
 <p>Personal project — Thomas Balutch — 2026</p>
 </footer>
 
-
 <script>
 function toggleMenu(){
 document.getElementById("mobileMenu").classList.toggle("open");
 }
 </script>
-
 
 </body>
 </html>

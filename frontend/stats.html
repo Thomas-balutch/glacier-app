@@ -2,139 +2,417 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
-<title>Statistiques de l’évolution des glaciers d’Europe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Statistiques de l’évolution des glaciers alpins</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    margin: 0;
-    padding: 40px;
+
+body{
+font-family: Arial, sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:0;
+color:#333;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 40px;
+h1{
+text-align:center;
+margin:40px 0 10px 0;
+font-size:32px;
 }
 
-.section {
-    max-width: 1100px;
-    margin: 0 auto 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+.subtitle{
+text-align:center;
+color:#666;
+max-width:800px;
+margin:auto;
+margin-bottom:40px;
+line-height:1.7;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
 }
 
-canvas {
-    width: 100% !important;
-    height: 400px !important;
+.card{
+background:white;
+padding:30px;
+margin-bottom:40px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
+
+.menu-toggle{
+font-size:28px;
+background:none;
+border:none;
+cursor:pointer;
+margin:15px;
+}
+
+.mobile-menu{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+left:10px;
+background:rgba(0,0,0,0.9);
+padding:15px;
+border-radius:10px;
+z-index:9999;
+}
+
+.mobile-menu a{
+color:white;
+text-decoration:none;
+padding:8px 12px;
+font-size:16px;
+display:block;
+}
+
+.mobile-menu.open{
+display:flex;
+}
+
+.chart-section{
+display:grid;
+grid-template-columns:380px 1fr;
+gap:50px;
+align-items:center;
+}
+
+.chart-text{
+font-size:16px;
+line-height:1.8;
+color:#444;
+}
+
+.chart-text h3{
+color:#2a6f97;
+margin-bottom:10px;
+font-size:22px;
+}
+
+.chart-graph{
+background:#f7f9fb;
+padding:25px;
+border-radius:10px;
+}
+
+canvas{
+width:100% !important;
+height:380px !important;
+}
+
+.conclusion{
+line-height:1.8;
+color:#555;
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+color:#666;
+font-size:14px;
+}
+
+@media (max-width:900px){
+
+.chart-section{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+canvas{
+height:320px !important;
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<h1>Statistiques de l’évolution des glaciers d’Europe</h1>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-<div class="section">
-    <h2>Altitude par glacier</h2>
-    <canvas id="altitudeChart"></canvas>
+<nav id="mobileMenu" class="mobile-menu">
+
+<a href="index.html">Accueil</a>
+<a href="map.html">Carte</a>
+<a href="stats.html">Statistiques</a>
+<a href="empreinte.html">Empreinte carbone</a>
+<a href="faune.html">Faune alpine</a>
+<a href="about.html">À propos</a>
+<a href="sources.html">Sources</a>
+
+<hr>
+
+<a href="stats.html">FR</a>
+<a href="stats-en.html">EN</a>
+
+</nav>
+
+<h1>Statistiques de l’évolution des glaciers alpins</h1>
+
+<p class="subtitle">
+Les glaciers alpins constituent des indicateurs particulièrement sensibles des
+variations climatiques observées dans les régions de montagne. L’analyse de leur
+évolution permet de mieux comprendre les transformations environnementales
+liées au changement climatique depuis la fin du XIXᵉ siècle.
+<br><br>
+Les indicateurs présentés sur cette page permettent d’explorer plusieurs
+dimensions du fonctionnement des glaciers : leur superficie actuelle,
+leur évolution historique ainsi que l’influence de l’altitude sur leur
+stabilité et leur dynamique.
+</p>
+
+<div class="container">
+
+<!-- SURFACE -->
+
+<div class="card">
+
+<div class="chart-section">
+
+<div class="chart-text">
+
+<h3>Surface actuelle des principaux glaciers alpins</h3>
+
+<p>
+La surface d’un glacier constitue l’un des indicateurs les plus
+importants pour évaluer son état et sa dynamique. Elle reflète
+l’équilibre entre l’accumulation de neige dans les zones supérieures
+du glacier et la fonte de la glace dans les zones situées à plus
+basse altitude.
+</p>
+
+<p>
+Les glaciers de grande superficie possèdent généralement des zones
+d’accumulation plus étendues, ce qui peut leur permettre de maintenir
+une certaine stabilité malgré les variations climatiques à court
+terme. À l’inverse, les glaciers plus petits sont souvent plus
+sensibles aux épisodes de réchauffement et aux périodes de fonte
+intense.
+</p>
+
+<p>
+La comparaison de plusieurs glaciers représentatifs du massif alpin
+européen permet d’illustrer les différences entre les grands systèmes
+glaciaires alpins et de mettre en évidence la diversité des
+environnements glaciaires présents dans les Alpes.
+</p>
+
 </div>
 
-<div class="section">
-    <h2>Surface actuelle par glacier</h2>
-    <canvas id="surfaceChart"></canvas>
+<div class="chart-graph">
+<canvas id="chartSurface"></canvas>
 </div>
 
-<div class="section">
-    <h2>Évolution de la surface du glacier (Mer de Glace)</h2>
-    <canvas id="evolutionChart"></canvas>
 </div>
+
+</div>
+
+<!-- EVOLUTION -->
+
+<div class="card">
+
+<div class="chart-section">
+
+<div class="chart-text">
+
+<h3>Évolution historique de la surface glaciaire</h3>
+
+<p>
+Depuis la fin du Petit Âge glaciaire au XIXᵉ siècle, la majorité
+des glaciers alpins ont connu une réduction progressive de leur
+surface et de leur volume.
+</p>
+
+<p>
+Les observations glaciologiques réalisées dans l’ensemble des
+Alpes montrent que cette diminution s’est accélérée au cours
+de la seconde moitié du XXᵉ siècle, parallèlement à l’augmentation
+des températures moyennes observée dans les régions de montagne.
+</p>
+
+<p>
+Cette évolution est également influencée par les modifications
+du régime des précipitations neigeuses et par l’allongement
+de la période de fonte estivale.
+</p>
+
+<p>
+Les séries temporelles présentées dans ce graphique permettent
+d’illustrer ces tendances à long terme et de mieux comprendre
+les transformations progressives des paysages glaciaires alpins.
+</p>
+
+</div>
+
+<div class="chart-graph">
+<canvas id="chartEvolution"></canvas>
+</div>
+
+</div>
+
+</div>
+
+<!-- ALTITUDE -->
+
+<div class="card">
+
+<div class="chart-section">
+
+<div class="chart-text">
+
+<h3>Altitude moyenne des principaux glaciers alpins</h3>
+
+<p>
+L’altitude joue un rôle déterminant dans la stabilité et la
+dynamique des glaciers. Les glaciers situés à haute altitude
+bénéficient généralement de températures plus basses et d’une
+accumulation de neige plus importante, ce qui favorise la
+conservation de la glace.
+</p>
+
+<p>
+À l’inverse, les glaciers situés à plus basse altitude sont
+souvent plus exposés aux variations climatiques et aux épisodes
+de fonte estivale intense.
+</p>
+
+<p>
+L’analyse de l’altitude moyenne des glaciers permet ainsi de
+mieux comprendre les différences de sensibilité au changement
+climatique entre les différents systèmes glaciaires alpins.
+</p>
+
+</div>
+
+<div class="chart-graph">
+<canvas id="chartAltitude"></canvas>
+</div>
+
+</div>
+
+</div>
+
+<!-- CONCLUSION -->
+
+<div class="card">
+
+<div class="conclusion">
+
+<h3>Interprétation générale</h3>
+
+<p>
+L’ensemble des indicateurs présentés confirme la tendance
+générale observée dans le massif alpin : une diminution
+progressive de la surface et du volume de nombreux glaciers
+depuis plus d’un siècle.
+</p>
+
+<p>
+Ces transformations constituent l’un des signaux les plus
+visibles du réchauffement climatique dans les régions de
+haute montagne. Les glaciers alpins jouent ainsi un rôle
+majeur d’indicateurs environnementaux permettant de suivre
+les évolutions climatiques à long terme.
+</p>
+
+<p>
+L’étude de ces indicateurs contribue également à mieux
+comprendre les impacts potentiels du changement climatique
+sur les ressources en eau, les paysages alpins et les
+écosystèmes de montagne.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="footer">
+Observatoire des glaciers alpins — Projet personnel
+</footer>
 
 <script>
 
-/* ALTITUDE */
-new Chart(document.getElementById("altitudeChart"), {
-    type: "bar",
-    data: {
-        labels: [
-            "Mer de Glace (France)",
-            "Aletsch (Suisse)",
-            "Pasterze (Autriche)",
-            "Blaueis (Allemagne)",
-            "Ghiacciaio del Forni (Italie)"
-        ],
-        datasets: [{
-            label: "Altitude (m)",
-            data: [2500, 2300, 2100, 2400, 3650],
-            backgroundColor: "#4da3ff"
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: { y: { beginAtZero: true } }
-    }
+document.addEventListener("DOMContentLoaded",function(){
+
+new Chart(document.getElementById("chartSurface"),{
+type:"bar",
+data:{
+labels:[
+"Mer de Glace (France)",
+"Aletsch (Suisse)",
+"Pasterze (Autriche)",
+"Blaueis (Allemagne)",
+"Ghiacciaio del Forni (Italie)"
+],
+datasets:[{
+label:"Surface (km²)",
+data:[12.3,17.3,9.6,1.1,11.3],
+backgroundColor:"#2ecc71"
+}]
+},
+options:{responsive:true,maintainAspectRatio:false}
 });
 
-/* SURFACE */
-new Chart(document.getElementById("surfaceChart"), {
-    type: "bar",
-    data: {
-        labels: [
-            "Mer de Glace (France)",
-            "Aletsch (Suisse)",
-            "Pasterze (Autriche)",
-            "Blaueis (Allemagne)",
-            "Ghiacciaio del Forni (Italie)"
-        ],
-        datasets: [{
-            label: "Surface (km²)",
-            data: [12.2, 17.3, 9.6, 1.0, 11.3],
-            backgroundColor: "#3ddcc0"
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: { y: { beginAtZero: true } }
-    }
+new Chart(document.getElementById("chartEvolution"),{
+type:"line",
+data:{
+labels:["1850","1900","1950","2000","2025"],
+datasets:[{
+label:"Surface (km²)",
+data:[40,35,30,27,24],
+borderColor:"#2c7ed6",
+backgroundColor:"rgba(44,126,214,0.2)",
+fill:true,
+tension:0.3
+}]
+},
+options:{responsive:true,maintainAspectRatio:false}
 });
 
-/* EVOLUTION */
-new Chart(document.getElementById("evolutionChart"), {
-    type: "line",
-    data: {
-        labels: ["1990", "2000", "2010", "2020", "2024"],
-        datasets: [{
-            label: "Surface (km²)",
-            data: [18.0, 16.2, 14.0, 12.3, 11.8],
-            fill: true,
-            borderColor: "#2962ff",
-            backgroundColor: "rgba(41,98,255,0.15)",
-            tension: 0.3,
-            pointRadius: 5
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            x: { title: { display: true, text: "Année" } },
-            y: { title: { display: true, text: "Surface (km²)" } }
-        }
-    }
+new Chart(document.getElementById("chartAltitude"),{
+type:"bar",
+data:{
+labels:[
+"Mer de Glace (France)",
+"Aletsch (Suisse)",
+"Pasterze (Autriche)",
+"Blaueis (Allemagne)",
+"Ghiacciaio del Forni (Italie)"
+],
+datasets:[{
+label:"Altitude (m)",
+data:[2500,2300,2100,2400,3650],
+backgroundColor:"#4da3ff"
+}]
+},
+options:{responsive:true,maintainAspectRatio:false}
 });
+
+});
+
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("open");
+}
+
 </script>
 
 </body>

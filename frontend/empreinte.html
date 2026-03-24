@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Empreinte carbone — Glaciers alpins</title>
-  
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Empreinte carbone — Glaciers alpins</title>
+
 <link rel="stylesheet" href="style.css" />
 
 <style>
@@ -49,115 +52,110 @@ display:block;
 .mobile-menu.open{
 display:flex;
 }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px;
-    }
 
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 16px;
-      margin: 16px 0;
-      box-shadow: 0 1px 6px rgba(0,0,0,.08);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+.container{
+max-width:1100px;
+margin:0 auto;
+padding:16px;
+}
 
+.card{
+background:#fff;
+border-radius:10px;
+padding:20px;
+margin:20px 0;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
 
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
 
-    label {
-      display: block;
-      margin: 8px 0 6px;
-      font-weight: 600;
-    }
+@media (max-width:900px){
+.grid{
+grid-template-columns:1fr;
+}
+}
 
-    select, input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
+label{
+display:block;
+margin:8px 0 6px;
+font-weight:600;
+}
 
-    .btnrow {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
+select,input{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
+}
 
-    .btn {
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      background: #f7f7f7;
-      cursor: pointer;
-    }
+.btnrow{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:12px;
+}
 
-    .btn.primary {
-      background: #e9f2ff;
-      border-color: #cfe3ff;
-    }
+.btn{
+padding:10px 14px;
+border-radius:8px;
+border:1px solid #ddd;
+background:#f7f7f7;
+cursor:pointer;
+}
 
-    .muted {
-      opacity: .75;
-      font-size: 0.95em;
-    }
+.btn.primary{
+background:#e9f2ff;
+border-color:#cfe3ff;
+}
 
-    .kpi {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
+.muted{
+opacity:.75;
+font-size:0.95em;
+}
 
-    @media (max-width: 900px) {
-      .kpi {
-        grid-template-columns: 1fr;
-      }
-    }
+.kpi{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+}
 
-    .kpi .box {
-      background: #fafafa;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 12px;
-    }
+@media (max-width:900px){
+.kpi{
+grid-template-columns:1fr;
+}
+}
 
-    .kpi .value {
-      font-size: 1.2em;
-      font-weight: 800;
-      margin-top: 6px;
-      line-height: 1.5;
-    }
+.kpi .box{
+background:#fafafa;
+border:1px solid #eee;
+border-radius:10px;
+padding:12px;
+}
 
-    .note {
-      background: #fffbe6;
-      border: 1px solid #ffe58f;
-      padding: 12px;
-      border-radius: 10px;
-    }
+.kpi .value{
+font-size:1.2em;
+font-weight:800;
+margin-top:6px;
+line-height:1.5;
+}
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+.note{
+background:#fffbe6;
+border:1px solid #ffe58f;
+padding:12px;
+border-radius:10px;
+}
 
-    .topbar a {
-      text-decoration: none;
-    }
-  </style>
+ul{
+line-height:1.6;
+}
+
+</style>
+
 </head>
 
 <body class="page-empreinte">
@@ -176,12 +174,12 @@ display:flex;
 <a href="map-en.html">EN</a>
 </nav>
 
-  <div class="container">
+<div class="container">
 
-    <div class="topbar">
-      <div>
-        <h1>Empreinte carbone</h1>
+<h1>Empreinte carbone et glaciers alpins</h1>
+
 <div class="card">
+
 <h2>Pourquoi calculer l'empreinte carbone liée aux glaciers ?</h2>
 
 <p>
@@ -193,98 +191,177 @@ contribue à l'élévation des températures moyennes globales et accélère la 
 <p>
 Cette page propose une estimation pédagogique permettant de relier des émissions
 de CO₂ issues d'activités humaines (comme les déplacements) à un impact potentiel
-sur les glaciers alpins. L'objectif est de rendre compréhensible le lien entre
-les comportements individuels et l'évolution des environnements de haute montagne.
+sur les glaciers alpins.
 </p>
 
 <p>
-Les valeurs affichées sont des ordres de grandeur basés sur des facteurs d'émission
-moyens et des estimations scientifiques issues de la littérature sur le changement
-climatique et la cryosphère.
+L'objectif est de rendre compréhensible le lien entre les comportements individuels
+et l'évolution des environnements de haute montagne.
 </p>
 
 </div>
-        <p class="muted">Estimation pédagogique basée sur des facteurs d’émission moyens.</p>
-      </div>
 
-      
-    </div>
+<div class="card">
 
-    <div class="card">
-      <h2>Paramètres</h2>
+<h2>Pourquoi les glaciers disparaissent-ils ?</h2>
 
-      <div class="grid">
-        <div>
-          <label for="profile">Profil</label>
-          <select id="profile">
-            <option value="habitant">Habitant des Alpes</option>
-            <option value="touriste">Touriste</option>
-          </select>
+<p>
+Depuis la fin du XIXᵉ siècle, la majorité des glaciers alpins ont perdu
+une part importante de leur surface et de leur volume.
+</p>
 
-          <label for="transport">Transport</label>
-          <select id="transport">
-            <option value="voiture">Voiture</option>
-            <option value="train">Train</option>
-            <option value="avion">Avion</option>
-          </select>
+<p>
+Cette évolution est principalement liée à l'augmentation des températures
+moyennes provoquée par l'accumulation de gaz à effet de serre dans l'atmosphère.
+</p>
 
-          <label for="distance">Distance (km)</label>
-          <input id="distance" type="number" min="0" step="1" value="200" />
-        </div>
+<ul>
+<li>moins d'accumulation de neige en hiver</li>
+<li>fonte plus rapide en été</li>
+<li>saisons de fonte plus longues</li>
+</ul>
 
-        <div>
-          <label for="glacier">Glacier</label>
-          <select id="glacier">
-            <option value="">Chargement…</option>
-          </select>
+<p>
+Lorsque la fonte devient plus importante que l'accumulation de neige,
+les glaciers reculent progressivement.
+</p>
 
-          <div class="note" style="margin-top:14px;">
-            <strong>Note méthodologique</strong><br />
-            Les résultats sont des ordres de grandeur. Ils servent à relier une émission de CO₂ à un impact glaciaire de façon compréhensible.
-          </div>
-        </div>
-      </div>
+</div>
 
-      <div class="btnrow">
-        <button class="btn primary" id="btnCalc">Calculer</button>
-        <button class="btn" id="btnReset">Réinitialiser</button>
-      </div>
-    </div>
+<div class="card">
 
-    <div class="card">
-      <h2>Résultats</h2>
+<h2>Quel est le lien entre CO₂ et fonte des glaciers ?</h2>
 
-      <div class="kpi">
-        <div class="box">
-          <div class="muted">Émissions estimées</div>
-          <div class="value" id="outCo2">—</div>
-        </div>
+<p>
+Les activités humaines — transport, chauffage, industrie —
+émettent du dioxyde de carbone dans l'atmosphère.
+</p>
 
-        <div class="box">
-          <div class="muted">Équivalent fonte (est.)</div>
-          <div class="value" id="outDays">—</div>
-        </div>
+<p>
+Ce gaz retient une partie de la chaleur dans le système climatique,
+ce qui entraîne une augmentation progressive de la température moyenne.
+</p>
 
-        <div class="box">
-          <div class="muted">Surface impactée (est.)</div>
-          <div class="value" id="outM2">—</div>
-        </div>
-      </div>
+<p>
+Dans les régions de montagne, cette hausse de température
+accélère la fonte estivale des glaciers et modifie l'équilibre
+entre neige et glace.
+</p>
 
-      <p class="muted" id="outDetails" style="margin-top:12px;">
-        Sélectionne un glacier puis clique sur "Calculer".
-      </p>
-        
-      <div id="equivalent" class="muted" style="margin-top:12px;"></div>
-    </div>
+</div>
 
-  </div>
+<div class="card">
 
-  <script src="empreinte.js" defer></script>
+<h2>Simulateur d'empreinte carbone</h2>
+
+<p class="muted">
+Estimation pédagogique basée sur des facteurs d’émission moyens.
+</p>
+
+<div class="grid">
+
+<div>
+
+<label for="profile">Profil</label>
+<select id="profile">
+<option value="habitant">Habitant des Alpes</option>
+<option value="touriste">Touriste</option>
+</select>
+
+<label for="transport">Transport</label>
+<select id="transport">
+<option value="voiture">Voiture</option>
+<option value="train">Train</option>
+<option value="avion">Avion</option>
+</select>
+
+<label for="distance">Distance (km)</label>
+<input id="distance" type="number" min="0" step="1" value="200">
+
+</div>
+
+<div>
+
+<label for="glacier">Glacier</label>
+<select id="glacier">
+<option value="">Chargement…</option>
+</select>
+
+<div class="note" style="margin-top:14px;">
+<strong>Note méthodologique</strong><br>
+Les résultats sont des ordres de grandeur permettant
+de relier une émission de CO₂ à un impact glaciaire
+de façon compréhensible.
+</div>
+
+</div>
+
+</div>
+
+<div class="btnrow">
+<button class="btn primary" id="btnCalc">Calculer</button>
+<button class="btn" id="btnReset">Réinitialiser</button>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Résultats</h2>
+
+<div class="kpi">
+
+<div class="box">
+<div class="muted">Émissions estimées</div>
+<div class="value" id="outCo2">—</div>
+</div>
+
+<div class="box">
+<div class="muted">Équivalent fonte (est.)</div>
+<div class="value" id="outDays">—</div>
+</div>
+
+<div class="box">
+<div class="muted">Surface impactée (est.)</div>
+<div class="value" id="outM2">—</div>
+</div>
+
+</div>
+
+<p class="muted" id="outDetails" style="margin-top:12px;">
+Sélectionne un glacier puis clique sur "Calculer".
+</p>
+
+<div id="equivalent" class="muted" style="margin-top:12px;"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Comment réduire son impact climatique ?</h2>
+
+<ul>
+<li>Privilégier le train ou les transports en commun</li>
+<li>Limiter les déplacements en avion lorsque c'est possible</li>
+<li>Utiliser des modes de transport doux (marche, vélo)</li>
+<li>Réduire la consommation énergétique des logements</li>
+</ul>
+
+<p>
+Même si les actions individuelles semblent modestes,
+leur effet cumulé à grande échelle contribue à réduire
+les émissions globales de gaz à effet de serre.
+</p>
+
+</div>
+
+</div>
+
+<script src="empreinte.js" defer></script>
 
 <script>
-function toggleMenu() {
-const menu = document.getElementById("mobileMenu");
+function toggleMenu(){
+const menu=document.getElementById("mobileMenu");
 menu.classList.toggle("open");
 }
 </script>
