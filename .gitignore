@@ -1,0 +1,24 @@
+# backups
+*.backup
+*.bak
+*.SAFE
+*.CASSE
+*.AVANT_RESTAURATION
+*.AVANT_RESTORE
+*.STABLE_OK
+*.broken_*
+
+# archives
+*.tar
+*.tar.gz
+*.zip
+
+# system
+.DS_Store
+
+# python
+__pycache__/
+*.pyc
+
+# env
+.env
